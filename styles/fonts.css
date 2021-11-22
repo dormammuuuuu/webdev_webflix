@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Webflix Sans Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Regular'), url('../assets/fonts/WebflixSansRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Icon';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Icon'), url('../assets/fonts/WebflixSansIcon.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Thin';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Thin'), url('../assets/fonts/WebflixSansThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Light'), url('../assets/fonts/WebflixSansLight.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Medium'), url('../assets/fonts/WebflixSansMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Bold'), url('../assets/fonts/WebflixSansBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Webflix Sans Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Webflix Sans Black'), url('../assets/fonts/WebflixSansBlack.woff') format('woff');
+}

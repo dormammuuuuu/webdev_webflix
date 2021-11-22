@@ -1,0 +1,134 @@
+body {
+	background-color: black;
+}
+
+* {
+	font-family: arial;
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between ;
+	height: 85px;
+	align-items: center;
+	padding: 0 30px;
+	color: white;
+}
+
+li{
+	display: inline-block;
+	text-transform: uppercase;
+	margin: 0 10px;
+	font-size: 13px;
+}
+
+li:nth-child(3){
+	background: #FF69B4; 
+	padding: 15px 18px;
+	border-radius: 3px;
+}
+
+.nav-link{
+	color: white;
+	text-decoration: none;
+}
+
+.brand{
+	font-size: 40px;
+	color: #FF69B4;
+}
+
+.flex-container {
+  display: flex;
+	flex-direction: column;
+}
+
+#mainheader {
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	margin-top: 20px;
+}
+
+#subheader {
+	font-size: 18px;
+	font-weight: normal;
+	color: white;	
+	text-align: center;
+	margin: 20px 0px 30px 0px;
+}
+
+#register-form {
+	margin: auto;
+
+}
+
+.input-boxes {
+  width: 430px;
+	margin: 10px 0px 10px 0px;
+  height:35px;
+	display: block;
+	border: 0;
+}
+
+.input-labels {
+	font-size: 14px;
+	color: white;
+	display: block;
+}
+
+#confirminput {
+  	width: 430px;
+  	height: 35px;
+}
+
+input:focus {
+	border-bottom: 3px solid #FF69B4;
+	outline: none;
+}
+
+#terms {
+	font-size: 14px;
+	font-weight: normal;
+	display: block;
+	color: white;	
+	margin: 30px 0px 30px 0px;
+}
+
+#register {
+  background-color: #FF69B4;
+  width: 430px;
+  height: 35px;
+  font-size: 15px;
+  cursor: pointer;  
+  display: block;
+  border: 0;
+}
+
+#account {
+	font-size: 14px;
+	font-weight: normal;
+	color: white;	
+	margin: 30px 0px 30px 0px;
+	text-align: center;
+}
+
+#footer {
+	font-size: 12px;
+	text-align: center;
+	color: white; 
+	margin-top: 60px;
+}
+
+.form-links {
+	color: #FF69B4;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.form-links:hover {
+	color: #FF69B4;
+	text-decoration: underline;
+}
