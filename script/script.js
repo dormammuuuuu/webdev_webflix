@@ -24,6 +24,8 @@ function register() {
     } else {
         errorMsg.innerHTML = '';
         if(inputFields[4].value == inputFields[5].value) {
+            inputFields[4].style.border = "none";
+            inputFields[5].style.border = "none";
             if(isAgreeChecked()) {
                 alert();
             } else {
@@ -31,6 +33,8 @@ function register() {
             }
         } else {
             errorMsg.innerHTML = "Passwords don't match";
+            inputFields[4].style.borderBottom = "2.5px solid #EE3E3E";
+            inputFields[5].style.borderBottom = "2.5px solid #EE3E3E";
         }
     }
 }
