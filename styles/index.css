@@ -23,6 +23,7 @@ h1, p {
 }
 
 #about{
+  width: 1000px;
   padding: 1em 5em;
   padding-top: 3em;
   margin: auto;
