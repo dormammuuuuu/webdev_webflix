@@ -1,0 +1,117 @@
+body {
+	background-color: black;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    font-family: arial;
+}
+
+#mainheader {
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+    position: absolute;
+    margin: 120px 0px 0px 200px;
+}
+
+#avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    margin: 200px 0px 0px 340px;
+}
+
+label {
+    background-color: #FF69B4;
+    font-weight: bold;
+    width: 140px;
+    padding: 10px 25px ;
+    border: 0px;
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    margin: 350px 0px 0px 305px;
+}
+
+label:hover {
+    background-color: #AA104F;
+    color: white;
+}
+
+label:active {
+    background-color:#AA104F;
+    color: white;
+    box-shadow: #AA104F;
+    transform: translateY(2px);
+}
+
+#register-form {
+    margin: auto;
+    margin-top: 7%;
+}
+
+#errorMsg{
+	color: #EE3E3E;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 1rem;
+}
+
+.input-labels {
+	font-size: 14px;
+	color: white;
+    display: block;
+}
+
+.input-boxes {
+    width: 430px;
+    height:35px;
+    border: 0px;
+	display: block;
+    margin: 10px 0px 20px 0px;
+}
+
+.input-boxes:disabled {
+    color: white;
+}
+
+#save {
+    background-color: #FF69B4;
+    font-size: 15px;
+    width: 200px;
+    height: 35px;
+    border: 0px;
+    cursor: pointer;  
+    display: block;
+    margin: auto;
+}
+
+#save:hover {
+    background-color: #AA104F;
+    color: white;
+}
+
+#save:active {
+  background-color:#AA104F;
+  color: white;
+  box-shadow: #AA104F;
+  transform: translateY(2px);
+}
+
+input:focus {
+	border-bottom: 3px solid #FF69B4;
+	outline: none;
+}
+
+#footer {
+	font-size: 12px;
+	text-align: center;
+	color: white; 
+	margin-top: 40px;
+}

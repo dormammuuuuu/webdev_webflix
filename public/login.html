@@ -1,0 +1,58 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<title> StreamHub - Login </title>
+			<link rel="stylesheet" type="text/CSS" href="styles/login.css">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+			<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+		</head>
+	<body>
+		<nav>
+			<div>
+  			  <p><i class="brand fas fa-play-circle"></i></p>
+				
+			</div>
+			<ul>
+				<li><a class="nav-link" href="index.html">Home</a></li>
+				<li><a class="nav-link" href="index.html#about">About</a></li>
+				<li><a class="nav-link" href="signup.html">Register</a></li>
+			</ul>
+		</nav>
+		<div class="container">
+			<div class="flex-container">
+				<div>
+					<p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
+					<p id="subheader"> Welcome back! Log In with your Email or Phone Number </p> 
+					<div class="phone-email">
+						<button class="buttons"> Email </button>
+						<button class="buttons"> Phone </button>
+					</div>
+					<div class="form-input">
+						<span class="form-labels"> Email</span>
+						<input type="email" class="user-input" name="email">
+	
+						<span class="form-labels"> Password</span>
+						<input type="password" class="user-input" name="password">
+					</div>
+					<div id="errorMsgDiv"><p id="errorMsgLogin"></p></div>
+					<button id="login"> <b> LOG IN <b> </button>
+					<a href="#" class="forgot-register"> Forgot password? </a>
+					<a href="signup.html" class="forgot-register"> Register now </a>
+				</div>
+				
+				<div>
+					<div> <img src="assets/images/thumb.png" id="image"> </div>
+					<div> <p id="tagline"> Watch. Enjoy. Binge. </p> </div>
+				</div>
+
+			</div>
+		</div>
+
+		<footer> <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p> </footer>
+		<script src="script/firebase.js"></script>
+		<script src="script/login.js"></script>
+		<script src="script/script.js"></script>
+	</body>
+</html>

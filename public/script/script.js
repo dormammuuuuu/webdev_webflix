@@ -18,7 +18,6 @@ function register() {
             inputFields[i].style.border = "none";
         }
     }
-    console.log(emptyFields);
     if(emptyFields) {
         errorMsg.innerHTML = "Please input empty fields";
     } else {
@@ -27,7 +26,7 @@ function register() {
             inputFields[4].style.border = "none";
             inputFields[5].style.border = "none";
             if(isAgreeChecked()) {
-                alert();
+                registerToDatabase();
             } else {
                 showTerms();
             }
@@ -42,4 +41,47 @@ function register() {
 function closeTermsBtn() {
     termsModal.style.display = "none";
     window.location = "signup.html";
+}
+
+function registerToDatabase() {
+    var user = {
+        firstName: "", 
+        lastName: "", 
+        username: "", 
+        email: "",  
+        password: "", 
+        confirmPassword: "", 
+    }
+    var accDetails = [user.firstName, user.lastName, user.username, user.email, user.password, user.confirmPassword];
+    var inputFields = document.getElementsByClassName("input-boxes");
+
+    for(let i = 0; i < accDetails.length; i++) {
+        accDetails[i] = inputFields[i].value;
+    }
+    email = accDetails[3];
+    password = accDetails[4];
+
+    auth.createUserWithEmailAndPassword(email, password).then(() => {
+        var user = auth.currentUser;
+        var dbref = db.ref(`users/${user.uid}`);
+        const t = Date.now();
+        const today = new Date(t).toLocaleDateString();
+
+        dbref.set({
+            firstName: accDetails[0],
+            lastName: accDetails[1],
+            username: accDetails[2],
+            email: accDetails[3],
+            dateCreated: today  
+        });
+        setTimeout(() => {
+            window.location = "HOMEPAGE.html"
+        }, 1000);
+    }).catch(function(error) {
+        alert(error.message);
+    });
+}
+
+function logout() {
+    firebase.auth().signOut();
 }

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <title> USER SETTING </title>
+     <link rel="stylesheet" type="text/CSS" href="styles/USERSETTING.css">
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>  
+
+<body>
+
+    
+    <div class="flex-container">
+        <span id="mainheader"> User Setting </span>
+        <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
+        <input type="file" id="upload" hidden/>
+        <label for="upload"> CHANGE AVATAR </label>
+       
+            <div id="register-form">
+
+                <span class="input-labels"> First Name </span> 
+                <input type="text" class="input-boxes" name="firstname" disabled> 
+
+                <span class="input-labels"> Last Name </span> 
+                <input type="text" class="input-boxes" name="lastname" disabled> 
+
+                <span class="input-labels"> Username </span> 
+                <input type="text" class="input-boxes" name="username" disabled> 
+
+                <span class="input-labels"> Current Password </span> 
+                <input type="password" class="input-boxes" name="currentpassword" disabled> 
+
+                <span class="input-labels"> New Password </span> 
+                <input type="password" class="input-boxes" name="newpassword" disabled> 
+
+                <span class="input-labels"> Confirm Password </span> 
+                <input type="password" class="input-boxes" name="confirmpassword" disabled> 
+
+                <div id="errorMsgDiv"><p id="errorMsg"></p></div>
+                
+                <button id="save" disabled> <b> SAVE CHANGES <b> </button>
+                    <button type="button" id="editBtn">EDIT</button>
+
+            </div>
+
+                    <footer id="footer"> 
+                        <span> © 2021 - 2022 StreamHub.com. All rights reserved. </span> 
+                    </footer> 
+    </div>
+    <script src="script/usersetting.js"></script>
+    <script src="script/firebase.js"></script>
+</body> 
+</html>
