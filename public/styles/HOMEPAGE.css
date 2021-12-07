@@ -269,6 +269,7 @@ a.username {
 #searchbox {
   width: 200px;
   height: 30px;
+  justify-content: flex-end;
 }
 
 input:focus {
