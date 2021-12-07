@@ -1,3 +1,20 @@
+var mainApp = {};
+(function() {
+    var uid = null;
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+            uid = user.uid;
+        } else {
+            uid = null;
+            window.location.replace("index.html");
+        }
+      });
+      function logout() {
+        firebase.auth().signOut();
+    }
+    mainApp.logout = logout;
+})();
+
 function displayUserData() {
     firebase.auth().onAuthStateChanged(user => {
         var user = auth.currentUser;
