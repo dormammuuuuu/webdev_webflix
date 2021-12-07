@@ -1,15 +1,15 @@
 var firebaseApp = {};
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCKtMsOOvK-dF2dcYzyth-nvgcwyN6x-nA",
-    authDomain: "streamhub-57802.firebaseapp.com",
-    databaseURL: "https://streamhub-57802-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "streamhub-57802",
-    storageBucket: "streamhub-57802.appspot.com",
-    messagingSenderId: "154806697678",
-    appId: "1:154806697678:web:91d6b6f5b0ed78e27dda9f",
-    measurementId: "G-1M4KBZXWHD"
-};
+    apiKey: "AIzaSyDt04IZzGmstIeFfxbiIw-oHdE0KBArrgs",
+    authDomain: "streamhub-7924b.firebaseapp.com",
+    projectId: "streamhub-7924b",
+    storageBucket: "streamhub-7924b.appspot.com",
+    messagingSenderId: "1079889960053",
+    databaseURL: "https://streamhub-7924b-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    appId: "1:1079889960053:web:57db9718776779eb99ac3c",
+    measurementId: "G-44NTBMWTYK"
+  };
 
 firebase.initializeApp(firebaseConfig);
 
