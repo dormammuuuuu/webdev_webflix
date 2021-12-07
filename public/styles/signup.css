@@ -107,6 +107,19 @@ input:focus {
   margin-top: 50px;
 }
 
+#register:hover {
+    background-color: #AA104F;
+    color: white;
+}
+
+#register:active {
+  background-color:#AA104F;
+  color: white;
+  box-shadow: #AA104F;
+  transform: translateY(2px);
+}
+
+
 #account {
 	font-size: 14px;
 	font-weight: normal;
@@ -255,11 +268,6 @@ input:focus {
 	font-weight: bold;
 	border: none;
 	transition: ease 0.2s;
-}
-
-#registerBtn:hover {
-	background-color: #ca5690;
-	cursor: pointer;
 }
 
 #registerBtn:disabled{

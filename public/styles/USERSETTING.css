@@ -11,40 +11,128 @@ body {
     font-family: arial;
 }
 
+#body_container {
+  display: none;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: black;
+    margin: 20px 0px 0px 140px;
+  }
+  
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px; 
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    color: white;
+ 
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #FF69B4;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 40%;
+    z-index: 1;
+  }  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    background-color: #696969	;
+    height: 150px;
+  }
+  
+  .column a {
+    float: none;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .column a:hover {
+    background-color:  #FF69B4;
+  }
+  
+  
+  .row:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+#mainHeaderDiv {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-items: center;
+}
+
 #mainheader {
 	font-size: 30px;
 	font-weight: bold;
 	color: white;
-    position: absolute;
-    margin: 120px 0px 0px 200px;
 }
 
 #avatar {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    position: absolute;
-    margin: 200px 0px 0px 340px;
+    margin: 20px;
 }
 
-label {
+#changeAvatarBtn {
     background-color: #FF69B4;
     font-weight: bold;
     width: 140px;
     padding: 10px 25px ;
     border: 0px;
-    display: block;
     cursor: pointer;
-    position: absolute;
-    margin: 350px 0px 0px 305px;
 }
 
-label:hover {
+#changeAvatarBtn:hover {
     background-color: #AA104F;
     color: white;
 }
 
-label:active {
+#changeAvatarBtn:active {
     background-color:#AA104F;
     color: white;
     box-shadow: #AA104F;
@@ -53,10 +141,9 @@ label:active {
 
 #register-form {
     margin: auto;
-    margin-top: 7%;
 }
 
-#errorMsg{
+#errorMsg, #errorMsg2{
 	color: #EE3E3E;
 	font-style: italic;
 	font-weight: 100;
@@ -81,23 +168,48 @@ label:active {
     color: white;
 }
 
-#save {
+#save, #save2 {
     background-color: #FF69B4;
     font-size: 15px;
-    width: 200px;
+    width: 150px;
     height: 35px;
     border: 0px;
     cursor: pointer;  
     display: block;
     margin: auto;
+    margin: 0px 0px 0px 230px;
 }
 
-#save:hover {
+#save:hover, #save2:hover {
     background-color: #AA104F;
     color: white;
 }
 
-#save:active {
+#save:active, #save3:active {
+  background-color:#AA104F;
+  color: white;
+  box-shadow: #AA104F;
+  transform: translateY(2px);
+}
+
+#editBtn, #editBtn2 {
+    background-color: #FF69B4;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    height: 35px;
+    border: 0px;
+    cursor: pointer;  
+    display: block;
+    margin: -35px 0px 0px 45px;
+}
+
+#editBtn:hover, #editBtn2:hover {
+    background-color: #AA104F;
+    color: white;
+}
+
+#editBtn:active, #editBtn2:active {
   background-color:#AA104F;
   color: white;
   box-shadow: #AA104F;
@@ -113,5 +225,5 @@ input:focus {
 	font-size: 12px;
 	text-align: center;
 	color: white; 
-	margin-top: 40px;
+	margin-top: 60px;
 }

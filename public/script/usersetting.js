@@ -1,29 +1,36 @@
 function displayUserData() {
-    var user = auth.currentUser;
-    var dbref = db.ref(`users/${user.uid}`);
     firebase.auth().onAuthStateChanged(user => {
+        var user = auth.currentUser;
+        var dbref = db.ref(`users/${user.uid}`);
         if(user) {
             dbref.once("value", snap => {
                 var userData = snap.val();
                 var userArr = [userData.firstName, userData.lastName, userData.username];
                 var userDetails = document.getElementsByClassName("input-boxes");
-                console.log(userDetails);
                 for(let i = 0; i < 3; i++) {
                     userDetails[i].value = userArr[i];
                 }
-            })
+            }).then(() => {
+                loader.style.display = 'none';
+                body_container.style.display = 'block';
+            });
         }
     });
 }
-
-setTimeout(() => {
-    displayUserData();
-}, 500);
+displayUserData();
 
 editBtn.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
     save.disabled = false;
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 4; i++) {
+        userDetails[i].disabled = false;
+    }
+}
+
+editBtn2.onclick = () => {
+    var userDetails = document.getElementsByClassName("input-boxes");
+    save.disabled = false;
+    for(let i = 4; i < 7; i++) {
         userDetails[i].disabled = false;
     }
 }
@@ -32,7 +39,7 @@ save.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
     var emptyFields = false;
 
-    for(let i = 0; i < 6; i++) {
+    for(let i = 0; i < 3; i++) {
         if(userDetails[i].value == '') {
             emptyFields = (userDetails[i].value == '') ? true : false;
             userDetails[i].style.borderBottom = "2px solid red";
@@ -68,14 +75,17 @@ function updateUserDetails() {
                 firstName: userDetails[0].value,
                 lastName: userDetails[1].value,
                 username: userDetails[2].value,
+            }).then(() => {
+                var userDetails = document.getElementsByClassName("input-boxes");
+                save.disabled = true;
+                for(let i = 0; i < 4; i++) {
+                    userDetails[i].disabled = true;
+                }
             });
-            save.disabled = true;
+            
             }).catch(function(error) {
-            console.log(error.message);
+                errorMsg.innerHTML = error.message;
             });
         }
     });
 }
-
-
-

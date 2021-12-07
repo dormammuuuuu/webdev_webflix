@@ -16,21 +16,22 @@ var mainApp = {};
 })();
 
 function displayName() {
-    var user = auth.currentUser;
-    var dbref = db.ref(`users/${user.uid}`);
     firebase.auth().onAuthStateChanged(user => {
+        var user = auth.currentUser;
+        var dbref = db.ref(`users/${user.uid}`);
         if(user) {
             dbref.once("value", snap => {
                 var userData = snap.val();
                 document.getElementById("user_name").innerHTML = userData.username;
-            })
+            }).then(() => {
+                loader.style.display = 'none';
+                body_container.style.display = 'block';
+            });
         };
     });
 }
 
-setTimeout(() => {
-    displayName();
-}, 500);
+displayName();
 
 logoutBtn.onclick = () => {
     firebase.auth().signOut();

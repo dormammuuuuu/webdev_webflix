@@ -126,8 +126,20 @@ button, input{
 	  height: 40px;
 	  font-size: 15px;
 	  cursor: pointer;  
-	  margin: 30px 0;
+	  margin: 10px 0;
 	  margin-bottom: 15px;
+}
+
+#login:hover {
+    background-color: #AA104F;
+    color: white;
+}
+
+#login:active {
+  background-color:#AA104F;
+  color: white;
+  box-shadow: #AA104F;
+  transform: translateY(2px);
 }
 
 #errorMsgLogin{
@@ -142,13 +154,13 @@ button, input{
 }
 
 .forgot-register {
-	 	font-family: arial;
-		font-size: 13px;
-		font-weight: bold;
-		color: white;
-		text-decoration: none;
-	  display: block;
-	  margin: 10px 0;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+	display: block;
+	margin: 10px 0;
 }
 
 .forgot-register:hover {

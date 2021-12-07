@@ -1,54 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <title> USER SETTING </title>
+     <title> StreamHub | USER SETTING </title>
+     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
      <link rel="stylesheet" type="text/CSS" href="styles/USERSETTING.css">
+     <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 </head>  
 
 <body>
-
+    <div id="loader"></div>
+    <div id="body_container">
+        <p style="margin:0px 0px 0px 50px; font-size: 3em; position: absolute;">
+            <i style="color: #F86B86;" class="fas fa-play-circle"></i></p>
     
-    <div class="flex-container">
-        <span id="mainheader"> User Setting </span>
-        <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
-        <input type="file" id="upload" hidden/>
-        <label for="upload"> CHANGE AVATAR </label>
-       
-            <div id="register-form">
-
-                <span class="input-labels"> First Name </span> 
-                <input type="text" class="input-boxes" name="firstname" disabled> 
-
-                <span class="input-labels"> Last Name </span> 
-                <input type="text" class="input-boxes" name="lastname" disabled> 
-
-                <span class="input-labels"> Username </span> 
-                <input type="text" class="input-boxes" name="username" disabled> 
-
-                <span class="input-labels"> Current Password </span> 
-                <input type="password" class="input-boxes" name="currentpassword" disabled> 
-
-                <span class="input-labels"> New Password </span> 
-                <input type="password" class="input-boxes" name="newpassword" disabled> 
-
-                <span class="input-labels"> Confirm Password </span> 
-                <input type="password" class="input-boxes" name="confirmpassword" disabled> 
-
-                <div id="errorMsgDiv"><p id="errorMsg"></p></div>
-                
-                <button id="save" disabled> <b> SAVE CHANGES <b> </button>
-                    <button type="button" id="editBtn">EDIT</button>
-
+        <div class="navbar">
+            <a href="#home"> Home </a>
+            <a href="#news"> Movies </a>
+            <a href="#news"> Series </a>
+    
+             <div class="dropdown">
+                <button class="dropbtn"> Genre 
+                 </button>
+    
+                    <div class="dropdown-content">
+                         <div class="row">
+                                <div class="column">
+                                    <a href="#">Action</a>
+                                    <a href="#">Thriller</a>
+                                    <a href="#">Horror</a>
+                                </div>
+                                <div class="column">
+                                    <a href="#">Romance</a>
+                                    <a href="#">Comedy</a>
+                                    <a href="#">Science Fiction</a>
+                                </div>
+                                <div class="column">
+                                    <a href="#">Fiction</a>
+                                    <a href="#">Crime</a>
+                                    <a href="#">Adventure</a>
+                                </div>
+                        </div>
+                    </div>
+            </div> 
+        </div>
+        
+        <div class="flex-container">
+            <div id="mainHeaderDiv">
+                <span id="mainheader"> User Setting </span>
+                <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
+                <input type="file" id="upload" hidden/>
+                <label for="upload" id="changeAvatarBtn"> CHANGE AVATAR </label>
             </div>
-
-                    <footer id="footer"> 
-                        <span> © 2021 - 2022 StreamHub.com. All rights reserved. </span> 
-                    </footer> 
+            
+           
+                <div id="register-form">
+    
+                    <br> <br> <br>
+    
+                    <span class="input-labels"> First Name </span> 
+                    <input type="text" class="input-boxes" name="firstname" disabled> 
+    
+                    <span class="input-labels"> Last Name </span> 
+                    <input type="text" class="input-boxes" name="lastname" disabled> 
+    
+                    <span class="input-labels"> Username </span> 
+                    <input type="text" class="input-boxes" name="username" disabled> 
+    
+                    <span class="input-labels"> Current Password </span> 
+                    <input type="password" class="input-boxes" name="currentpassword" disabled> 
+    
+                    <div id="errorMsgDiv"><p id="errorMsg"></p></div>
+                    
+                    <button id="save" disabled> <b> SAVE CHANGES <b> </button>
+                    <button type="button" id="editBtn">EDIT   ✏️ </button>
+                    
+                    <br> <br>
+    
+                    <span class="input-labels"> Current Password </span> 
+                    <input type="password" class="input-boxes" name="currentpassword" disabled> 
+    
+                    <span class="input-labels"> New Password </span> 
+                    <input type="password" class="input-boxes" name="newpassword" disabled> 
+    
+                    <span class="input-labels"> Confirm Password </span> 
+                    <input type="password" class="input-boxes" name="confirmpassword" disabled> 
+    
+                    <div id="errorMsgDiv"><p id="errorMsg2"></p></div>
+                    
+                    <button id="save2" disabled> <b> SAVE CHANGES <b> </button>
+                    <button type="button" id="editBtn2">EDIT ✏️ </button>
+    
+                    </div>
+    
+                        <footer id="footer"> 
+                            <span> © 2021 - 2022 StreamHub.com. All rights reserved. </span> 
+                        </footer> 
+        </div>
     </div>
-    <script src="script/usersetting.js"></script>
+    
     <script src="script/firebase.js"></script>
+    <script src="script/usersetting.js"></script>
 </body> 
 </html>
