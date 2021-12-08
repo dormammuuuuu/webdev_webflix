@@ -183,6 +183,7 @@ button:focus {
 .card.previous--card {
   --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
   --card-rotation-offset: 0deg;
+  z-index: 2;
 }
 .card.previous--previous--card {
   --card-translateX-offset: calc(-1.67 * var(--card-width) * 1.1);
@@ -191,6 +192,7 @@ button:focus {
 .card.next--card {
   --card-translateX-offset: calc(var(--card-width) * 1.1);
   --card-rotation-offset: 0deg;
+  z-index: 2;
 }
 .card.next--next--card {
   --card-translateX-offset: calc(1.67 * var(--card-width) * 1.1);
@@ -333,5 +335,43 @@ button:focus {
   :root {
     --card-width: 250px;
     --card-height: 400px;
+  }
+}
+
+
+@media screen and (max-width:1400px) {
+  
+.card.previous--card {
+  --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+}
+
+.card.previous--previous--card {
+  --card-translateX-offset: calc(-.5 * var(--card-width) * 1.1);
+  z-index: -1;
+ 
+}
+
+.card.next--card {
+  --card-translateX-offset: calc(var(--card-width) * 1.1);
+
+}
+.card.next--next--card {
+  --card-translateX-offset: calc(.5 * var(--card-width) * 1.1);
+  z-index: -1;
+}
+  
+}
+
+@media screen and (max-width:1400px){
+  .app .feat-txt h1{
+    font-size: 2.5em;
+    transition: font-size ease-in-out .4s;
+  }
+}
+
+@media screen and (max-width:830px){
+  :root {
+    --card-width: 150px;
+    --card-height: 300px;
   }
 }

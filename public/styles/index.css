@@ -2,7 +2,7 @@
   --webflix-red: #F86B86;
   --webflix-red-dark: #dd4a65;
   --body-color-gray: #010100;
-  --webflix-mustard: #ff395d;
+  --webflix-mustard: #f8506f;
   --input-get-started-height: 58px;
   --webflix-black-bg: #010100;
   --webflix-blue: #0171EA;
@@ -17,6 +17,12 @@ body {
 button{
   box-shadow: inherit;
 }
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 
 h1, p {
   color: white !important;

@@ -4,6 +4,7 @@
 		<title> StreamHub | REGISTER </title>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/CSS" href="styles/signup.css">
+		<link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
@@ -13,13 +14,18 @@
 		<nav>
 			<div>
 				<p><i class="brand fas fa-play-circle"></i></p>
-				
+			
 			</div>
-			<ul>
+			<ul class="nav-menu">
 				<li><a class="nav-link" href="index.html">Home</a></li>
 				<li><a class="nav-link" href="index.html#about">About</a></li>
 				<li><a class="nav-link" href="login.html">Log In</a></li>
 			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
 		</nav>
 
 		<div class="flex-container">
@@ -114,5 +120,6 @@
 		</div>
 		<script src="script/firebase.js"></script>
 		<script src="script/register.js"></script>
+		<script src="script/navbar.js"></script>
 	</body>
 	</html>

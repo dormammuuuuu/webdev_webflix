@@ -6,39 +6,6 @@ body {
 	font-family: arial;
 }
 
-nav{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between ;
-	height: 85px;
-	align-items: center;
-	padding: 0 30px;
-	color: white;
-}
-
-li{
-	display: inline-block;
-	text-transform: uppercase;
-	margin: 0 10px;
-	font-size: 13px;
-}
-
-li:nth-child(3){
-	background: #FF69B4; 
-	padding: 15px 18px;
-	border-radius: 3px;
-}
-
-.nav-link{
-	color: white;
-	text-decoration: none;
-}
-
-.brand{
-	font-size: 40px;
-	color: #FF69B4;
-}
-
 .flex-container {
   display: flex;
 	flex-direction: column;

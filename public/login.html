@@ -4,6 +4,7 @@
 		<title> StreamHub | LOGIN </title>
 			<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 			<link rel="stylesheet" type="text/CSS" href="styles/login.css">
+			<link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 			<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 			<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
@@ -12,14 +13,20 @@
 	<body>
 		<nav>
 			<div>
-  			  <p><i class="brand fas fa-play-circle"></i></p>
+  			  	<p><i class="brand fas fa-play-circle"></i></p>
 				
 			</div>
-			<ul>
+			<ul class="nav-menu">
 				<li><a class="nav-link" href="index.html">Home</a></li>
 				<li><a class="nav-link" href="index.html#about">About</a></li>
 				<li><a class="nav-link" href="signup.html">Register</a></li>
 			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+			
 		</nav>
 		<div class="container">
 			<div class="flex-container">
@@ -37,13 +44,15 @@
 						<span class="form-labels"> Password</span>
 						<input type="password" class="user-input" name="password">
 					</div>
-					<div id="errorMsgDiv"><p id="errorMsgLogin"></p></div>
+					<div id="errorMsgDiv">
+						<p id="errorMsgLogin"></p>
+					</div>
 					<button id="login"> <b> LOG IN <b> </button>
 					<a href="#" class="forgot-register"> Forgot password? </a>
 					<a href="signup.html" class="forgot-register"> Register now </a>
 				</div>
 				
-				<div>
+				<div class="image-login">
 					<div> <img src="assets/images/thumb.png" id="image"> </div>
 					<div> <p id="tagline"> Watch. Enjoy. Binge. </p> </div>
 				</div>
@@ -55,5 +64,6 @@
 		<script src="script/firebase.js"></script>
 		<script src="script/login.js"></script>
 		<script src="script/register.js"></script>
+		<script src="script/navbar.js"></script>
 	</body>
 </html>
