@@ -29,7 +29,7 @@ h1, p {
 }
 
 #about{
-  width: 1000px;
+  max-width: 1000px;
   padding: 1em 5em;
   padding-top: 3em;
   margin: auto;
@@ -188,7 +188,7 @@ li.nav-item::marker{
   grid-template-areas:
     "p p p p p p"
     "input input input input button button"
-    "ifeedback ifeedback ifeedback ifeedback ifeedback ifeedback"
+    "ifeedback ifeedback ifeedback ifeedback ifeedback ifeedback";
 }
 
 .invalid-feedback {
