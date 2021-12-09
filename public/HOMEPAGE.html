@@ -1,351 +1,363 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title> StreamHub | HOME </title>
-    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
-    <link rel="stylesheet" type="text/CSS" href="styles/HOMEPAGE.css">
-    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
-</head>
+   <head>
+      <title> StreamHub | HOME </title>
+      <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/sidebar.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/HOMEPAGE.css">
+      <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+   </head>
+   <body>
+      <div class="sidebar">
+         <div class="logo-details">
+            <i class="icon fas fa-play-circle"></i>
+            <div class="logo_name">StreamHub</div>
+            <i class='bx bx-menu' id="btn" ></i>
+         </div>
+         <ul class="nav-list">
+            <li>
+               <a href="#">
+               <i class='bx bx-movie'></i>
+               <span class="links_name">Movies</span>
+               </a>
+               <span class="tooltip">Movies</span>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-tv' ></i>
+               <span class="links_name">TV/Shows</span>
+               </a>
+               <span class="tooltip">TV/Shows</span>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bx-heart' ></i>
+               <span class="links_name">My List</span>
+               </a>
+               <span class="tooltip">My List</span>
+            </li>
+            <li>
+               <a href="#">
+               <i class='bx bxs-calendar-event'></i>
+               <span class="links_name">Coming Soon</span>
+               </a>
+               <span class="tooltip">Coming Soon</span>
+            </li>
+            <li>
+               <a href="USERSETTING.html">
+               <i class='bx bx-cog' ></i>
+               <span class="links_name">Account Settings</span>
+               </a>
+               <span class="tooltip">Account Settings</span>
+            </li>
+            <li class="profile" id="logoutBtn">
+               <div class="profile-details">
+                  <!--<img src="profile.jpg" alt="profileImg">-->
+                  <div class="name_job">
+                     <div class="name">Log out</div>
+                  </div>
+               </div>
+               <i class='bx bx-log-out' id="log_out" ></i>
+            </li>
+         </ul>
+      </div>
+      <section class="home-section">
+        <div id="loader"></div>
+        <div id="body_container">
+           
+           <nav class="navbar">
+              <div>
+                <h1 class="title-nav">MOVIES</h1>
+                <div class="select" tabindex="1">
+                  <input class="selectopt" name="test" type="radio" id="genre1" checked>
+                  <label for="genre1" class="option">Action</label>
+                  <input class="selectopt" name="test" type="radio" id="genre2">
+                  <label for="genre2" class="option">Thriller</label>
+                  <input class="selectopt" name="test" type="radio" id="genre3">
+                  <label for="genre3" class="option">Horror</label>
+                  <input class="selectopt" name="test" type="radio" id="genre4">
+                  <label for="genre4" class="option">Romance</label>
+                  <input class="selectopt" name="test" type="radio" id="genre5">
+                  <label for="genre5" class="option">Comedy</label>
+                  <input class="selectopt" name="test" type="radio" id="genre6">
+                  <label for="genre6" class="option">Science Fiction</label>
+                  <input class="selectopt" name="test" type="radio" id="genre7">
+                  <label for="genre7" class="option">Fiction</label>
+                  <input class="selectopt" name="test" type="radio" id="genre8">
+                  <label for="genre8" class="option">Crime</label>
+                  <input class="selectopt" name="test" type="radio" id="genre9">
+                  <label for="genre9" class="option">Adventure</label>
+                </div>
+              </div>
+              <div>
+                <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
+                <span class="username" id="user_name"></span>
+              </div>
+              
+           </nav>
 
-<body>
-    <div id="loader"></div>
-    <div id="body_container">
-        <p style="margin:0px 0px 0px 50px; font-size: 3em; position: absolute;">
-            <i style="color: #F86B86;" class="fas fa-play-circle"></i></p>
-       
-        <div class="navbar">
-            <a href="#home"> Home </a>
-            <a href="#news"> Movies </a>
-            <a href="#news"> Series </a>
-    
-             <div class="dropdown">
-                <button class="dropbtn"> Genre 
-                 </button>
-    
-                    <div class="dropdown-content">
-                         <div class="row">
-                                <div class="column">
-                                    <a href="#">Action</a>
-                                    <a href="#">Thriller</a>
-                                    <a href="#">Horror</a>
-                                </div>
-                                <div class="column">
-                                    <a href="#">Romance</a>
-                                    <a href="#">Comedy</a>
-                                    <a href="#">Science Fiction</a>
-                                </div>
-                                <div class="column">
-                                    <a href="#">Fiction</a>
-                                    <a href="#">Crime</a>
-                                    <a href="#">Adventure</a>
-                                </div>
-                        </div>
+           <div class="maincontainer">
+              <div id="searchBox">
+                 <button type="submit" id="searchbtn"> <i class="fa fa-search" style="font-size:20px; height: 24px;"> </i> </button>
+                 <input type="text" placeholder="Search" name="search" id="searchbox">
+              </div>
+              <div id="mainFlexBox">
+                 <div class="rowpic">
+                    <div class="columngrid">
+                       <div class="container">
+                          <img src="assets/images/MOV 1.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> SPACE JAM </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 17.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> THE INVISIBLE GUEST </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 2.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> PENINSULA </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
                     </div>
-            </div> 
-            <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
-            <span class="username" id="user_name"></span>
-            <span id="logoutBtn">LOGOUT</span>
+                    <div class="columngrid">
+                       <div class="container">
+                          <img src="assets/images/MOV 16.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> DEEPWATER HORIZON </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 3.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> NOBODY </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 4.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> ANGEL HAS FALLEN </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="columngrid">
+                       <div class="container">
+                          <img src="assets/images/MOV 6.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> SPECTRE </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 5.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> MIDNIGHT SUN </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 7.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> SPACE BETWEEN US </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="columngrid">
+                       <div class="container">
+                          <img src="assets/images/MOV 14.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> WORLD WAR Z </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 11.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> GODZILLA VS. KONG </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="container">
+                          <img src="assets/images/MOV 13.png" style="width:100%" class="image">
+                          <div class="middle">
+                             <div class="text"> MISSION: IMPOSSIBLE FALLOUT </div>
+                             <div class="rating">
+                                <span class="rate"> Rating :</span> 
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                             </div>
+                             tar checked"></span>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="container_top">
+                    <div class="rowpictop">
+                       <span class="topmovies"> TOP MOVIES TODAY </span> 
+                       <div class="columngridtop">
+                          <div class="container">
+                             <img src="assets/images/MOV 9.png" style="width:100%" class="image">
+                             <div class="middle">
+                                <div class="text"> THE LOST PROGRAMMER </div>
+                                <div class="rating">
+                                   <span class="rate"> Rating :</span> 
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="container">
+                             <img src="assets/images/MOV 10.png" style="width:100%" class="image">
+                             <div class="middle">
+                                <div class="text"> GOBLIN </div>
+                                <div class="rating">
+                                   <span class="rate"> Rating :</span> 
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="container">
+                             <img src="assets/images/MOV 15.png" style="width:100%" class="image">
+                             <div class="middle">
+                                <div class="text"> TITANIC </div>
+                                <div class="rating">
+                                   <span class="rate"> Rating :</span> 
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                   <span class="fa fa-star checked"></span>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="center">
+                 <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#" class="active">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">6</a>
+                    <a href="#">&raquo;</a>
+                 </div>
+              </div>
+              <footer>
+                 <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p>
+              </footer>
+           </div>
         </div>
-    
-            
-        
-        <div class="maincontainer">
-            <div id="searchBox">
-                <button type="submit" id="searchbtn"> <i class="fa fa-search" style="font-size:20px; height: 24px;"> </i> </button>
-                <input type="text" placeholder="Search" name="search" id="searchbox">
-            </div>
-            <div id="mainFlexBox">
-            <div class="rowpic"> 
-    
-                 <div class="columngrid">
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 1.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> SPACE JAM </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 17.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> THE INVISIBLE GUEST </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 2.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> PENINSULA </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                </div>
-    
-    
-                <div class="columngrid">
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 16.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> DEEPWATER HORIZON </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 3.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> NOBODY </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 4.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> ANGEL HAS FALLEN </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                </div>
-    
-    
-                <div class="columngrid">
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 6.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> SPECTRE </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 5.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> MIDNIGHT SUN </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 7.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> SPACE BETWEEN US </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-        
-    
-                <div class="columngrid">
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 14.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> WORLD WAR Z </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 11.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> GODZILLA VS. KONG </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>
-                         </div>
-                    </div>
-    
-                    <div class="container">
-                        <img src="assets/images/MOV 13.png" style="width:100%" class="image">
-                        <div class="middle">
-                            <div class="text"> MISSION: IMPOSSIBLE FALLOUT </div>
-                            <div class="rating">
-                            <span class="rate"> Rating :</span> 
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            </div>tar checked"></span>
-                            </div>
-                         </div>
-                    </div>
-                </div>
-    
-    
-                
-                <div class="container_top">
-    
-                    <div class="rowpictop"> 
-    
-                        
-                        
-                        <span class="topmovies"> TOP MOVIES TODAY </span> 
-                        <div class="columngridtop">
-                            
-                                    <div class="container">
-    
-                                    <img src="assets/images/MOV 9.png" style="width:100%" class="image">
-                                    <div class="middle">
-                                        <div class="text"> THE LOST PROGRAMMER </div>
-                                        <div class="rating">
-                                        <span class="rate"> Rating :</span> 
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        </div>
-                                      </div>
-    
-                                    </div>
-    
-                                <div class="container">
-                                    <img src="assets/images/MOV 10.png" style="width:100%" class="image">
-                                    <div class="middle">
-                                        <div class="text"> GOBLIN </div>
-                                        <div class="rating">
-                                        <span class="rate"> Rating :</span> 
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <div class="container">
-                                    <img src="assets/images/MOV 15.png" style="width:100%" class="image">
-                                    <div class="middle">
-                                        <div class="text"> TITANIC </div>
-                                        <div class="rating">
-                                        <span class="rate"> Rating :</span> 
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                        </div>
-    
-                    </div>
-    
-            </div>
-        </div>
-                    
-                <div class="center">
-                    <div class="pagination">
-                        <a href="#">&laquo;</a>
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#" class="active">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#">6</a>
-                        <a href="#">&raquo;</a>
-                    </div>
-                </div>
-    
-                    <footer> <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p> </footer>
-        </div>
-    </div>
-    
-
-        <script src="script/firebase.js"></script>
-        <script src="script/homepage.js"></script>
-
-</body>
+      </section>
+     
+      <script src="script/firebase.js"></script>
+      <script src="script/sidebar.js"></script>
+      <script src="script/homepage.js"></script>
+   </body>
 </html>
