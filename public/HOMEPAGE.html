@@ -68,14 +68,15 @@
          </ul>
       </div>
       <section class="home-section">
-        <div id="loader"></div>
-        <div id="body_container">
-           
-           <nav class="navbar">
-              <div>
-                <h1 class="title-nav">MOVIES</h1>
-                <div class="select" tabindex="1">
-                  <input class="selectopt" name="test" type="radio" id="genre1" checked>
+         <div id="loader"></div>
+         <div id="body_container">
+         <nav class="navbar">
+            <div>
+               <h1 class="title-nav">MOVIES</h1>
+               <div class="select" tabindex="1">
+                  <input class="selectopt" name="test" type="radio" id="genre0" checked>
+                  <label for="genre0" class="option">All</label>
+                  <input class="selectopt" name="test" type="radio" id="genre1" >
                   <label for="genre1" class="option">Action</label>
                   <input class="selectopt" name="test" type="radio" id="genre2">
                   <label for="genre2" class="option">Thriller</label>
@@ -93,270 +94,436 @@
                   <label for="genre8" class="option">Crime</label>
                   <input class="selectopt" name="test" type="radio" id="genre9">
                   <label for="genre9" class="option">Adventure</label>
-                </div>
-              </div>
-              <div>
-                <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
-                <span class="username" id="user_name"></span>
-              </div>
-              
-           </nav>
+               </div>
+            </div>
+            <div>
+               <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
+               <span class="username" id="user_name"></span>
+            </div>
+         </nav>
+         <div class="maincontainer">
+            
+            <div id="mainFlexBox">
+               
 
-           <div class="maincontainer">
-              <div id="searchBox">
-                 <button type="submit" id="searchbtn"> <i class="fa fa-search" style="font-size:20px; height: 24px;"> </i> </button>
-                 <input type="text" placeholder="Search" name="search" id="searchbox">
-              </div>
-              <div id="mainFlexBox">
-                 <div class="rowpic">
-                    <div class="columngrid">
-                       <div class="container">
-                          <img src="assets/images/MOV 1.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> SPACE JAM </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 17.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> THE INVISIBLE GUEST </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 2.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> PENINSULA </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="columngrid">
-                       <div class="container">
-                          <img src="assets/images/MOV 16.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> DEEPWATER HORIZON </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 3.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> NOBODY </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 4.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> ANGEL HAS FALLEN </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="columngrid">
-                       <div class="container">
-                          <img src="assets/images/MOV 6.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> SPECTRE </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 5.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> MIDNIGHT SUN </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 7.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> SPACE BETWEEN US </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                    <div class="columngrid">
-                       <div class="container">
-                          <img src="assets/images/MOV 14.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> WORLD WAR Z </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 11.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> GODZILLA VS. KONG </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                          </div>
-                       </div>
-                       <div class="container">
-                          <img src="assets/images/MOV 13.png" style="width:100%" class="image">
-                          <div class="middle">
-                             <div class="text"> MISSION: IMPOSSIBLE FALLOUT </div>
-                             <div class="rating">
-                                <span class="rate"> Rating :</span> 
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                             </div>
-                             tar checked"></span>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-                 <div class="container_top">
-                    <div class="rowpictop">
-                       <span class="topmovies"> TOP MOVIES TODAY </span> 
-                       <div class="columngridtop">
-                          <div class="container">
-                             <img src="assets/images/MOV 9.png" style="width:100%" class="image">
-                             <div class="middle">
-                                <div class="text"> THE LOST PROGRAMMER </div>
-                                <div class="rating">
-                                   <span class="rate"> Rating :</span> 
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="container">
-                             <img src="assets/images/MOV 10.png" style="width:100%" class="image">
-                             <div class="middle">
-                                <div class="text"> GOBLIN </div>
-                                <div class="rating">
-                                   <span class="rate"> Rating :</span> 
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                </div>
-                             </div>
-                          </div>
-                          <div class="container">
-                             <img src="assets/images/MOV 15.png" style="width:100%" class="image">
-                             <div class="middle">
-                                <div class="text"> TITANIC </div>
-                                <div class="rating">
-                                   <span class="rate"> Rating :</span> 
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                   <span class="fa fa-star checked"></span>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-              <div class="center">
-                 <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#" class="active">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">6</a>
-                    <a href="#">&raquo;</a>
-                 </div>
-              </div>
-              <footer>
-                 <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p>
-              </footer>
-           </div>
-        </div>
+               <div class="container">
+                  <div class="search">
+                     <div id="search-container">
+                        <div>
+                           <i class="fa fa-search search-icon" ></i>
+                           <input type="text" placeholder="Search" name="search" id="searchBox" autocomplete="off">
+                           <i class="fas fa-times search-clear"></i>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="main-list">
+                     <div class="list">
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 1.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Space Jam</p>
+                                 <p class="thumbnail-runtime-year">2021</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">
+                                       PG<!-- - PG - 1h 55m-->
+                                    </span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 2.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Peninsula</p>
+                                 <p class="thumbnail-runtime-year">2020</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 3.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Nobody</p>
+                                 <p class="thumbnail-runtime-year">2021</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 4.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Angel Has Fallen</p>
+                                 <p class="thumbnail-runtime-year">2019</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 5.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Midnight Sun</p>
+                                 <p class="thumbnail-runtime-year">2018</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG-13</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 6.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Spectre</p>
+                                 <p class="thumbnail-runtime-year">2015</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 8.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">A Quiet Place II</p>
+                                 <p class="thumbnail-runtime-year">2020</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.6</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 9.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Kim: Lost Programmer</p>
+                                 <p class="thumbnail-runtime-year">2020</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">SPG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>100</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 11.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Godzilla vs Kong</p>
+                                 <p class="thumbnail-runtime-year">2021</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 12.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Alita: Battle Angel</p>
+                                 <p class="thumbnail-runtime-year">2019</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 13.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">MI: Fallout</p>
+                                 <p class="thumbnail-runtime-year">2018</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 14.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">World War Z</p>
+                                 <p class="thumbnail-runtime-year">2013</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG-13</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 15.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Titanic</p>
+                                 <p class="thumbnail-runtime-year">1997</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG-13</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 16.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Deepwater Horizon</p>
+                                 <p class="thumbnail-runtime-year">2016</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 17.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Invisible Guest</p>
+                                 <p class="thumbnail-runtime-year">2016</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 18.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">IT Chapter II</p>
+                                 <p class="thumbnail-runtime-year">2019</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4.9</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 19.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">F9: The Fast Saga</p>
+                                 <p class="thumbnail-runtime-year">2021</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="top-list">
+                     <div class="best">
+                        <h1>TOP MOVIES</h1>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 11.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Godzilla vs Kong</p>
+                                 <p class="thumbnail-runtime-year">2021</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 12.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Alita: Battle Angel</p>
+                                 <p class="thumbnail-runtime-year">2019</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 13.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">MI: Fallout</p>
+                                 <p class="thumbnail-runtime-year">2018</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 14.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">World War Z</p>
+                                 <p class="thumbnail-runtime-year">2013</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG-13</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>4</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="thumbnail-container">
+                           <img class="thumbnail" src="assets/images/MOV 15.png">
+                           <div class="thumbnail-description">
+                              <div>
+                                 <p class="thumbnail-title">Titanic</p>
+                                 <p class="thumbnail-runtime-year">1997</p>
+                                 <div class="thumbnail-rating">
+                                    <span class="restriction">PG-13</span>
+                                    <i class="fas fa-star thumbnail-star"></i>
+                                    <p>5</p>
+                                 </div>
+                              </div>
+                              <div class="thumbnail-add-watchlist">
+                                 <i class='bx bxs-heart'></i>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+                  
+                  
+               <!-- <div class="center">
+                  <div class="pagination">
+                     <a href="#">&laquo;</a>
+                     <a href="#">1</a>
+                     <a href="#">2</a>
+                     <a href="#" class="active">3</a>
+                     <a href="#">4</a>
+                     <a href="#">5</a>
+                     <a href="#">6</a>
+                     <a href="#">&raquo;</a>
+                  </div>
+                  </div>
+                  <footer>
+                  <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p>
+                  </footer> -->
+            </div>
+         </div>
       </section>
-     
       <script src="script/firebase.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
       <script src="script/sidebar.js"></script>
       <script src="script/homepage.js"></script>
    </body>
