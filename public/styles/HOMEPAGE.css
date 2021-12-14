@@ -157,41 +157,6 @@ a.username {
 	border-radius: 50%;
 }
 
-/*
-.container {
-	position: relative;
-	width: 100%;
-}
-
-.image {
-	opacity: 1;
-	display: block;
-	width: 100%;
-	height: auto;
-	transition: .5s ease;
-	backface-visibility: hidden;
-}
-
-.middle {
-	transition: .5s ease;
-	opacity: 0;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	text-align: center;
-	transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-}
-
-
-.container:hover .image {
-	opacity: 0.3;
-}
-
-.container:hover .middle {
-	opacity: 1;
-}*/
-
 .text {
 	color: #FF69B4;
 	font-size: 20px;
@@ -294,28 +259,31 @@ input:focus {
 	width: calc(100% - 40px);
 }
 
+.search-label{
+	width: 100%;
+	max-width: 1000px;
+	margin: 4em 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.search-label h1{
+	color: white;
+}
+
 .container {
 	width: 100%;
-	display: grid; 
+	display: flex; 
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-	gap: 50px 4vw; 
-  	grid-template-areas: 
-    "search top-list"
-    "main-list top-list"; 
 }
-
-.main-list { grid-area: main-list; }
-
-.top-list { grid-area: top-list; 
-	background: rgb(15, 15, 15);
-	padding: 50px;
-}
-.search { grid-area: search; }
 
 .list {
 	height: fit-content;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	gap: 15px;
 	grid-auto-flow: row;
 }
@@ -494,46 +462,3 @@ input:focus {
 
 	}
 }
-
-/*
-.rowpictop {
-	padding: 0 20px;
-}
-
-.columngridtop {
-	max-width: 200px;
-	padding: 0 10px;
-}
-
-.columngridtop img {
-	margin-top: 58px;
-}
-
-@media screen and (max-width: 800px) {
-	.columngridtop {
-		-ms-flex: 50%;
-		flex: 50%;
-		max-width: 50%;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.columngridtop {
-		-ms-flex: 100%;
-		flex: 100%;
-		max-width: 100%;
-	}
-}
-
-.topmovies {
-	font-size: 22px;
-	text-decoration: underline;
-	font-weight: bold;
-	color: white;
-}
-
-#mainFlexBox {
-	display: flex;
-	justify-content: space-around;
-	flex-direction: row;
-}*/
