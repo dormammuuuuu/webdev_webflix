@@ -22,7 +22,7 @@ function displayName() {
         if(user) {
             dbref.once("value", snap => {
                 var userData = snap.val();
-                document.getElementById("user_name").innerHTML = userData.username;
+                // document.getElementById("user_name").innerHTML = userData.username;
             }).then(() => {
                 loader.style.display = 'none';
                 body_container.style.display = 'block';
@@ -37,9 +37,9 @@ logoutBtn.onclick = () => {
     firebase.auth().signOut();
 }
 
-user_name.onclick = () => {
-    window.location = "USERSETTING.html";
-}
+// user_name.onclick = () => {
+//     window.location = "USERSETTING.html";
+// }
 
 var searchClear = $('.search-clear');
 

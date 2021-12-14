@@ -40,6 +40,15 @@ body {
 	text-decoration: none;
 }
 
+.dropdown-container{
+	display: flex;
+	align-items: flex-end;
+}
+
+.dropdown-container h1{
+	margin: 0;
+}
+
 .select {
 	display: flex;
 	flex-direction: column;
@@ -49,6 +58,7 @@ body {
 	height: 30px;
 	margin: 0 20px;
 	color: white;
+	z-index: 20;
 }
 
 .select:focus {
@@ -262,7 +272,7 @@ input:focus {
 .search-label{
 	width: 100%;
 	max-width: 1000px;
-	margin: 4em 0;
+	margin: 4em 1em;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -410,7 +420,7 @@ input:focus {
 @media (max-width: 1200px) {
 	.list {
 
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 
 	}
 }
@@ -422,7 +432,7 @@ input:focus {
 	}
 	.list {
 
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 
 	}
 }
@@ -434,7 +444,7 @@ input:focus {
 	}
 	.list {
 
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
 
 	}
 }
