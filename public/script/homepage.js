@@ -18,7 +18,7 @@ var mainApp = {};
 function displayName() {
     firebase.auth().onAuthStateChanged(user => {
         var user = auth.currentUser;
-        var dbref = db.ref(`users/${user.uid}`);
+        let dbref = db.ref(`users/${user.uid}`);
         if(user) {
             dbref.once("value", snap => {
                 var userData = snap.val();
@@ -32,6 +32,89 @@ function displayName() {
 }
 
 displayName();
+
+function displayMovie(title, rate, restriction, year){
+    let container = document.getElementById('list-movies');
+    let thumbnailContainer = document.createElement('div');
+    thumbnailContainer.setAttribute('class', 'thumbnail-container');
+    container.appendChild(thumbnailContainer);
+
+    //Add the Thumbnail
+    let thumbnail = document.createElement('img');
+    thumbnail.setAttribute('class', 'thumbnail');
+    thumbnail.setAttribute('src', 'assets/images/MOV 1.png');
+    thumbnailContainer.appendChild(thumbnail);
+
+    //Add div thumbnail-description
+    let thumbnailDescription = document.createElement('div');
+    thumbnailDescription.setAttribute('class', 'thumbnail-description');
+    thumbnailContainer.appendChild(thumbnailDescription);
+
+    //Add empty div
+    let div = document.createElement('div');
+    thumbnailDescription.appendChild(div);
+
+    //Add contents
+    let thumbnailTitle = document.createElement('p');
+    thumbnailTitle.setAttribute('class','thumbnail-title');
+    thumbnailTitle.innerHTML = title;
+    div.appendChild(thumbnailTitle);
+
+    //Add year
+    let thumbnailRuntimeYear = document.createElement('p');
+    thumbnailRuntimeYear.setAttribute('class','thumbnail-runtime-year');
+    thumbnailRuntimeYear.innerHTML = year;
+    div.appendChild(thumbnailRuntimeYear);    
+
+    //Create div for rating
+    let thumbnailRating = document.createElement('div');
+    thumbnailRating.setAttribute('class','thumbnail-rating');
+    div.appendChild(thumbnailRating);
+
+    //Add rating to div
+    let spanRestriction = document.createElement('span');
+    spanRestriction.setAttribute('class','restriction');
+    spanRestriction.innerHTML = restriction;
+    thumbnailRating.appendChild(spanRestriction);    
+
+    //Add star icon
+    let star = document.createElement('i');
+    star.setAttribute('class','fas fa-star thumbnail-star');
+    thumbnailRating.appendChild(star);    
+
+    //Add rating number
+    let rating = document.createElement('p');
+    rating.innerHTML = rate;
+    thumbnailRating.appendChild(rating);    
+
+    //Create container for heart button
+    let thumbnailAddWatchlist = document.createElement('div');
+    thumbnailAddWatchlist.setAttribute('class','thumbnail-add-watchlist');
+    thumbnailDescription.appendChild(thumbnailAddWatchlist);
+    
+    let heart = document.createElement('i');
+    heart.setAttribute('class','bx bxs-heart');
+    thumbnailAddWatchlist.appendChild(heart);
+    
+}
+
+
+function fetchMovieList(){
+    let dbref = db.ref('movies');
+    dbref.once('value', snap => {
+        snap.forEach(
+            function(ChildSnapshot){
+                let title = ChildSnapshot.val().title;
+                let rate = ChildSnapshot.val().rating;
+                let restriction = ChildSnapshot.val().restriction;
+                let year = ChildSnapshot.val().year;
+                displayMovie(title, rate, restriction, year);
+            }     
+        );
+    });
+}
+
+fetchMovieList();
 
 logoutBtn.onclick = () => {
     firebase.auth().signOut();

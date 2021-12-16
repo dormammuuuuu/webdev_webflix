@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+</head>
+<body>
+    <span> ID </span>
+    <input type="text" name="id"> 
+    <span> Title </span> 
+    <input type="text" name="title"> 
+    <span> Rating </span> 
+    <input type="text" name="rating"> 
+    <span> Year </span> 
+    <input type="text" name="year">
+    <span> Restriction </span> 
+    <input type="text" name="restriction"> 
+    <button id="register" onclick="addMovie()"> <strong> ADD </strong> </button>
+    <script src="script/firebase.js"></script>
+    <script>
+        function addMovie() {
+            var movie = {
+                id: "",
+                title: "", 
+                rating: "", 
+                year: "", 
+                restriction: "",  
+            }
+            var movieDetails = [movie.id, movie.title, movie.rating, movie.year, movie.restriction];
+            var input = document.getElementsByTagName("input");
+
+            for(let i = 0; i < movieDetails.length; i++) {
+                movieDetails[i] = input[i].value;
+            }
+
+                var user = auth.currentUser;
+                var dbref = db.ref('movies/' + movieDetails[0]);
+
+                dbref.set({
+                    title: movieDetails[1],
+                    rating: movieDetails[2],
+                    year: movieDetails[3],
+                    restriction: movieDetails[4],
+                });
+                alert('SUCCESS');
+
+        }
+    </script>
+</body>
+</html>
