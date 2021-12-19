@@ -33,7 +33,7 @@ function displayName() {
 
 displayName();
 
-function displayMovie(title, rate, restriction, year){
+function displayMovie(title, rate, thumbnailImage, restriction, year){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
     thumbnailContainer.setAttribute('class', 'thumbnail-container');
@@ -42,7 +42,7 @@ function displayMovie(title, rate, restriction, year){
     //Add the Thumbnail
     let thumbnail = document.createElement('img');
     thumbnail.setAttribute('class', 'thumbnail');
-    thumbnail.setAttribute('src', 'assets/images/MOV 1.png');
+    thumbnail.setAttribute('src', thumbnailImage);
     thumbnailContainer.appendChild(thumbnail);
 
     //Add div thumbnail-description
@@ -107,8 +107,9 @@ function fetchMovieList(){
                 let title = ChildSnapshot.val().title;
                 let rate = ChildSnapshot.val().rating;
                 let restriction = ChildSnapshot.val().restriction;
+                let thumbnail = ChildSnapshot.val().thumbnail;
                 let year = ChildSnapshot.val().year;
-                displayMovie(title, rate, restriction, year);
+                displayMovie(title, rate, thumbnail, restriction, year);
             }     
         );
     });

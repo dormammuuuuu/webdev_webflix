@@ -1,0 +1,136 @@
+{
+  "movies" : [ null, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%201.png?alt=media&token=f1ea2a5f-4322-4b3c-8654-257a01e54d28",
+    "title" : "Space Jam",
+    "year" : "2021"
+  }, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%202.png?alt=media&token=d7193791-87a3-4766-b21a-3700f1a4b032",
+    "title" : "Peninsula",
+    "year" : "2020"
+  }, {
+    "rating" : "4.6",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%203.png?alt=media&token=582e3943-1cf4-486f-8472-0762e51dcb16",
+    "title" : "Nobody",
+    "year" : "2021"
+  }, {
+    "rating" : "4.7",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%204.png?alt=media&token=627a1b85-146b-44fe-be72-d0d35e533d31",
+    "title" : "Angel Has Fallen",
+    "year" : "2019"
+  }, {
+    "rating" : "4.8",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%205.png?alt=media&token=b0c62878-a62b-4e3e-8c35-72ba275de731",
+    "title" : "Midnight Sun",
+    "year" : "2018"
+  }, {
+    "rating" : "4.5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%206.png?alt=media&token=0d721a69-5788-4d62-811b-4d1b7de5a064",
+    "title" : "Spectre",
+    "year" : "2015"
+  }, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%207.png?alt=media&token=269e1601-1501-49fd-99f4-b7bd550350c0",
+    "title" : " A Quiet Place II",
+    "year" : "2020"
+  }, {
+    "rating" : "100",
+    "restriction" : "SPG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%208.png?alt=media&token=509e4b0d-6d1e-4136-9396-466903512b69",
+    "title" : "Kim: Lost Programmer",
+    "year" : "2020"
+  }, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%209.png?alt=media&token=580bb6aa-39fd-4728-b6ea-479bb67109d9",
+    "title" : "Godzilla vs Kong",
+    "year" : "2021"
+  }, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2010.png?alt=media&token=4973b8f8-6c11-4b82-bfeb-c9ab10ff3509",
+    "title" : "Alita: Battle Angel",
+    "year" : "2019"
+  }, {
+    "rating" : "4.5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2011.png?alt=media&token=9ffdcf90-723c-4931-a5e9-4b627f5d83fd",
+    "title" : "MI: Fallout",
+    "year" : "2018"
+  }, {
+    "rating" : "4.9",
+    "restriction" : "PG-13",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2012.png?alt=media&token=a3f1c1d1-0c59-40d4-998c-adefbefbecff",
+    "title" : "World War Z",
+    "year" : "2013"
+  }, {
+    "rating" : "4.9",
+    "restriction" : "PG-13",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2013.png?alt=media&token=9382f369-2b02-4b0c-9012-91da6750bcd4",
+    "title" : "Titanic",
+    "year" : "1997"
+  }, {
+    "rating" : "4.5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2014.png?alt=media&token=06b0c0af-9c70-483d-95f8-7dc1ac3da29c",
+    "title" : "Deep Water Horizon",
+    "year" : "2016"
+  }, {
+    "rating" : "4.9",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2015.png?alt=media&token=cb310ef4-256d-4337-a185-8d1292b58122",
+    "title" : "Invisible Guest",
+    "year" : "2016"
+  }, {
+    "rating" : "4",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2016.png?alt=media&token=f286dcd0-3405-4da5-9c0d-0e70e544c5ea",
+    "title" : "IT: Chapter II",
+    "year" : "2-19"
+  }, {
+    "rating" : "5",
+    "restriction" : "PG",
+    "thumbnail" : "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%2017.png?alt=media&token=7716e79a-d312-46a1-ab31-12003b2fae62",
+    "title" : "F9: The Fast Saga",
+    "year" : "2021"
+  } ],
+  "users" : {
+    "BNQaxEGrjBXyHKQ2Rf5tC3GgPoc2" : {
+      "dateCreated" : "12/8/2021",
+      "email" : "juanbenjamin.ongkiko@tup.edu.ph",
+      "firstName" : "joben",
+      "lastName" : "ongkiko",
+      "username" : "ben"
+    },
+    "EvUSN7932LW0HNaXbCQpdu3ez303" : {
+      "dateCreated" : "12/8/2021",
+      "email" : "jericovic65@gmail.com",
+      "firstName" : "Jerico",
+      "lastLogin" : "12/16/2021",
+      "lastName" : "Victoria",
+      "username" : "dorms"
+    },
+    "w6Gia5Y35pgVqnMdMGf8RJHjJRJ2" : {
+      "dateCreated" : "12/7/2021",
+      "email" : "ongkikojuanbenjamin@gmail.com",
+      "firstName" : "jobenasd",
+      "lastName" : "ongkiko",
+      "username" : "ongkikojuanbenjamin"
+    },
+    "xPvo1lQG0wWvVUlRO2JcNH7jpzR2" : {
+      "dateCreated" : "12/17/2021",
+      "email" : "qwerflake@gmail.com",
+      "firstName" : "joben",
+      "lastName" : "ongkiko",
+      "username" : "jobenongkiko"
+    }
+  }
+}

@@ -75,7 +75,7 @@ function registerToDatabase() {
             dateCreated: today  
         });
         setTimeout(() => {
-            window.location = "HOMEPAGE.html"
+            window.location = "home.html"
         }, 1000);
     }).catch(function(error) {
         alert(error.message);

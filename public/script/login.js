@@ -28,7 +28,7 @@ login.onclick = () => {
             errorMsgLogin.innerHTML = '';
             inputFields[0].style.border = "none";
             inputFields[1].style.border = "none";
-            window.location = "HOMEPAGE.html";
+            window.location = "home.html";
         })
         .catch(function(error) {
             errorMsgLogin.innerHTML = "Invalid email or password";
