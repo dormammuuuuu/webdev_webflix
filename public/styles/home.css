@@ -296,6 +296,7 @@ input:focus {
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	gap: 15px;
 	grid-auto-flow: row;
+	margin-bottom: 4em;
 }
 
 .best {

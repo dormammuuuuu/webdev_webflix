@@ -33,10 +33,10 @@ function displayName() {
 
 displayName();
 
-function displayMovie(title, rate, thumbnailImage, restriction, year){
+function displayMovie(title, rate, thumbnailImage, restriction, year, category){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
-    thumbnailContainer.setAttribute('class', 'thumbnail-container');
+    thumbnailContainer.setAttribute('class', 'thumbnail-container '+ category);
     container.appendChild(thumbnailContainer);
 
     //Add the Thumbnail
@@ -109,7 +109,8 @@ function fetchMovieList(){
                 let restriction = ChildSnapshot.val().restriction;
                 let thumbnail = ChildSnapshot.val().thumbnail;
                 let year = ChildSnapshot.val().year;
-                displayMovie(title, rate, thumbnail, restriction, year);
+                let category = ChildSnapshot.val().category;
+                displayMovie(title, rate, thumbnail, restriction, year, category);
             }     
         );
     });
@@ -168,3 +169,11 @@ const swiper = new Swiper(".swiper", {
     el: '.swiper-scrollbar',
   },*/
 });
+
+$('input[name=categ_select]').on('change', function() {
+    $('.thumbnail-container').hide();
+    $('.' + $(this).val()).show();
+    if ($(this).val() == 'All')
+        $('.thumbnail-container').show();
+
+})
