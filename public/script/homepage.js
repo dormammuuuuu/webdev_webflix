@@ -37,6 +37,7 @@ function displayMovie(title, rate, thumbnailImage, restriction, year, category){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
     thumbnailContainer.setAttribute('class', 'thumbnail-container '+ category);
+    thumbnailContainer.setAttribute('data-title', title);
     container.appendChild(thumbnailContainer);
 
     //Add the Thumbnail
@@ -177,3 +178,10 @@ $('input[name=categ_select]').on('change', function() {
         $('.thumbnail-container').show();
 
 })
+
+$("#searchBox").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("[data-title]").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
