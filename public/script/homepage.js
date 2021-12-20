@@ -139,7 +139,7 @@ $('#searchBox').on('input', function(){
 searchClear.on('click', function(){
     $('#searchBox').val("");
     searchClear.css('visibility', 'hidden');
-
+    $('.thumbnail-container').show();
 });
 
 //carousel
