@@ -433,13 +433,14 @@ nav{
 	z-index: 100;
 }
 
-.modal-container{
+.modal-container, .loading-wrapper{
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 100%;
 	max-width: 50vw;
+	min-height: 40vh;
 	padding: 2em 1em;
 	background: rgb(27, 27, 27);
 	display: flex;
@@ -447,7 +448,6 @@ nav{
 	justify-content: space-evenly;
 	color: white;
 }
-
 
 .modal-thumb-play{
 	display: flex;
@@ -547,6 +547,51 @@ nav{
 #modal-close:hover{
 	color: #FF69B4; 
 }
+
+/*Modal loader*/
+
+  .loader {
+	display: block;
+	height: 36px;
+	width: 10px;
+	background: #fff;
+	margin-right: 24px;
+	animation: scale 1.6s ease-in-out infinite;
+	transform-origin: 50% 50%;
+	box-shadow: 2px 2px 2px #FF69B4;
+  }
+
+  .loading-wrapper div{
+	  width: 90px;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+  }
+  
+  .loader.one {
+	animation-delay: 1s;
+  }
+  
+  .loader.two {
+	animation-delay: 1.2s;
+  }
+  
+  .loader.three {
+	animation-delay: 1.3s;
+  }
+  
+  @keyframes scale {
+	0% {
+	  transform: scale(1);
+	}
+	50% {
+	  transform: scale(1.5);
+	}
+	100% {
+	  transform: scale(1);
+	}
+  }
+  
 
 @media (max-width: 1200px) {
 	.list {

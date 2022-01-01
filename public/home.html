@@ -268,20 +268,28 @@
       </section>
 
       <div class="modal-preview">
+         <div class="loading-wrapper">
+            <div>
+               <div class="loader one"></div>
+               <div class="loader two"></div>
+               <div class="loader three"></div>
+            </div>
+            
+          </div>
          <div class="modal-container">
             <div class="modal-thumb-play">
-               <img class="modal-thumbnail" src="https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%208.png?alt=media&token=509e4b0d-6d1e-4136-9396-466903512b69" alt="">
+               <img id="modal-movie-thumbnail" class="modal-thumbnail" alt="">
                <button id="modal-play">PLAY</button>
             </div>
             <div class="modal-description">
                <div>
-                  <h1 class="modal-title">Kim: Lost Programmer</h1>
+                  <h1 id="modal-title">Kim: Lost Programmer</h1>
                   <div class="modal-line"></div>
                   <div class="modal-extra-description">
-                     <p>2021</p>
-                     <p>SPG</p>
-                     <p>19h 20m</p>
-                     <p><i class="fas fa-star thumbnail-star"></i> 5</p>
+                     <p id="modal-year">2021</p>
+                     <p id="modal-restriction">SPG</p>
+                     <p id="modal-runtime">19h 20m</p>
+                     <p><i class="fas fa-star thumbnail-star"></i> <span id="modal-rating"></span></p>
                   </div>
                   <div class="modal-cast">
                      <p>Cast: <span class="modal-cast-inner">Kim Villacer and Family</span></p>

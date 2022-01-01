@@ -37,7 +37,7 @@ function displayMovie(title, rate, thumbnailImage, restriction, year, category){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
     thumbnailContainer.setAttribute('class', 'thumbnail-container '+ category);
-    thumbnailContainer.setAttribute('data-title', title);
+    thumbnailContainer.setAttribute('data-movie', title);
     thumbnailContainer.setAttribute('onclick', 'selectedMovie(this)');
     container.appendChild(thumbnailContainer);
 
@@ -106,13 +106,13 @@ function fetchMovieList(){
     dbref.once('value', snap => {
         snap.forEach(
             function(ChildSnapshot){
-                let title = ChildSnapshot.val().title;
+                let movie = ChildSnapshot.key;
                 let rate = ChildSnapshot.val().rating;
                 let restriction = ChildSnapshot.val().restriction;
                 let thumbnail = ChildSnapshot.val().thumbnail;
                 let year = ChildSnapshot.val().year;
                 let category = ChildSnapshot.val().category;
-                displayMovie(title, rate, thumbnail, restriction, year, category);
+                displayMovie(movie, rate, thumbnail, restriction, year, category);
             }     
         );
     });
@@ -190,12 +190,33 @@ $("#searchBox").on("keyup", function() {
 });
 
 function selectedMovie(e){
+    let loader = $('.loading-wrapper');
     let modalPreview = $('.modal-preview');
+    let modalContainer = $('.modal-container');
     modalPreview.show();
+    loader.show();
+    modalContainer.hide();
+    let modalTitle = $('#modal-title');
+    let modalRating = $('#modal-rating');
+    let modalRestriction = $('#modal-restriction');
+    let modalYear = $('#modal-year');
+    let modalThumbnail = $('#modal-movie-thumbnail');
+    let dbref = db.ref('movies/' + e.dataset.movie);
+    dbref.once('value', snap => {
+        modalTitle.text(snap.val().title);
+        modalRestriction.text(snap.val().restriction);
+        modalYear.text(snap.val().year);
+        modalRating.text(snap.val().rating);
+        modalThumbnail.attr('src', snap.val().thumbnail);
+    }).then(() => {
+        loader.hide();
+        modalContainer.show();
+    });
+
+
 }
 
 $('#modal-close').on('click', function() {
     let modalPreview = $('.modal-preview');
     modalPreview.fadeOut();
-    
 })
