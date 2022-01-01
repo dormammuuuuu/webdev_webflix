@@ -105,7 +105,7 @@ function fetchMovieList(){
     let clickButton = $('.swiper-button-next');
     setInterval(function() {
         clickButton.click();
-    }, 6000);
+    }, 7000);
     let dbref = db.ref('movies');
     dbref.once('value', snap => {
         snap.forEach(
