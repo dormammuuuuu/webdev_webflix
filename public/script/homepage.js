@@ -33,11 +33,11 @@ function displayName() {
 
 displayName();
 
-function displayMovie(title, rate, thumbnailImage, restriction, year, category){
+function displayMovie(title, movie, rate, thumbnailImage, restriction, year, category){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
     thumbnailContainer.setAttribute('class', 'thumbnail-container '+ category);
-    thumbnailContainer.setAttribute('data-movie', title);
+    thumbnailContainer.setAttribute('data-movie', movie);
     thumbnailContainer.setAttribute('onclick', 'selectedMovie(this)');
     container.appendChild(thumbnailContainer);
 
@@ -107,12 +107,13 @@ function fetchMovieList(){
         snap.forEach(
             function(ChildSnapshot){
                 let movie = ChildSnapshot.key;
+                let title = ChildSnapshot.val().title;
                 let rate = ChildSnapshot.val().rating;
                 let restriction = ChildSnapshot.val().restriction;
                 let thumbnail = ChildSnapshot.val().thumbnail;
                 let year = ChildSnapshot.val().year;
                 let category = ChildSnapshot.val().category;
-                displayMovie(movie, rate, thumbnail, restriction, year, category);
+                displayMovie(title, movie, rate, thumbnail, restriction, year, category);
             }     
         );
     });
