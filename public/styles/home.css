@@ -440,7 +440,7 @@ nav{
 	transform: translate(-50%, -50%);
 	width: 100%;
 	max-width: 50vw;
-	min-height: 40vh;
+	min-height: 55vh;
 	padding: 2em 1em;
 	background: rgb(27, 27, 27);
 	display: flex;
