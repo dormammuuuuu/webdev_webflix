@@ -4,10 +4,12 @@
     border-top: 3px solid #FF69B4;
     width: 40px;
     height: 40px;
-    margin: auto;
-    margin-top: 20%;
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) ;
   }
   
   /* Safari */

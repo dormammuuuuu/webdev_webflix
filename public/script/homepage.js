@@ -199,14 +199,18 @@ function selectedMovie(e){
     modalContainer.hide();
     let modalTitle = $('#modal-title');
     let modalRating = $('#modal-rating');
+    let modalCast = $('#modal-cast');
     let modalRestriction = $('#modal-restriction');
     let modalYear = $('#modal-year');
+    let modalGenre = $('#modal-genre');
     let modalThumbnail = $('#modal-movie-thumbnail');
     let dbref = db.ref('movies/' + e.dataset.movie);
     dbref.once('value', snap => {
         modalTitle.text(snap.val().title);
         modalRestriction.text(snap.val().restriction);
         modalYear.text(snap.val().year);
+        modalCast.text(snap.val().cast);
+        modalGenre.text(snap.val().category);
         modalRating.text(snap.val().rating);
         modalThumbnail.attr('src', snap.val().thumbnail);
     }).then(() => {
