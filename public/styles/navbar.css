@@ -7,19 +7,19 @@ nav{
 	color: white;
 }
 
-ul{
+nav ul{
 	margin: 0;
 	padding: 0;
 }
 
-li{
+nav ul li{
 	display: inline-block;
 	text-transform: uppercase;
 	margin: 0 10px;
 	font-size: 14px;
 }
 
-li:nth-child(3){
+nav ul li:nth-child(3){
 	background: #FF69B4; 
 	padding: 15px 18px;
 	border-radius: 3px;
@@ -38,6 +38,8 @@ li:nth-child(3){
 }
 
 .hamburger {
+	position: relative;
+	z-index: 20;
     display: none;
 }
 
@@ -75,9 +77,10 @@ li:nth-child(3){
         text-align: center;
         transition: 0.3s;
 		background: black;
+		z-index: 9;
     }
 
-	li{
+	nav ul li{
 		width: fit-content;
 		margin: 1em auto;
 		letter-spacing: 3px;
@@ -86,16 +89,16 @@ li:nth-child(3){
 	}
 
 	
-	li:nth-child(3){
+	nav ul li:nth-child(3){
 		background: none;
 		padding: 0;
 	}
 
-	li:hover a{
+	nav ul li:hover a{
 		color: #F86B86;
 	}
 
-	li:after {
+	nav ul li:after {
 		content: '';
 		position: absolute;
 		left: 50%;
@@ -112,14 +115,14 @@ li:nth-child(3){
 		transform: scale(0,1) translateX(-50%);
 	}
 	
-	li:hover:after{
+	nav ul li:hover:after{
 		opacity: 1;
 		-webkit-transform: scale(1) translateX(-50%);
 		transform: scale(1) translateX(-50%);
 	}
 	
 	.nav-link{
-		color: white;
+		color: rgb(78, 78, 78);
 		text-decoration: none;
 	}
 
@@ -130,6 +133,7 @@ li:nth-child(3){
 	
 
 	.hamburger {
+		
 		display: block;
 	}
 

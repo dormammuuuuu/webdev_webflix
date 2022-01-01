@@ -38,6 +38,7 @@ function displayMovie(title, rate, thumbnailImage, restriction, year, category){
     let thumbnailContainer = document.createElement('div');
     thumbnailContainer.setAttribute('class', 'thumbnail-container '+ category);
     thumbnailContainer.setAttribute('data-title', title);
+    thumbnailContainer.setAttribute('onclick', 'selectedMovie(this)');
     container.appendChild(thumbnailContainer);
 
     //Add the Thumbnail
@@ -119,9 +120,9 @@ function fetchMovieList(){
 
 fetchMovieList();
 
-logoutBtn.onclick = () => {
-    firebase.auth().signOut();
-}
+$('.log_out').on('click', function () {
+    firebase.auth().signOut(); 
+})
 
 // user_name.onclick = () => {
 //     window.location = "USERSETTING.html";
@@ -141,6 +142,8 @@ searchClear.on('click', function(){
     searchClear.css('visibility', 'hidden');
     $('.thumbnail-container').show();
 });
+
+
 
 //carousel
 
@@ -185,3 +188,14 @@ $("#searchBox").on("keyup", function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
+
+function selectedMovie(e){
+    let modalPreview = $('.modal-preview');
+    modalPreview.show();
+}
+
+$('#modal-close').on('click', function() {
+    let modalPreview = $('.modal-preview');
+    modalPreview.fadeOut();
+    
+})

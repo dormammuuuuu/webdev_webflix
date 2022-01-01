@@ -243,7 +243,7 @@
 	font-size: 12px;
 }
 
-.sidebar .profile #log_out {
+.sidebar .profile .log_out {
 	position: absolute;
 	top: 50%;
 	right: 0;
@@ -256,7 +256,7 @@
 	transition: all 0.5s ease;
 }
 
-.sidebar.open .profile #log_out {
+.sidebar.open .profile .log_out {
 	width: 50px;
 	background: none;
 }
@@ -285,8 +285,13 @@
 	margin: 18px
 }
 
-@media (max-width: 420px) {
-	.sidebar li .tooltip {
+@media (max-width: 500px) {
+	.home-section{
+		left: 0;
+		width: 100%;
+	}
+	
+	.sidebar {
 		display: none;
 	}
 }

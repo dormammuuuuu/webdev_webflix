@@ -5,12 +5,14 @@
       <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
-      <link rel="stylesheet" type="text/CSS" href="styles/sidebar.css">
-      <link rel="stylesheet" type="text/CSS" href="styles/home.css">
-      <link rel="stylesheet" type="text/CSS" href="styles/home_carousel.css">
+      
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.css'>
+      <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/sidebar.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/home_carousel.css">
+      <link rel="stylesheet" type="text/CSS" href="styles/home.css">
       <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
@@ -67,10 +69,29 @@
                      <div class="name">Log out</div>
                   </div>
                </div>
-               <i class='bx bx-log-out' id="log_out" ></i>
+               <i class='bx bx-log-out log_out'></i>
             </li>
          </ul>
       </div>
+      <nav>
+			<div>
+  			  	<p><i class="brand fas fa-play-circle"></i></p>
+			</div>
+			<ul class="nav-menu">
+				<li><a class="nav-link" href="#">Movies</a></li>
+				<li><a class="nav-link" href="#">TV/Shows</a></li>
+				<li><a class="nav-link" href="#">My List</a></li>
+				<li><a class="nav-link" href="#">Coming Soon</a></li>
+				<li><a class="nav-link" href="USERSETTING.html">Account Settings</a></li>
+				<li><span class="nav-link log_out" >Logout</span></li>
+			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+			
+		</nav>
       <section class="home-section">
          <div id="loader"></div>
          <div id="body_container">
@@ -245,10 +266,46 @@
             </div>
          </div>
       </section>
+
+      <div class="modal-preview">
+         <div class="modal-container">
+            <div class="modal-thumb-play">
+               <img class="modal-thumbnail" src="https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/images%2FMOV%208.png?alt=media&token=509e4b0d-6d1e-4136-9396-466903512b69" alt="">
+               <button id="modal-play">PLAY</button>
+            </div>
+            <div class="modal-description">
+               <div>
+                  <h1 class="modal-title">Kim: Lost Programmer</h1>
+                  <div class="modal-line"></div>
+                  <div class="modal-extra-description">
+                     <p>2021</p>
+                     <p>SPG</p>
+                     <p>19h 20m</p>
+                     <p><i class="fas fa-star thumbnail-star"></i> 5</p>
+                  </div>
+                  <div class="modal-cast">
+                     <p>Cast: <span class="modal-cast-inner">Kim Villacer and Family</span></p>
+                  </div>
+                  <div class="modal-genre">
+                     <p>Genre: <span class="modal-genre-inner">Horror Thriller</span></p>
+                  </div>
+                  <div class="modal-sypnosis">
+                     <p><span class="modal-sypnosis-inner">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat provident dolor aliquam accusamus labore eos, error mollitia sapiente enim dignissimos reprehenderit quis sunt, quos deleniti dolores eaque! Odit, excepturi voluptatem?</span></p>
+                  </div>
+               </div>
+               <div class="watchlist-button">
+                  <button>+ My List</button>
+               </div>
+               <span id="modal-close"><i class='bx bx-x'></i></span>
+            </div>
+         </div>
+      </div>
+
       <script src="script/firebase.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.js'></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.js'></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
       <script src="script/sidebar.js"></script>
       <script src="script/homepage.js"></script>
+      <script src="script/navbar.js"></script>
    </body>
 </html>

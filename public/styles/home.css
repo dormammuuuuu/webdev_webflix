@@ -1,5 +1,6 @@
 body {
 	background-color: black;
+	overflow-x: hidden;
 }
 
 * {
@@ -236,6 +237,7 @@ input:focus {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
+
 }
 
 #search-container div {
@@ -271,11 +273,10 @@ input:focus {
 
 .search-label{
 	width: 100%;
-	max-width: 1000px;
 	margin: 4em 1em;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
 
 .search-label h1{
@@ -418,6 +419,135 @@ input:focus {
 	margin-top: 5px;
 }
 
+nav{
+	display: none;
+}
+
+.modal-preview{
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .8);
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+
+.modal-container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 50vw;
+	padding: 2em 1em;
+	background: rgb(27, 27, 27);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color: white;
+}
+
+
+.modal-thumb-play{
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-thumbnail{
+	width: 200px;
+	height: 300px;
+	object-fit: cover;
+	object-position: center;
+}
+
+#modal-play{
+	margin-top: 1em;
+	padding: .6em .5em;
+	background: #FF69B4;
+	border: 2px solid #FF69B4;
+	font-weight: 600;
+	color: rgb(27,27,27);
+	letter-spacing: 2px;
+	transition: ease .2s;
+}
+
+#modal-play:focus,#modal-play:hover{
+	border: 2px solid #d63987;
+	background: #d63987;
+}
+
+.modal-line{
+	width: 100%;
+	height: 2px;
+	background-color: #FF69B4;
+	margin: .5em 0;
+}
+
+.modal-description{
+	width: 27vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.modal-title{
+	margin: 0;	
+}
+
+.modal-extra-description{
+	display: flex;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+
+.modal-extra-description p{
+	margin-right: 3%;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.modal-cast, .modal-genre{
+	margin-bottom: 5px;	
+}
+
+.modal-cast-inner, .modal-genre-inner, .modal-sypnosis-inner{
+	color: rgba(255, 255, 255, 0.8);
+
+}
+
+.watchlist-button{
+	display: flex;
+	align-self: flex-start;
+}
+
+.watchlist-button button{
+	background: transparent;
+	color: #FF69B4;
+	padding: .4em 1.8em;
+	letter-spacing: 2px;
+	font-size: 14px;
+	border: 2px solid #FF69B4;
+	font-weight: 600;
+	transition: ease .3s;
+}
+
+.watchlist-button button:hover{
+	background: #FF69B4;
+	color: rgb(27, 27, 27);
+}
+
+#modal-close{
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	font-size: 1.5em;
+	transition: ease .3s;
+}
+
+#modal-close:hover{
+	color: #FF69B4; 
+}
+
 @media (max-width: 1200px) {
 	.list {
 
@@ -470,6 +600,16 @@ input:focus {
 	.list {
 
 		grid-template-columns: 1fr;
+	}
 
+	.thumbnail-container{
+		justify-content: center;
+		width: 100%;
+		height: 400px;
+	}
+
+	nav{
+		display: flex;
+		padding: 30px;
 	}
 }
