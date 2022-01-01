@@ -102,6 +102,10 @@ function displayMovie(title, movie, rate, thumbnailImage, restriction, year, cat
 
 
 function fetchMovieList(){
+    let clickButton = $('.swiper-button-next');
+    setInterval(function() {
+        clickButton.click();
+    }, 6000);
     let dbref = db.ref('movies');
     dbref.once('value', snap => {
         snap.forEach(
