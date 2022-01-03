@@ -36,20 +36,51 @@ function displayUserData() {
 }
 displayUserData();
 
+var toggle1 = false;
 editBtn.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
-    save.disabled = false;
-    for(let i = 0; i < 4; i++) {
-        userDetails[i].disabled = false;
+    if (!toggle1){
+      save.disabled = false;
+
+        for(let i = 0; i < 4; i++) {
+            userDetails[i].disabled = false;
+        }
+        toggle1 = true;
+        editBtn.innerHTML = "CANCEL";
+
+    } else {
+    save.disabled = true;
+
+        for(let i = 0; i < 4; i++) {
+            userDetails[i].disabled = true;
+        }
+        toggle1 = false;
+        editBtn.innerHTML = "EDIT ✏️";
+
     }
+    
 }
 
+var toggle = false;
 editBtn2.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
-    save.disabled = false;
-    for(let i = 4; i < 7; i++) {
-        userDetails[i].disabled = false;
+    if (!toggle){
+    save2.disabled = false;
+
+        for(let i = 4; i < 7; i++) {
+            userDetails[i].disabled = false;
+        }
+        toggle = true;
+        editBtn2.innerHTML = "CANCEL";
+    } else {
+    save2.disabled = true;
+
+        for(let i = 4; i < 7; i++) {
+            userDetails[i].disabled = true;
+        }
+        toggle = false;
     }
+    
 }
 
 save.onclick = () => {
