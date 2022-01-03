@@ -27,6 +27,7 @@ function displayUserData() {
                 for(let i = 0; i < 3; i++) {
                     userDetails[i].value = userArr[i];
                 }
+                avatar.src = userData.avatar;
             }).then(() => {
                 loader.style.display = 'none';
                 body_container.style.display = 'block';
@@ -137,3 +138,15 @@ function updateUserDetails() {
         }
     });
 }
+
+$('#upload').on('change', function(e) {
+    let file = [];
+    file = e.target.files;
+    let reader;
+    reader = new FileReader;
+    reader.onload = function() {
+        avatar.src = reader.result;
+    }
+    reader.readAsDataURL(file[0]);
+    $('#changeAvatarBtn').text('SAVE CHANGES');
+});

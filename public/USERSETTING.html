@@ -15,6 +15,7 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
     </head>
     <body>
         <div id="loader"></div>
@@ -148,8 +149,8 @@
                     <section>
                         <div class="account-details">
                             <div class="account-avatar">
-                                <img src="assets/images/avatar.png" id="avatar" alt="Avatar">
-                                <input type="file" id="upload" hidden/>
+                                <img id="avatar" alt="Avatar">
+                                <input type="file" accept="image/*" id="upload" hidden/>
                                 <label for="upload" id="changeAvatarBtn"> CHANGE AVATAR </label>
                             </div>
                             <div>

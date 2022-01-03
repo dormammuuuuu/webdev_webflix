@@ -72,6 +72,7 @@ function registerToDatabase() {
             lastName: accDetails[1],
             username: accDetails[2],
             email: accDetails[3],
+            avatar: "https://firebasestorage.googleapis.com/v0/b/streamhub-7924b.appspot.com/o/avatar.png?alt=media&token=aa64e2d4-1aa3-4ded-aace-932373eddf29";
             dateCreated: today  
         });
         setTimeout(() => {

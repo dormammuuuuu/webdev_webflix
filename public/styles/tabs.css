@@ -3,13 +3,12 @@
 }
 
 .tabs {
-	left: 50%;
-	transform: translateX(-50%);
+    margin: auto;
 	position: relative;
 	padding: 50px;
 	padding-bottom: 80px;
 	width: 70%;
-	height: 250px;
+	height: 100vh;
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 	border-radius: 5px;
 	min-width: 240px;
@@ -122,6 +121,7 @@
 	-webkit-animation-iteration-count: 1;
 	animation-iteration-count: 1;
 	line-height: 1.4;
+    height: 100%;
 }
 
 .tabs .content section h2 {
