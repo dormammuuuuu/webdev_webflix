@@ -10,31 +10,56 @@
             $password = $_POST['password'];
             $firstName = $_POST['firstname'];
             $lastName = $_POST['lastname'];
-
-            echo $username;
-            echo $email;
-            echo $password;
-            echo $firstName;
-            echo $lastName;
     
             $checkUsername = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `user` WHERE `userName` = '$username'"));
             $checkEmail = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `user` WHERE `email` = '$email'"));
 
             if($checkUsername == 1 || $checkEmail == 1){
                 echo '
-                EMAIL AND USERNAME ALREADY TAKEN
-              ';
+                <div id="toast-id">
+                  <div class="toast">
+                    <div class="toast-container">
+                      <div class="toast-content">
+                        <div class="toast-icon">
+                          <i class="fas fa-exclamation"></i>
+                        </div>
+                        <p class="toast-message"></p>
+                      </div>
+                      <div class="toast-dismiss">
+                        <i class="fas fa-times"></i>
+                      </div>
+                    </div>
+                    <div id="toast-progress"></div>
+                  </div>
+                </div>
+                ';
+
               if ($checkEmail == 1 && $checkUsername == 1){
                 echo '
-                  USERNAME AND EMAIL ALREADY TAKEN
+                <script>
+                $(function () {
+                  $(".toast-message").text("Username and Email is already taken.");
+                });
+                </script>
+                
                 ';
               } elseif ($checkUsername == 1 && $checkEmail == 0){
                 echo '
-                USERNAME ALREADY TAKEN
+                <script>
+                  $(function () {
+                    $(".toast-message").text("Username is already taken");
+                  });
+                </script>
+               
                 ';
               } else {
                 echo '
-                  EMAIL IS ALREADY TAKEN
+                <script>
+                $(function () {
+                  $(".toast-message").text("Email is already taken");
+                });
+              </script>
+              
                 ';
               }
             
@@ -42,11 +67,11 @@
                 
                 $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password')";
 
-                $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));
+                $cmd = mysqli_query($conn,$query);
                 
     
                 if($cmd){
-                   // echo " Registration Succcesful !";
+                   echo " Registration Succcesful !";
                    header ("location:login.php");
                 }else{
                    echo " Registration not Succcesful";

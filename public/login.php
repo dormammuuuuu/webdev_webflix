@@ -22,7 +22,7 @@
 			<ul class="nav-menu">
 				<li><a class="nav-link" href="index.html">Home</a></li>
 				<li><a class="nav-link" href="index.html#about">About</a></li>
-				<li><a class="nav-link" href="signup.html">Register</a></li>
+				<li><a class="nav-link" href="signup.php">Register</a></li>
 			</ul>
 			<div class="hamburger">
 				<span class="bar"></span>
@@ -53,7 +53,7 @@
 						</div>
 						<input type="submit" name="submit" id="login" value="LOG IN">
 						<a href="#" class="forgot-register"> Forgot password? </a>
-						<a href="signup.html" class="forgot-register"> Register now </a>
+						<a href="signup.php" class="forgot-register"> Register now </a>
 					</form>
 				</div>
 				

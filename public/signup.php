@@ -1,6 +1,3 @@
-<?php
-	include("php-scripts/signup.php");
-?>
 
 <DOCTYPE html>
 	<html>
@@ -9,13 +6,18 @@
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/CSS" href="styles/signup.css">
 		<link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
+		<link rel="stylesheet" type="text/CSS" href="styles/toast.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 	</head>
 	<body>
+		<?php
+			include("php-scripts/signup.php");
+		?>
 		<nav>
 			<div>
 				<p><i class="brand fas fa-play-circle"></i></p>
@@ -24,7 +26,7 @@
 			<ul class="nav-menu">
 				<li><a class="nav-link" href="index.html">Home</a></li>
 				<li><a class="nav-link" href="index.html#about">About</a></li>
-				<li><a class="nav-link" href="login.html">Log In</a></li>
+				<li><a class="nav-link" href="login.php">Log In</a></li>
 			</ul>
 			<div class="hamburger">
 				<span class="bar"></span>
@@ -38,25 +40,25 @@
 			<span id="subheader"> Watch, enjoy, and binge on thousands of videos. </span> 
 			<form method="post" id="register-form">
 				<span class="input-labels"> First name </span> 
-				<input type="text" class="input-boxes" name="firstname"> 
+				<input type="text" class="input-boxes" name="firstname" require> 
 				<span class="input-labels"> Last name </span> 
-				<input type="text" class="input-boxes" name="lastname"> 
+				<input type="text" class="input-boxes" name="lastname" require> 
 				<span class="input-labels"> Username </span> 
-				<input type="text" class="input-boxes" name="username">
+				<input type="text" class="input-boxes" name="username" require>
 				<span class="input-labels"> Email </span> 
-				<input type="email" class="input-boxes" name="email"> 
+				<input type="email" class="input-boxes" name="email" require> 
 				<span class="input-labels"> Password </span> 
-				<input type="password" class="input-boxes" name="password"> 
+				<input type="password" class="input-boxes" name="password" require> 
 				<span class="input-labels"> Confirm Password </span> 
-				<input type="password" class="input-boxes" name="confirm"> 
+				<input type="password" class="input-boxes" name="confirm" require> 
 				<div id="errorMsgDiv">
 					<p id="errorMsg"></p>
 				</div>
-				<input type="submit" name="submit" id="registerBtn" value="REGISTER">
+				<input type="submit" name="submit" id="register" value="REGISTER">
 
-				<button id="register" onclick="register()"> <strong> REGISTER </strong> </button>
+				<!-- <button id="register" onclick="register()"> <strong> REGISTER </strong> </button> -->
 				<div id="account">
-					<span> Already have an account? <a class="form-links" href="login.html"> Log in </a></span> 
+					<span> Already have an account? <a class="form-links" href="login.php"> Log in </a></span> 
 				</div>
 				<div id="termsModal">
 					<div id="termsModalContent">
@@ -127,8 +129,12 @@
 		
 			
 		</div>
+		
+
 		<script src="script/firebase.js"></script>
+
 		<script src="script/register.js"></script>
 		<script src="script/navbar.js"></script>
+		<script src="script/toast.js"></script>
 	</body>
 	</html>
