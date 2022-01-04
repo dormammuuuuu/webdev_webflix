@@ -1,3 +1,6 @@
+<?php
+	include("php-scripts/login.php");
+?>
 <DOCTYPE html>
 <html>
 	<head>
@@ -31,26 +34,29 @@
 		<div class="container">
 			<div class="flex-container">
 				<div>
-					<p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
-					<p id="subheader"> Welcome back! Log In with your Email or Phone Number </p> 
-					<div class="phone-email">
-						<button class="buttons"> Email </button>
-						<button class="buttons"> Phone </button>
-					</div>
-					<div class="form-input">
-						<span class="form-labels"> Email</span>
-						<input type="email" class="user-input" name="email">
-	
-						<span class="form-labels"> Password</span>
-						<input type="password" class="user-input" name="password">
-					</div>
-					<div id="errorMsgDiv">
-						<p id="errorMsgLogin"></p>
-					</div>
-					<button id="login"> <b> LOG IN <b> </button>
-					<a href="#" class="forgot-register"> Forgot password? </a>
-					<a href="signup.html" class="forgot-register"> Register now </a>
+					<form method="post">
+						<p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
+						<p id="subheader"> Welcome back! Log In with your Email or Phone Number </p> 
+						<div class="phone-email">
+							<button class="buttons"> Email </button>
+							<button class="buttons"> Phone </button>
+						</div>
+						
+							<span class="form-labels"> Email</span>
+							<input type="email" class="user-input" name="email">
+		
+							<span class="form-labels"> Password</span>
+							<input type="password" class="user-input" name="password">
+						
+						<div id="errorMsgDiv">
+							<p id="errorMsgLogin"></p>
+						</div>
+						<input type="submit" name="submit" id="login" value="LOG IN">
+						<a href="#" class="forgot-register"> Forgot password? </a>
+						<a href="signup.html" class="forgot-register"> Register now </a>
+					</form>
 				</div>
+				
 				
 				<div class="image-login">
 					<div> <img src="assets/images/thumb.png" id="image"> </div>
