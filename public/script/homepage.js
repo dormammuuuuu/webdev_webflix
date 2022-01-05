@@ -25,14 +25,13 @@
 //                 // document.getElementById("user_name").innerHTML = userData.username;
 //             }).then(() => {
 //                 loader.style.display = 'none';
-//                 body_container.style.display = 'block';
 //             });
 //         };
 //     });
 // }
 
 // displayName();
-
+/*
 function displayMovie(title, movie, rate, thumbnailImage, restriction, year, category){
     let container = document.getElementById('list-movies');
     let thumbnailContainer = document.createElement('div');
@@ -122,7 +121,6 @@ function fetchMovieList(){
         );
     });
 }
-
 fetchMovieList();
 
 $('.log_out').on('click', function () {
@@ -132,8 +130,10 @@ $('.log_out').on('click', function () {
 // user_name.onclick = () => {
 //     window.location = "USERSETTING.html";
 // }
+*/
 
 var searchClear = $('.search-clear');
+ body_container.style.display = 'block';
 
 $('#searchBox').on('input', function(){
     searchClear.css('visibility', 'visible');
@@ -193,7 +193,7 @@ $("#searchBox").on("keyup", function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
-
+/*
 function selectedMovie(e){
     let loader = $('.loading-wrapper');
     let modalPreview = $('.modal-preview');
@@ -226,7 +226,7 @@ function selectedMovie(e){
 
 
 }
-
+*/
 $('#modal-close').on('click', function() {
     let modalPreview = $('.modal-preview');
     modalPreview.fadeOut();

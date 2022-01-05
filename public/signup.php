@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<?php
-			include("php-scripts/signup.php");
+			include("php-scripts/signup-script.php");
 		?>
 		<nav>
 			<div>
@@ -40,13 +40,13 @@
 			<span id="subheader"> Watch, enjoy, and binge on thousands of videos. </span> 
 			<form method="post" id="register-form">
 				<span class="input-labels"> First name </span> 
-				<input type="text" class="input-boxes" name="firstname" require> 
+				<input type="text" class="input-boxes" name="firstname" value="<?php echo $firstName?>" require> 
 				<span class="input-labels"> Last name </span> 
-				<input type="text" class="input-boxes" name="lastname" require> 
+				<input type="text" class="input-boxes" name="lastname" value="<?php echo $lastName?>" require> 
 				<span class="input-labels"> Username </span> 
-				<input type="text" class="input-boxes" name="username" require>
+				<input type="text" class="input-boxes" name="username" value="<?php echo $username?>" require>
 				<span class="input-labels"> Email </span> 
-				<input type="email" class="input-boxes" name="email" require> 
+				<input type="email" class="input-boxes" name="email" value="<?php echo $email?>" require> 
 				<span class="input-labels"> Password </span> 
 				<input type="password" class="input-boxes" name="password" require> 
 				<span class="input-labels"> Confirm Password </span> 

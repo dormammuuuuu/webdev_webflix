@@ -11,4 +11,6 @@
         exit();
     }
     
+    $firstName = $lastName = $email = $password = $username = "";
+
 ?>

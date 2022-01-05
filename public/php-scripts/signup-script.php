@@ -1,6 +1,11 @@
 <?php 
     include('initialize-db.php');
 
+    session_start();
+    if(ISSET($_SESSION['id'])){
+      header("location:home.php");
+    }
+
     if(isset($_POST['submit'])){
 
         if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])){
@@ -37,12 +42,15 @@
               if ($checkEmail == 1 && $checkUsername == 1){
                 echo '
                 <script>
-                $(function () {
-                  $(".toast-message").text("Username and Email is already taken.");
-                });
+                  $(function () {
+                    $(".toast-message").text("Username and Email is already taken.");
+                  });
                 </script>
                 
                 ';
+                $username = "";
+                $email = "";
+
               } elseif ($checkUsername == 1 && $checkEmail == 0){
                 echo '
                 <script>
@@ -52,26 +60,29 @@
                 </script>
                
                 ';
+                $username = "";
               } else {
                 echo '
                 <script>
-                $(function () {
-                  $(".toast-message").text("Email is already taken");
-                });
-              </script>
+                  $(function () {
+                    $(".toast-message").text("Email is already taken");
+                  });
+                </script>
               
                 ';
+                $email = "";
               }
             
             }else{
                 
                 $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password')";
 
-                $cmd = mysqli_query($conn,$query);
+                $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));
                 
     
                 if($cmd){
-                   echo " Registration Succcesful !";
+                   $firstName = $lastName = $email = $password = $username = "";
+
                    header ("location:login.php");
                 }else{
                    echo " Registration not Succcesful";

@@ -20,6 +20,15 @@
       <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
    </head>
    <body>
+      <?php
+         include('php-scripts/initialize-db.php');
+
+         session_start();
+         if(!ISSET($_SESSION['id'])){
+            header("location:index.html");
+         }
+      ?>
+
       <div class="sidebar">
          <div class="logo-details">
             <i class="icon fas fa-play-circle"></i>
@@ -63,6 +72,7 @@
                <span class="tooltip">Account Settings</span>
             </li>
             <li class="profile" id="logoutBtn">
+               <a href="php-scripts/destroy-session.php">
                <div class="profile-details">
                   <!--<img src="profile.jpg" alt="profileImg">-->
                   <div class="name_job">
@@ -70,6 +80,7 @@
                   </div>
                </div>
                <i class='bx bx-log-out log_out'></i>
+               </a>
             </li>
          </ul>
       </div>
@@ -93,7 +104,7 @@
 			
 		</nav>
       <section class="home-section">
-         <div id="loader"></div>
+         <!-- <div id="loader"></div> -->
          <div id="body_container">
          <div class="maincontainer">
             
@@ -212,26 +223,13 @@
                   
                   <div class="main-list">
                      <div class="list" id="list-movies">
+                        <?php 
+                           include('php-scripts/fetch-movies.php');
+                        ?>
                      </div>
                   </div>
                </div>
-                  
-                  
-               <!-- <div class="center">
-                  <div class="pagination">
-                     <a href="#">&laquo;</a>
-                     <a href="#">1</a>
-                     <a href="#">2</a>
-                     <a href="#" class="active">3</a>
-                     <a href="#">4</a>
-                     <a href="#">5</a>
-                     <a href="#">6</a>
-                     <a href="#">&raquo;</a>
-                  </div>
-                  </div>
-                  <footer>
-                  <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p>
-                  </footer> -->
+
             </div>
          </div>
       </section>
