@@ -256,7 +256,29 @@ if (Date.now() > (time + delay)) {
     // Scroll Event Listener
 window.addEventListener('scroll', throttleScroll(1000));
 */
-$('#modal-close').on('click', function() {
-    let modalPreview = $('.modal-preview');
-    modalPreview.fadeOut();
-})
+
+$('.thumbnail-container').click(function (e) { 
+    let str = $(this).attr('data-movie');
+    $('#displayData').load('../php-scripts/fetch-data.php',{
+        data: str
+    });
+    
+});
+
+/*
+function ajaxRequest(e){
+    $.ajax({
+        method: "get",
+        url: "php-scripts/fetch-data.php",
+        data: { data: e },
+        dataType: "html",
+        async: false,
+        success: function (response) {
+            $('#displayData').html(response);
+        },
+        complete: function() {
+            alert("COMPLETE");
+        }
+    });
+}
+*/
