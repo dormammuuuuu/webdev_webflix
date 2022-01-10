@@ -130,6 +130,14 @@ $('.log_out').on('click', function () {
 // user_name.onclick = () => {
 //     window.location = "USERSETTING.html";
 // }
+
+const repositionPage = () => {
+
+    let pageVerticalPosition = localStorage.getItem('pageVerticalPosition') || 0;
+    window.scrollTo(0, pageVerticalPosition);
+}
+  
+window.addEventListener('load', repositionPage);
 */
 
 var searchClear = $('.search-clear');
@@ -226,6 +234,27 @@ function selectedMovie(e){
 
 
 }
+
+const recordVerticalOffset = () => {
+    localStorage.setItem('pageVerticalPosition', window.scrollY);
+}
+
+// Only save window position after scrolling stops
+const throttleScroll = (delay) => {
+
+let time = Date.now();
+
+const checkScroll = setInterval(() => {
+
+if (Date.now() > (time + delay)) {
+
+        clearInterval(checkScroll);
+        return recordVerticalOffset();
+        }
+    }, 300);
+}
+    // Scroll Event Listener
+window.addEventListener('scroll', throttleScroll(1000));
 */
 $('#modal-close').on('click', function() {
     let modalPreview = $('.modal-preview');

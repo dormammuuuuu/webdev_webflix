@@ -1,3 +1,7 @@
+*{
+	transition: ease .3s;
+}
+
 nav{
 	display: flex;
 	flex-direction: row;

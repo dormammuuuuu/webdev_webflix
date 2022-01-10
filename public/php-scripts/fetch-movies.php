@@ -9,7 +9,7 @@
 
         do{ 
             echo'
-            <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'">
+            <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'" id="movie'.$row['movies_id'].'">
                 <img class="thumbnail" src="'.$row['movies_thumbnail'].'">
                 <div class="thumbnail-description">
                     <div>
