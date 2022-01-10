@@ -49,10 +49,11 @@
             </div>
         </div>
         <script>
-        
+
         $("#modal-close").on("click", function() {
             let modalPreview = $(".modal-preview");
             modalPreview.fadeOut();
+            modalPreview.remove();
         })
 
         </script>
