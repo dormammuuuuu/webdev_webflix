@@ -1,4 +1,4 @@
-var mainApp = {};
+/*var mainApp = {};
 (function() {
     var uid = null;
     firebase.auth().onAuthStateChanged(function(user) {
@@ -30,13 +30,28 @@ function displayUserData() {
                 avatar.src = userData.avatar;
             }).then(() => {
                 loader.style.display = 'none';
-                body_container.style.display = 'block';
             });
         }
     });
 }
 displayUserData();
+*/
+function toggleDisabled(e) {
+    return this.each(function() {
+        var $this = $(this);
+        if ($this.attr('disabled')) $this.removeAttr('disabled');
+        else $this.attr('disabled', 'disabled');
+    });
+}
 
+
+$('#editBtn').click(function (e) { 
+    let inputBoxes = $('.input-boxes');
+    let saveAccountDetails = $('#save-account-details');
+    inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
+    saveAccountDetails.prop('disabled', function(i, disabled) { return !disabled; });
+});
+/*
 var toggle1 = false;
 editBtn.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
@@ -50,7 +65,7 @@ editBtn.onclick = () => {
         editBtn.innerHTML = "CANCEL";
 
     } else {
-    save.disabled = true;
+        save = true;
 
         for(let i = 0; i < 4; i++) {
             userDetails[i].disabled = true;
@@ -83,7 +98,8 @@ editBtn2.onclick = () => {
     }
     
 }
-
+*/
+/*
 save.onclick = () => {
     var userDetails = document.getElementsByClassName("input-boxes");
     var emptyFields = false;
@@ -138,7 +154,7 @@ function updateUserDetails() {
         }
     });
 }
-
+*/
 $('#upload').on('change', function(e) {
     let file = [];
     file = e.target.files;
@@ -150,3 +166,17 @@ $('#upload').on('change', function(e) {
     reader.readAsDataURL(file[0]);
     $('#changeAvatarBtn').text('SAVE CHANGES');
 });
+
+$('#save-account-details').click(function (e) { 
+    let firstName = $('#first-name').val();
+    let lastName = $('#last-name').val();
+    let userName = $('#user-name').val();
+    $('#update-notif').load('../php-scripts/save_account_details.php',{
+        firstname: firstName,
+        lastname: lastName,
+        username: userName
+    });
+    
+});
+
+body_container.style.display = 'block';

@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/CSS" href="styles/sidebar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/tabs.css">
+        <link rel="stylesheet" type="text/CSS" href="styles/toast.css">
         <link rel="stylesheet" type="text/CSS" href="styles/USERSETTING.css">
 
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +19,19 @@
         <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
     </head>
     <body>
-        <div id="loader"></div>
+        <?php
+            include('php-scripts/initialize-db.php');
+            
+            session_start();
+            if(!ISSET($_SESSION['id'])){
+               header("location:index.html");
+            } else{
+                $id = (int) $_SESSION['id'];
+  
+                $query = mysqli_query ($conn, "SELECT * FROM user WHERE id = '$id' ") or die (mysqli_error($conn));
+                $account = mysqli_fetch_array ($query);
+            }
+        ?>
         <div id="body_container">
         <div class="sidebar">
             <div class="logo-details">
@@ -28,7 +41,7 @@
             </div>
             <ul class="nav-list">
                 <li>
-                    <a href="home.html">
+                    <a href="home.php">
                     <i class='bx bx-movie'></i>
                     <span class="links_name">Movies</span>
                     </a>
@@ -56,20 +69,22 @@
                     <span class="tooltip">Coming Soon</span>
                 </li>
                 <li>
-                    <a href="USERSETTING.html">
+                    <a href="#">
                     <i class='bx bx-cog' ></i>
                     <span class="links_name">Account Settings</span>
                     </a>
                     <span class="tooltip">Account Settings</span>
                 </li>
                 <li class="profile" id="logoutBtn">
-                    <div class="profile-details">
-                        <!--<img src="profile.jpg" alt="profileImg">-->
-                        <div class="name_job">
-                            <div class="name">Log out</div>
+                    <a href="php-scripts/logout.php">
+                        <div class="profile-details">
+                            <!--<img src="profile.jpg" alt="profileImg">-->
+                            <div class="name_job">
+                                <div class="name">Log out</div>
+                            </div>
                         </div>
-                    </div>
-                    <i class='bx bx-log-out log_out'></i>
+                        <i class='bx bx-log-out log_out'></i>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -149,23 +164,23 @@
                     <section>
                         <div class="account-details">
                             <div class="account-avatar">
-                                <img id="avatar" alt="Avatar">
+                                <img id="avatar" src="<?php echo $account['avatar'] ?>" alt="Avatar">
                                 <input type="file" accept="image/*" id="upload" hidden/>
                                 <label for="upload" id="changeAvatarBtn"> CHANGE AVATAR </label>
                             </div>
                             <div>
                                 <span class="input-labels"> First Name </span> 
-                                <input type="text" class="input-boxes" name="firstname" disabled> 
+                                <input type="text" id="first-name" class="input-boxes" name="firstname" value="<?php echo $account['firstName']?>" disabled> 
                                 <span class="input-labels"> Last Name </span> 
-                                <input type="text" class="input-boxes" name="lastname" disabled> 
+                                <input type="text" id="last-name" class="input-boxes" name="lastname" value="<?php echo $account['lastName']?>" disabled> 
                                 <span class="input-labels"> Username </span> 
-                                <input type="text" class="input-boxes" name="username" disabled> 
+                                <input type="text" id="user-name" class="input-boxes" name="username" value="<?php echo $account['userName']?>"  disabled> 
                                 <span class="input-labels"> Current Password </span> 
                                 <input type="password" class="input-boxes" name="currentpassword" disabled> 
                                 <div id="errorMsgDiv">
                                     <p id="errorMsg"></p>
                                 </div>
-                                <button id="save" disabled> <strong> SAVE CHANGES </strong> </button>
+                                <button id="save-account-details" disabled> <strong> SAVE CHANGES </strong> </button>
                                 <button type="button" id="editBtn">EDIT   ✏️ </button>
                             </div>
                         </div>
@@ -193,7 +208,10 @@
                     </section>
                 </div>
             </div>
+            
         </section>
+        <div id="update-notif"></div>
+
         <script src="script/firebase.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="script/sidebar.js"></script>

@@ -58,14 +58,14 @@
                     <span class="tooltip">Coming Soon</span>
                 </li>
                 <li>
-                    <a href="USERSETTING.html">
+                    <a href="USERSETTING.php">
                     <i class='bx bx-cog' ></i>
                     <span class="links_name">Account Settings</span>
                     </a>
                     <span class="tooltip">Account Settings</span>
                 </li>
                 <li class="profile" id="logoutBtn">
-                    <a href="php-scripts/destroy-session.php">
+                    <a href="php-scripts/logout.php">
                         <div class="profile-details">
                             <!--<img src="profile.jpg" alt="profileImg">-->
                             <div class="name_job">
@@ -86,7 +86,7 @@
                 <li><a class="nav-link" href="#">TV/Shows</a></li>
                 <li><a class="nav-link" href="#">My List</a></li>
                 <li><a class="nav-link" href="#">Coming Soon</a></li>
-                <li><a class="nav-link" href="USERSETTING.html">Account Settings</a></li>
+                <li><a class="nav-link" href="USERSETTING.php">Account Settings</a></li>
                 <li><span class="nav-link log_out" >Logout</span></li>
             </ul>
             <div class="hamburger">

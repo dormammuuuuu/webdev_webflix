@@ -158,7 +158,7 @@ body {
     color: white;
 }
 
-#save, #save2 {
+#save-account-details, #save2 {
     background-color: #FF69B4;
     font-size: 15px;
     width: 150px;
@@ -170,12 +170,12 @@ body {
     margin: 0px 0px 0px 230px;
 }
 
-#save:hover, #save2:hover {
+#save-account-details:hover, #save2:hover {
     background-color: #b14a7d;
     color: black;
 }
 
-#save:active, #save3:active {
+#save-account-details:active, #save3:active {
   background-color:#b14a7d;
   color: black;
   box-shadow: #b14a7d;
@@ -199,7 +199,7 @@ body {
     color: black;
 }
 
-#save:disabled, #save2:disabled{
+#save-account-details:disabled, #save2:disabled{
   background-color: rgb(58, 58, 58);
   color: gray;
 
@@ -237,3 +237,10 @@ input:focus {
   align-items: center;
   justify-content: center;
 }
+
+#update-notif{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  }
