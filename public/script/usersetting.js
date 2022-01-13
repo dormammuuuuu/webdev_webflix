@@ -171,10 +171,12 @@ $('#save-account-details').click(function (e) {
     let firstName = $('#first-name').val();
     let lastName = $('#last-name').val();
     let userName = $('#user-name').val();
+    let password = $('#ad-password').val();
     $('#update-notif').load('../php-scripts/save_account_details.php',{
         firstname: firstName,
         lastname: lastName,
-        username: userName
+        username: userName,
+        password: password
     });
     
 });

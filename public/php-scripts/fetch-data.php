@@ -49,13 +49,15 @@
             </div>
         </div>
         <script>
-
-        $("#modal-close").on("click", function() {
-            let modalPreview = $(".modal-preview");
-            modalPreview.fadeOut();
-            modalPreview.remove();
-        })
-
+            $("#modal-close").on("click", function() {
+                let modalPreview = $(".modal-preview");
+                modalPreview.fadeOut();
+                modalPreview.remove();
+            })
+            
+            $("#modal-play").click(function() {
+                window.location.href = "stream.php?watch='.$row['movies_id'].'";
+            })
         </script>
         ';
     } else {

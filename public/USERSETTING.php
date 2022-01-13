@@ -176,7 +176,7 @@
                                 <span class="input-labels"> Username </span> 
                                 <input type="text" id="user-name" class="input-boxes" name="username" value="<?php echo $account['userName']?>"  disabled> 
                                 <span class="input-labels"> Current Password </span> 
-                                <input type="password" class="input-boxes" name="currentpassword" disabled> 
+                                <input id="ad-password" type="password" class="input-boxes" name="currentpassword" disabled> 
                                 <div id="errorMsgDiv">
                                     <p id="errorMsg"></p>
                                 </div>
@@ -186,6 +186,7 @@
                         </div>
                     </section>
                     <section>
+                        <h1>Change Password</h1>
                         <span class="input-labels"> Current Password </span> 
                         <input type="password" class="input-boxes" name="currentpassword" disabled> 
                         <span class="input-labels"> New Password </span> 
@@ -208,9 +209,9 @@
                     </section>
                 </div>
             </div>
+             <div id="update-notif"></div>
             
         </section>
-        <div id="update-notif"></div>
 
         <script src="script/firebase.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
