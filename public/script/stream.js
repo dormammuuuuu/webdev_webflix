@@ -6,7 +6,7 @@ const upperContainer = $('#upper-container');
 const lowerContainer = $('#lower-container');
 var timer, vb;
 var visible = true;
-
+var DELAY = 300, rightclicks = 0, lefttclicks = 0, righttimer = null, lefttimer = null;
 
 $(function () {
     visible = true;
@@ -39,13 +39,13 @@ $('#back-arrow').click(function (e) {
     window.location.href= 'home.php';
 });
 
-$('body').keyup(function (e) { 
+$('html').keyup(function (e) { 
     if(e. keyCode == 32){
         playpause();
     }
 });
 
-$('body').keydown(function (e) { 
+$('html').keydown(function (e) { 
     let curr_volume = video.volume;
     let new_volume = curr_volume;
     if (e.keyCode == 38){
@@ -54,7 +54,11 @@ $('body').keydown(function (e) {
     } else if (e.keyCode == 40){
         new_volume -= 0.05;
         setVolume(new_volume);
-    } 
+    } else if (e.keyCode == 37){
+        video.currentTime -= 10;
+    } else if (e.keyCode == 39){
+        video.currentTime += 10;
+    }
     $('#volume-slider').slider('value', new_volume * 100);
 });
 
@@ -146,6 +150,10 @@ video.ontimeupdate = function(){
     $("#custom-seekbar span").css("width", percentage+"%");
     var currtime = format(video.currentTime);
     $('#time').text(currtime);
+    if(video.currentTime == video.duration - 1){
+        playpauseIcon.removeClass('bx-play');
+        playpauseIcon.addClass('bx-pause');
+    }
 };
 
 $("#custom-seekbar").on("click", function(e){
@@ -176,13 +184,12 @@ $('body').mousemove(function (e) {
 
     }, 5000);   
 });
-
-video.onclick = (e) => {
-    
+/*
+$('#left-previous, #right-forward').click(function (e) { 
     if (visible == true){
-        playpauseContainer.fadeOut();
-        upperContainer.fadeOut();
-        lowerContainer.fadeOut();
+        playpauseContainer.hide();
+        upperContainer.hide();
+        lowerContainer.hide();
         visible = false;
     } else {
         playpauseContainer.show();
@@ -193,4 +200,57 @@ video.onclick = (e) => {
     $('.volume').css('display', 'none');
     $('.brightness').css('display', 'none');
     $('#brightness-button, #volume-button').show();    
-}
+});
+*/
+$('#left-previous').click(function() {
+    lefttclicks++;  //count clicks
+    if(lefttclicks === 1) {
+        lefttimer = setTimeout(function() {
+            if (visible == true){
+                playpauseContainer.hide();
+                upperContainer.hide();
+                lowerContainer.hide();
+                visible = false;
+            } else {
+                playpauseContainer.show();
+                upperContainer.show();
+                lowerContainer.show();
+                visible = true;
+            }  //perform single-click action    
+            lefttclicks = 0;             //after action performed, reset counter
+        }, DELAY);
+    } else {
+        clearTimeout(lefttimer);    //prevent single-click action
+        video.currentTime -= 10; //perform double-click action
+        lefttclicks = 0;             //after action performed, reset counter
+    }
+}).on("dblclick", function(e){
+    e.preventDefault();  //cancel system double-click event
+});
+
+
+$('#right-forward').click(function() {
+    rightclicks++;  //count clicks
+    if(rightclicks === 1) {
+        righttimer = setTimeout(function() {
+            if (visible == true){
+                playpauseContainer.hide();
+                upperContainer.hide();
+                lowerContainer.hide();
+                visible = false;
+            } else {
+                playpauseContainer.show();
+                upperContainer.show();
+                lowerContainer.show();
+                visible = true;
+            }  //perform single-click action    
+            rightclicks = 0;             //after action performed, reset counter
+        }, DELAY);
+    } else {
+        clearTimeout(righttimer);    //prevent single-click action
+        video.currentTime += 10; //perform double-click action
+        rightclicks = 0;             //after action performed, reset counter
+    }
+}).on("dblclick", function(e){
+    e.preventDefault();  //cancel system double-click event
+});

@@ -29,7 +29,13 @@
         </video>
     </div>
     <div id="playpause">
+        <div id="left-previous">
+            <i class='bx bxs-chevrons-left'></i> <span class="fp-label">10</span>
+        </div>
         <button id="playpause-button"><i id="playpause-icon" class='bx bx-play'></i></button>
+        <div id="right-forward">
+           <span class="fp-label">10</span> <i class='bx bxs-chevrons-right'></i>
+        </div>
     </div>
     <div id="lower-container">
         <div class="volume-brightness-container">
