@@ -21,10 +21,15 @@ html,body{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     z-index: 5;
 }
+
+#video::-webkit-media-controls {
+    display: none;
+}
+  
 
 #playpause{
     position: absolute;
@@ -82,6 +87,9 @@ html,body{
     background: linear-gradient(360deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 100%, 0) 100%);
     z-index: 10;
     min-height: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .seekbar-time-container{
@@ -110,10 +118,14 @@ html,body{
     align-items: center;
 }
 
+.volume, .brightness{
+    display: none;
+    align-items: center;
+}
+
 #volume-slider, #brightness-slider {
     position: relative;
-    margin: 0 auto;
-    display: none;
+    display: block;
     height: 5px;
     width: 150px;
     background: #555;
@@ -128,6 +140,7 @@ html,body{
     border: none;
     border-radius: 10px;
     outline: none;
+    z-index: 10;
   }
 
   #volume-slider .ui-slider-handle, #brightness-slider .ui-slider-handle {
@@ -142,12 +155,13 @@ html,body{
     outline: none;
   }
 
+
 #custom-seekbar{
     cursor: pointer;
     height: 5px;
     overflow: hidden;
     position: relative;
-    width: 60vw;
+    width: 70vw;
     border-radius: 5px;
     background: #555;
 }
@@ -163,4 +177,13 @@ html,body{
 #time{
     display: inline;
     margin: 0;
+    margin: 0 10px;
+}
+
+#fullscreen-button{
+    font-size: 1.5em;
+}
+
+#fullscreen-button:hover{
+    color: white;
 }

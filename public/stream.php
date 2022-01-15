@@ -23,8 +23,9 @@
         <h1><?php echo $details['movies_title'] ?></h1>
     </div>
     <div id="movie-player">
-        <video id="video" controls="" preload="metadata" poster="img/poster.jpg">
-                <source src="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4" type="video/mp4">
+        <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">
+                <source src="<?php echo $details['movies_file']?>" type="video/mp4">
+                FILE NOT FOUND.
         </video>
     </div>
     <div id="playpause">
@@ -33,17 +34,25 @@
     <div id="lower-container">
         <div class="volume-brightness-container">
             <span id="volume-button"><i id="volume-rocker" class='bx bx-volume-full'></i></span>
-            <div id="volume-slider"></div>
+            <div class="volume">
+                <i id="volume-rocker" class='bx bx-volume-full'></i>
+                <div id="volume-slider"></div>
+            </div>
+            <div class="brightness">
+                <i id="brightness-rocker" class='bx bxs-sun'></i>
+                <div id="brightness-slider"></div>
+            </div>
             <span id="brightness-button"><i id="brightness-rocker" class='bx bxs-sun'></i></span>
-            <div id="brightness-slider"></div>
         </div>
         <div class="seekbar-time-container">
             <div id="custom-seekbar">
               <span></span>
             </div> 
-            <p id="time"></p>
+            <p id="time">00:00</p>
         </div>
-         
+         <div>
+             <span id="fullscreen-button"><i class='bx bx-fullscreen'></i></span>
+         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

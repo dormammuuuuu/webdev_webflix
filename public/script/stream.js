@@ -1,10 +1,23 @@
-$(function () {
-    const video = $('#video');
-    video.prop('controls', '');    
-});
 
 const playpauseIcon = $('#playpause-icon');
 const volumeIcon = $('#volume-rocker');
+const playpauseContainer = $('#playpause');
+const upperContainer = $('#upper-container');
+const lowerContainer = $('#lower-container');
+var timer, vb;
+var visible = true;
+
+
+$(function () {
+    visible = true;
+    const video = $('#video');
+    setTimeout(() => {
+        playpauseContainer.fadeOut();
+        upperContainer.fadeOut();
+        lowerContainer.fadeOut();
+        visible = false;
+    }, 5000);   
+});
 
 function playpause(){
     if(video.paused){
@@ -83,19 +96,41 @@ function setVolume(vol) {
 }
 
 $('#volume-button').click(function (e) { 
-    $('#volume-slider').fadeIn();    
+    $('.volume').css('display', 'flex');
+    $('#brightness-button, #volume-button').hide();
 });
 
-$('#volume-slider, #brightness-slider').mouseleave(function () {         
-        $(this).fadeOut();
-});
+// $('#volume-slider, #brightness-slider').mouseleave(function () {         
+//         $(this).fadeOut();
+// });
 
-$('#volume-slider, #brightness-slider').mouseenter(function () { 
-    $(this).show();
-});
 
 $('#brightness-button').click(function (e) { 
-    $('#brightness-slider').fadeIn();    
+    $('.brightness').css('display', 'flex');
+    $('#brightness-button, #volume-button').hide();    
+});
+
+$('.brightness').mouseleave(function () { 
+    vbButton = setTimeout(() => {
+        $('.brightness').css('display', 'none');
+        $('#brightness-button, #volume-button').fadeIn();   
+    }, 4000);
+});
+
+$('#volume-button').click(function (e) { 
+    $('.volume').css('display', 'flex');
+    $('#brightness-button, #volume-button').hide();    
+});
+
+$('.volume').mouseleave(function () { 
+    vbButton = setTimeout(() => {
+        $('.volume').css('display', 'none');
+        $('#brightness-button, #volume-button').fadeIn();   
+    }, 4000);
+});
+
+$('.brightness').mouseenter(function () { 
+    clearTimeout(vbButton);
 });
 
 function format(s) {
@@ -122,4 +157,40 @@ $("#custom-seekbar").on("click", function(e){
     video.currentTime = vidTime;
 });
 
+$('#fullscreen-button').click(function (e) { 
+    video.requestFullscreen();
+});
 
+$('body').mousemove(function (e) { 
+    // values: e.clientX, e.clientY, e.pageX, e.pageY
+    playpauseContainer.show();
+    upperContainer.show();
+    lowerContainer.show();
+    visible = true;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        playpauseContainer.fadeOut();
+        upperContainer.fadeOut();
+        lowerContainer.fadeOut();
+        visible = false;
+
+    }, 5000);   
+});
+
+video.onclick = (e) => {
+    
+    if (visible == true){
+        playpauseContainer.fadeOut();
+        upperContainer.fadeOut();
+        lowerContainer.fadeOut();
+        visible = false;
+    } else {
+        playpauseContainer.show();
+        upperContainer.show();
+        lowerContainer.show();
+        visible = true;
+    }
+    $('.volume').css('display', 'none');
+    $('.brightness').css('display', 'none');
+    $('#brightness-button, #volume-button').show();    
+}
