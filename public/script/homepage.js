@@ -257,28 +257,18 @@ if (Date.now() > (time + delay)) {
 window.addEventListener('scroll', throttleScroll(1000));
 */
 
-$('.thumbnail-container').click(function (e) { 
-    let str = $(this).attr('data-movie');
-    $('#displayData').load('../php-scripts/fetch-data.php',{
-        data: str
+$('#series-button').click(function (e) { 
+    $('#list-movies').empty();
+    $('.dropdown-container h1').text('Series List');
+    $('#list-movies').load('../php-scripts/fetch-series.php',{
+        fetch: "series"
     });
-    
 });
 
-/*
-function ajaxRequest(e){
-    $.ajax({
-        method: "get",
-        url: "php-scripts/fetch-data.php",
-        data: { data: e },
-        dataType: "html",
-        async: false,
-        success: function (response) {
-            $('#displayData').html(response);
-        },
-        complete: function() {
-            alert("COMPLETE");
-        }
+$('#movies-button').click(function (e) { 
+    $('#list-movies').empty();
+    $('.dropdown-container h1').text('Movie List');
+    $('#list-movies').load('../php-scripts/fetch-movies.php',{
+        fetch: "movies"
     });
-}
-*/
+});

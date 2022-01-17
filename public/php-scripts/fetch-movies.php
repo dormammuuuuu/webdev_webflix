@@ -20,16 +20,28 @@
                             <p>'.$row['movies_rating'].'</p>
                         </div>
                     </div>
-                    <div class="thumbnail-add-watchlist"><i class="bx bxs-heart"></i></div>
+                    <input type="checkbox" class="thumbnail-add-watchlist"><i class="bx bxs-heart"></i></input>
                 </div>
             </div>
             '; 
         } while ($row = $movies->fetch_assoc());
+        echo'
+        <script>
+            $(".thumbnail-container").click(function (e) { 
+                let str = $(this).attr("data-movie");
+                $("#displayData").load("../php-scripts/fetch-data.php",{
+                    data: str,
+                    fetch: "movies"
+                });
+            });
+        </script>
+        ';
     } else {
         echo '
-        There are currently no artwork available in this category '; 
+        There are currently no movies available in this category '; 
     }
 
     // $temp = ;
     
 ?>
+

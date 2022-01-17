@@ -1,5 +1,10 @@
 <?php
     include('php-scripts/initialize-db.php');
+
+    session_start();
+    if(!ISSET($_SESSION['id'])){
+        header("location:index.html");
+    }
     $movieID = $_GET['watch'];
 
     $query = "SELECT * FROM movies where movies_id = $movieID";
