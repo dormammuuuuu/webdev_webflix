@@ -156,7 +156,10 @@ searchClear.on('click', function(){
     $('.thumbnail-container').show();
 });
 
-
+$("#add-to-list").change(function(e) {
+    e.stopPropagation();
+    alert("STOP");
+})
 
 //carousel
 

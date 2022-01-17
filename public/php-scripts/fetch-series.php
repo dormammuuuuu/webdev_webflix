@@ -34,6 +34,11 @@
                     fetch: "series"
                 });
             });
+
+            $("input[type=checkbox]").click(function(e) {
+                e.cancelBubble = true;
+                e.stopPropagation();
+            })
         </script>
         ';
     } else {
