@@ -591,6 +591,49 @@ nav{
 	  transform: scale(1);
 	}
   }
+
+  input[type="checkbox"] {
+	position: absolute;
+	z-index: 10;
+	opacity: 0;
+}
+
+
+input[type="checkbox"] + label {
+    position: absolute;
+	right: 35px;
+    display: inline-block;
+    font-size: 16px;
+}
+ 
+input[type="checkbox"] + label:before {
+    content: "\1F5A4";
+    top: -11px;
+    left: -8px;
+    border: 1px solid transparent;    
+    padding: 10px;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+	transition:  .5s ease;
+	filter: invert(100%);	
+}
+ 
+
+ 
+input[type="checkbox"]:checked + label:before {
+    border: 1px solid transparent;
+    background-color: transparent;
+}
+ 
+input[type="checkbox"]:checked + label:after {
+    content: '\2764';
+    font-size: 19px;
+    position: absolute;
+	color: #FF69B4;
+	transition:  .5s ease;
+}
+/*                       */
   
 
 @media (max-width: 1200px) {

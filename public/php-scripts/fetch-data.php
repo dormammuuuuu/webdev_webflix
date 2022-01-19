@@ -56,7 +56,7 @@
                         <div class="modal-line"></div>
                         <div class="modal-extra-description">
                             <p id="modal-year">'.$year.'</p>
-                            <p id="modal-restriction">'.$row['movies_restriction'].'</p>
+                            <p id="modal-restriction">'.$restriction.'</p>
                             <p id="modal-runtime">1h 2m</p>
                             <p><i class="fas fa-star thumbnail-star"></i> <span id="modal-rating">'.$rating.'</span></p>
                         </div>
@@ -70,8 +70,8 @@
                             <p><span id="modal-sypnosis" class="modal-sypnosis-inner">'.$sypnosis.'</span></p>
                         </div>
                     </div>
-                    <div class="watchlist-button">
-                        <button>+ My List</button>
+                    <div id="modal-list-container" class="watchlist-button">
+                        <button id="add-to-watchlist">+ My List</button>
                     </div>
                     <span id="modal-close"><i class="bx bx-x"></i></span>
                 </div>
@@ -86,6 +86,10 @@
             
             $("#modal-play").click(function() {
                 window.location.href = "stream.php?watch='.$stream_id.'";
+            })
+
+            $("#add-to-watchlist").click(function(){
+                $("").load("", )
             })
         </script>
         ';

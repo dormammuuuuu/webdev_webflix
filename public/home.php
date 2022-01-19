@@ -44,7 +44,7 @@
                     </a>
                     <span class="tooltip">TV/Shows</span>
                 </li>
-                <li>
+                <li id="list-button">
                     <a href="#">
                     <i class='bx bx-heart' ></i>
                     <span class="links_name">My List</span>
@@ -59,7 +59,7 @@
                     <span class="tooltip">Coming Soon</span>
                 </li>
                 <li>
-                    <a href="USERSETTING.php">
+                    <a href="account.php">
                     <i class='bx bx-cog' ></i>
                     <span class="links_name">Account Settings</span>
                     </a>
@@ -87,7 +87,7 @@
                 <li><a class="nav-link" href="#">TV/Shows</a></li>
                 <li><a class="nav-link" href="#">My List</a></li>
                 <li><a class="nav-link" href="#">Coming Soon</a></li>
-                <li><a class="nav-link" href="USERSETTING.php">Account Settings</a></li>
+                <li><a class="nav-link" href="account.php">Account Settings</a></li>
                 <li><span class="nav-link log_out" >Logout</span></li>
             </ul>
             <div class="hamburger">
@@ -211,7 +211,17 @@
                         <div class="main-list">
                             <div class="list" id="list-movies">
                                 <?php 
-                                    include('php-scripts/fetch-movies.php');
+                                    $load = @$_GET['load'] ?: "";
+                                    if ($load == "series"){
+                                        include('php-scripts/fetch-series.php');
+                                        echo '<script> $(".dropdown-container h1").text("Series List") </script>';
+                                    } else if ($load == "favorite"){
+                                        include('php-scripts/fetch-favorites.php');
+                                        echo '<script> $(".dropdown-container h1").text("Favorites") </script>';
+                                    } else {
+                                        include('php-scripts/fetch-movies.php');
+                                        echo '<script> $(".dropdown-container h1").text("Movie List") </script>';
+                                    }
 
                                 ?>
                             </div>
@@ -222,49 +232,11 @@
 
         </section>
         
+        <div id="add">
+        </div>
         <div id="displayData">
         </div>
-
-        <!-- <div class="modal-preview">
-            <div class="loading-wrapper">
-                <div>
-                    <div class="loader one"></div>
-                    <div class="loader two"></div>
-                    <div class="loader three"></div>
-                </div>
-            </div>
-            <div class="modal-container">
-                <div class="modal-thumb-play">
-                    <img id="modal-movie-thumbnail" class="modal-thumbnail" alt="">
-                    <button id="modal-play">PLAY</button>
-                </div>
-                <div class="modal-description">
-                    <div>
-                        <h1 id="modal-title">Kim: Lost Programmer</h1>
-                        <div class="modal-line"></div>
-                        <div class="modal-extra-description">
-                            <p id="modal-year">2021</p>
-                            <p id="modal-restriction">SPG</p>
-                            <p id="modal-runtime">19h 20m</p>
-                            <p><i class="fas fa-star thumbnail-star"></i> <span id="modal-rating"></span></p>
-                        </div>
-                        <div class="modal-cast">
-                            <p>Cast: <span id="modal-cast" class="modal-cast-inner">Kim Villacer and Family</span></p>
-                        </div>
-                        <div class="modal-genre">
-                            <p>Genre: <span id="modal-genre" class="modal-genre-inner">Horror Thriller</span></p>
-                        </div>
-                        <div class="modal-sypnosis">
-                            <p><span id="modal-sypnosis" class="modal-sypnosis-inner">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat provident dolor aliquam accusamus labore eos, error mollitia sapiente enim dignissimos reprehenderit quis sunt, quos deleniti dolores eaque! Odit, excepturi voluptatem?</span></p>
-                        </div>
-                    </div>
-                    <div class="watchlist-button">
-                        <button>+ My List</button>
-                    </div>
-                    <span id="modal-close"><i class='bx bx-x'></i></span>
-                </div>
-            </div>
-        </div> -->
+        
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.js'></script>
         <script src="script/sidebar.js"></script>
         <script src="script/homepage.js"></script>

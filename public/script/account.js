@@ -1,41 +1,4 @@
-/*var mainApp = {};
-(function() {
-    var uid = null;
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            uid = user.uid;
-        } else {
-            uid = null;
-            window.location.replace("index.html");
-        }
-      });
-      function logout() {
-        firebase.auth().signOut();
-    }
-    mainApp.logout = logout;
-})();
 
-function displayUserData() {
-    firebase.auth().onAuthStateChanged(user => {
-        var user = auth.currentUser;
-        var dbref = db.ref(`users/${user.uid}`);
-        if(user) {
-            dbref.once("value", snap => {
-                var userData = snap.val();
-                var userArr = [userData.firstName, userData.lastName, userData.username];
-                var userDetails = document.getElementsByClassName("input-boxes");
-                for(let i = 0; i < 3; i++) {
-                    userDetails[i].value = userArr[i];
-                }
-                avatar.src = userData.avatar;
-            }).then(() => {
-                loader.style.display = 'none';
-            });
-        }
-    });
-}
-displayUserData();
-*/
 function toggleDisabled(e) {
     return this.each(function() {
         var $this = $(this);
@@ -180,5 +143,13 @@ $('#save-account-details').click(function (e) {
     });
     
 });
+
+$('#series-button').click(function(){
+    window.location.href = "home.php?load=series"
+})
+
+$('#favorite-button').click(function(){
+    window.location.href = "home.php?load=favorite"
+})
 
 body_container.style.display = 'block';

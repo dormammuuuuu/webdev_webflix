@@ -1,13 +1,21 @@
 <?php
     include('initialize-db.php');
 
+    @session_start();
+    $uid = $_SESSION['id'];
     $sql = "SELECT * FROM `movies`";
     $movies = $conn->query($sql) or die ($conn->error);
     $row = $movies->fetch_assoc();
+    $checked = "checked";
+    $type = "movie";
 
     if (!empty($row)){
 
         do{ 
+            $movieID = $row['movies_id'];
+            $fave_query = "SELECT * FROM user_favorites WHERE user_id = $uid AND ms_type = '$type' AND favorite_id = $movieID";
+            $fave = $conn->query($fave_query) or die ($conn->error);
+            $fave_selected = $fave->fetch_assoc();
             echo'
             <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'" data-title="'.$row['movies_title'].'" id="movie'.$row['movies_id'].'">
                 <img class="thumbnail" src="'.$row['movies_thumbnail'].'">
@@ -20,11 +28,15 @@
                             <p>'.$row['movies_rating'].'</p>
                         </div>
                     </div>
-                    <input type="checkbox" class="thumbnail-add-watchlist"><i class="bx bxs-heart"></i></input>
+                    <input type="checkbox" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" class="thumbnail-add-watchlist"'; if (!empty($fave_selected)){ echo $checked; } echo'>
+                    <label>.</label>
                 </div>
             </div>
             '; 
         } while ($row = $movies->fetch_assoc());
+
+        
+        
         echo'
         <script>
             $(".thumbnail-container").click(function (e) { 
@@ -36,9 +48,19 @@
             });
 
             $("input[type=checkbox]").click(function(e) {
-                e.cancelBubble = true;
                 e.stopPropagation();
             })
+
+            $("input[type=checkbox]").change(function(e) {
+                let type = $(this).attr("data-type");
+                let str = $(this).attr("data-movie");
+                
+                $("#add").load("../php-scripts/favorite.php",{
+                    dataID: str,
+                    type: type,
+                })
+            })
+            
         </script>
         ';
     } else {

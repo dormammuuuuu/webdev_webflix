@@ -1,4 +1,3 @@
-
 const playpauseIcon = $('#playpause-icon');
 const volumeIcon = $('#volume-rocker');
 const playpauseContainer = $('#playpause');
@@ -104,11 +103,6 @@ $('#volume-button').click(function (e) {
     $('#brightness-button, #volume-button').hide();
 });
 
-// $('#volume-slider, #brightness-slider').mouseleave(function () {         
-//         $(this).fadeOut();
-// });
-
-
 $('#brightness-button').click(function (e) { 
     $('.brightness').css('display', 'flex');
     $('#brightness-button, #volume-button').hide();    
@@ -184,24 +178,7 @@ $('body').mousemove(function (e) {
 
     }, 5000);   
 });
-/*
-$('#left-previous, #right-forward').click(function (e) { 
-    if (visible == true){
-        playpauseContainer.hide();
-        upperContainer.hide();
-        lowerContainer.hide();
-        visible = false;
-    } else {
-        playpauseContainer.show();
-        upperContainer.show();
-        lowerContainer.show();
-        visible = true;
-    }
-    $('.volume').css('display', 'none');
-    $('.brightness').css('display', 'none');
-    $('#brightness-button, #volume-button').show();    
-});
-*/
+
 $('#left-previous').click(function() {
     lefttclicks++;  //count clicks
     if(lefttclicks === 1) {

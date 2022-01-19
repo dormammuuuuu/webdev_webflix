@@ -1,13 +1,21 @@
 <?php
     include('initialize-db.php');
 
+    @session_start();
+    $uid = $_SESSION['id'];
     $sql = "SELECT * FROM `series`";
     $series = $conn->query($sql) or die ($conn->error);
     $row = $series->fetch_assoc();
+    $checked = "checked";
+    $type = "series";
 
     if (!empty($row)){
 
         do{ 
+            $seriesID = $row['series_id'];
+            $fave_query = "SELECT * FROM user_favorites WHERE user_id = $uid AND ms_type = '$type' AND favorite_id = $seriesID";
+            $fave = $conn->query($fave_query) or die ($conn->error);
+            $fave_selected = $fave->fetch_assoc();
             echo'
             <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-title="'.$row['series_title'].'" id="movie'.$row['series_id'].'">
                 <img class="thumbnail" src="'.$row['series_thumbnail'].'">
@@ -20,7 +28,8 @@
                             <p>'.$row['series_rating'].'</p>
                         </div>
                     </div>
-                    <input type="checkbox" class="thumbnail-add-watchlist"><i class="bx bxs-heart"></i></input>
+                    <input type="checkbox" data-movie="'.$row['series_id'].'" data-type="'.$type.'"  class="thumbnail-add-watchlist" '; if (!empty($fave_selected)){ echo $checked; } echo'>
+                    <label>.</label>
                 </div>
             </div>
             '; 
@@ -36,8 +45,17 @@
             });
 
             $("input[type=checkbox]").click(function(e) {
-                e.cancelBubble = true;
                 e.stopPropagation();
+            })
+
+            $("input[type=checkbox]").change(function(e) {
+                let type = $(this).attr("data-type");
+                let str = $(this).attr("data-movie");
+                
+                $("#add").load("../php-scripts/favorite.php",{
+                    dataID: str,
+                    type: type,
+                })
             })
         </script>
         ';
