@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2022 at 07:28 PM
+-- Generation Time: Jan 19, 2022 at 05:03 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -24,21 +24,47 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_favorites`
+-- Table structure for table `user`
 --
 
-CREATE TABLE `user_favorites` (
-  `user_id` int(11) NOT NULL,
-  `favorite_id` int(11) NOT NULL,
-  `ms_type` varchar(50) NOT NULL
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL,
+  `userName` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `avatar` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_favorites`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
-(1, 2, 'movie');
+INSERT INTO `user` (`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`) VALUES
+(1, 'Jerico', 'Victoria', 'dorms', 'jericovic65@gmail.com', 'assets/images/user_avatar/default.png', '12345'),
+(2, 'Anjo', 'Victoria', 'dormammu', 'jericovic60@gmail.com', 'NONE', '123'),
+(10, 'asdasd', 'asdasd', 'supremood', '12312123@gmail.com', 'NONE', '123');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
