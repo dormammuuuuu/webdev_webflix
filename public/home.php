@@ -112,7 +112,7 @@
                                     <div class="content">
                                         <h1>Blackpink: The Movie</h1>
                                         <p>Exclusive interviews and concert footage highlihgting the career of Korean pop group Blackpink, as the quartet celebrate five years in the business.</p>
-                                        <a href="" class="button">Watch now</a>
+                                        <a href="stream.php?watch=1" class="button">Watch now</a>
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@
                                     <div class="content">
                                         <h1>Shang-Chi</h1>
                                         <p>Martial-arts master Shang-Chi confronts the past he thought he left behind when he's drawn into the web of the mysterious Ten Rings organization.</p>
-                                        <a href="" class="button">Watch now</a>
+                                        <a href="stream.php?watch=2" class="button">Watch now</a>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +134,7 @@
                                     <div class="content">
                                         <h1>Free Guy</h1>
                                         <p>When a bank teller discovers he's actually a background player in an open-world video game, he decides to become the hero of his own story -- one that he can rewrite himself. In a world where there's no limits, he's determined to save the day his way before it's too late, and maybe find a little romance with the coder who conceived him.</p>
-                                        <a href="" class="button">Watch now</a>
+                                        <a href="stream.php?watch=3" class="button">Watch now</a>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@
                                     <div class="content">
                                         <h1>Army of  the Dead</h1>
                                         <p>After a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble and venture into the quarantine zone in hopes of pulling off an impossible heist.</p>
-                                        <a href="" class="button">Watch now</a>
+                                        <a href="stream.php?watch=4" class="button">Watch now</a>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +156,7 @@
                                     <div class="content">
                                         <h1>Black Widow</h1>
                                         <p>Natasha Romanoff, aka Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by a force that will stop at nothing to bring her down, Natasha must deal with her history as a spy, and the broken relationships left in her wake long before she became an Avenger.</p>
-                                        <a href="" class="button">Watch now</a>
+                                        <a href="stream.php?watch=5" class="button">Watch now</a>
                                     </div>
                                 </div>
                             </div>
