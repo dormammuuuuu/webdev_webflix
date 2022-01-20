@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> StreamHub | HOME </title>
+        <title> StreamHub | Browse </title>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -66,7 +66,7 @@
                     <span class="tooltip">Account Settings</span>
                 </li>
                 <li class="profile" id="logoutBtn">
-                    <a href="php-scripts/logout.php">
+                    
                         <div class="profile-details">
                             <!--<img src="profile.jpg" alt="profileImg">-->
                             <div class="name_job">
@@ -74,7 +74,6 @@
                             </div>
                         </div>
                         <i class='bx bx-log-out log_out'></i>
-                    </a>
                 </li>
             </ul>
         </div>

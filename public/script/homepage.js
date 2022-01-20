@@ -26,6 +26,10 @@ $("#add-to-list").change(function(e) {
     alert("STOP");
 })
 
+$('#logoutBtn').click(function() {
+    $('#add').load('../php-scripts/logout.php')
+})
+
 //carousel
 
 const swiper = new Swiper(".swiper", {
