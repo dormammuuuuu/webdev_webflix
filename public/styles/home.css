@@ -632,11 +632,17 @@ input[type="checkbox"]:checked + label:before {
 }
  
 input[type="checkbox"]:checked + label:after {
-    content: '\2764';
-    font-size: 19px;
+    content: '\1F5A4';
+    font-size: 16px;
+	top: -8.9px;
+    left: -13.1px;
+    border: 1px solid transparent;    
+    padding: 10px;
+    border-radius: 3px;
     position: absolute;
 	color: #FF69B4;
 	transition:  .5s ease;
+	filter: invert(47%) sepia(86%) saturate(392%) hue-rotate(281deg) brightness(103%) contrast(102%);
 }
 /*                       */
   
