@@ -9,10 +9,17 @@ function toggleDisabled(e) {
 
 
 $('#editBtn').click(function (e) { 
-    let inputBoxes = $('.input-boxes');
+    let inputBoxes = $('.account');
     let saveAccountDetails = $('#save-account-details');
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
     saveAccountDetails.prop('disabled', function(i, disabled) { return !disabled; });
+});
+
+$('#editBtn2').click(function (e) { 
+    let inputBoxes = $('.password');
+    let savePassword = $('#save-password');
+    inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
+    savePassword.prop('disabled', function(i, disabled) { return !disabled; });
 });
 /*
 var toggle1 = false;
@@ -158,7 +165,18 @@ $('#save-account-details').click(function (e) {
         username: userName,
         password: password
     });
+});
+
+$('#save-password').click(function (e) { 
+    let password = $('#old-password').val();
+    let newpassword = $('#new-password').val();
+    let confpassword = $('#confirm-password').val();
     
+    $('#update-notif').load('../php-scripts/save-password.php',{
+        password: password,
+        newPassword: newpassword,
+        confPassword: confpassword
+    });
 });
 
 $('#series-button').click(function(){

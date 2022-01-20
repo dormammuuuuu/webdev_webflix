@@ -158,7 +158,7 @@ body {
     color: white;
 }
 
-#save-account-details, #save2 {
+#save-account-details, #save-password {
     background-color: #FF69B4;
     font-size: 15px;
     width: 150px;
@@ -170,7 +170,7 @@ body {
     margin: 0px 0px 0px 230px;
 }
 
-#save-account-details:hover, #save2:hover {
+#save-account-details:hover, #save-password:hover {
     background-color: #b14a7d;
     color: black;
 }
@@ -199,7 +199,7 @@ body {
     color: black;
 }
 
-#save-account-details:disabled, #save2:disabled{
+#save-account-details:disabled, #save-password:disabled{
   background-color: rgb(58, 58, 58);
   color: gray;
 

@@ -133,13 +133,13 @@
                             </div>
                             <div>
                                 <span class="input-labels"> First Name </span>
-                                <input type="text" id="first-name" class="input-boxes" name="firstname" value="<?php echo $account['firstName'] ?>" disabled>
+                                <input type="text" id="first-name" class="input-boxes account" name="firstname" value="<?php echo $account['firstName'] ?>" disabled>
                                 <span class="input-labels"> Last Name </span>
-                                <input type="text" id="last-name" class="input-boxes" name="lastname" value="<?php echo $account['lastName'] ?>" disabled>
+                                <input type="text" id="last-name" class="input-boxes account" name="lastname" value="<?php echo $account['lastName'] ?>" disabled>
                                 <span class="input-labels"> Username </span>
-                                <input type="text" id="user-name" class="input-boxes" name="username" value="<?php echo $account['userName'] ?>" disabled>
+                                <input type="text" id="user-name" class="input-boxes account" name="username" value="<?php echo $account['userName'] ?>" disabled>
                                 <span class="input-labels"> Current Password </span>
-                                <input id="ad-password" type="password" class="input-boxes" name="currentpassword" disabled>
+                                <input id="ad-password" type="password" class="input-boxes account" name="currentpassword" disabled>
                                 <div id="errorMsgDiv">
                                     <p id="errorMsg"></p>
                                 </div>
@@ -151,15 +151,15 @@
                     <section>
                         <h1>Change Password</h1>
                         <span class="input-labels"> Current Password </span>
-                        <input type="password" class="input-boxes" name="currentpassword" disabled>
+                        <input type="password" id="old-password" class="input-boxes password" name="currentpassword" disabled>
                         <span class="input-labels"> New Password </span>
-                        <input type="password" class="input-boxes" name="newpassword" disabled>
+                        <input type="password" id="new-password" class="input-boxes password" name="newpassword" disabled>
                         <span class="input-labels"> Confirm Password </span>
-                        <input type="password" class="input-boxes" name="confirmpassword" disabled>
+                        <input type="password" id="confirm-password" class="input-boxes password" name="confirmpassword" disabled>
                         <div id="errorMsgDiv">
                             <p id="errorMsg2"></p>
                         </div>
-                        <button id="save2" disabled> <strong> SAVE CHANGES </strong> </button>
+                        <button id="save-password" disabled> <strong> SAVE CHANGES </strong> </button>
                         <button type="button" id="editBtn2">EDIT ✏️ </button>
                     </section>
                     <section>
