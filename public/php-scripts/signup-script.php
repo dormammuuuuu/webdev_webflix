@@ -76,10 +76,7 @@
             }else{
                 
                 $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password')";
-
-                $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));
-                
-    
+                $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));    
                 if($cmd){
                    $firstName = $lastName = $email = $password = $username = "";
 
@@ -88,9 +85,6 @@
                    echo " Registration not Succcesful";
                 }
             }
-
-           
-
         }else{
             echo "all fields required!";
         }

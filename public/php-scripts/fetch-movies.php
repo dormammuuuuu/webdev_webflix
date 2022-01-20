@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <input type="checkbox" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" class="thumbnail-add-watchlist"'; if (!empty($fave_selected)){ echo $checked; } echo'>
-                    <label>.</label>
+                    <label></label>
                 </div>
             </div>
             '; 

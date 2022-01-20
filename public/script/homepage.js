@@ -1,5 +1,12 @@
 var searchClear = $('.search-clear');
- body_container.style.display = 'block';
+body_container.style.display = 'block';
+
+$(function () {
+    let clickButton = $('.swiper-button-next');
+    setInterval(function() {
+        clickButton.click();
+    }, 6000);
+});
 
 $('#searchBox').on('input', function(){
     searchClear.css('visibility', 'visible');

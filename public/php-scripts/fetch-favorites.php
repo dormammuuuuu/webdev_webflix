@@ -8,6 +8,7 @@
     $row = $movies->fetch_assoc();
     $checked = "checked";
     $type = "movie";
+    $counter = 0;
 
     if (!empty($row)){
 
@@ -17,6 +18,7 @@
             $fave = $conn->query($fave_query) or die ($conn->error);
             $fave_selected = $fave->fetch_assoc();
             if(!empty($fave_selected)){
+                $counter++;
                 echo'
                 <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" data-title="'.$row['movies_title'].'" id="movie'.$row['movies_id'].'">
                     <img class="thumbnail" src="'.$row['movies_thumbnail'].'">
@@ -30,7 +32,7 @@
                             </div>
                         </div>
                         <input type="checkbox" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" class="thumbnail-add-watchlist"'; if (!empty($fave_selected)){ echo $checked; } echo'>
-                        <label>.</label>
+                        <label></label>
                     </div>
                 </div>
             ';
@@ -50,6 +52,7 @@
                 $fave = $conn->query($fave_query) or die ($conn->error);
                 $fave_selected = $fave->fetch_assoc();
                 if (!empty($fave_selected)){
+                    $counter++;
                     echo'
                     <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-type="'.$type.'" data-title="'.$row['series_title'].'" id="movie'.$row['series_id'].'">
                         <img class="thumbnail" src="'.$row['series_thumbnail'].'">
@@ -63,13 +66,18 @@
                                 </div>
                             </div>
                             <input type="checkbox" data-movie="'.$row['series_id'].'" data-type="'.$type.'"  class="thumbnail-add-watchlist" '; if (!empty($fave_selected)){ echo $checked; } echo'>
-                            <label>.</label>
+                            <label></label>
                         </div>
                     </div>
                     '; 
                 }
             } while ($row = $series->fetch_assoc());
         }
+
+        if(!$counter){
+            echo '<p style="position:absolute; margin: auto; transform: translate(-50%, -50%);">There are no saved movies or series on your list.</p>';
+        }
+
         echo'
         <script>
             $(".thumbnail-container").click(function (e) { 

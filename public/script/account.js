@@ -118,16 +118,33 @@ function updateUserDetails() {
     });
 }
 */
-$('#upload').on('change', function(e) {
-    let file = [];
-    file = e.target.files;
-    let reader;
-    reader = new FileReader;
-    reader.onload = function() {
-        avatar.src = reader.result;
+$('#upload').on('click', function(e) {
+    if ($('#changeAvatarBtn').text() == 'SAVE CHANGES'){
+        e.preventDefault();
+        alert('EDI WOW');
+    } else {
+        let fd = new FormData();
+        let files = $('#upload')[0].files;
+
+        // Check file selected or not
+        if(files.length > 0 ){
+            fd.append('file',files[0]);
+
+            $('#update-notif').load('../php-scripts/upload.php',{
+                file: fd
+            })
+
+            // let file = [];
+            // file = e.target.files;
+            // let reader;
+            // reader = new FileReader;
+            // reader.onload = function() {
+            //     avatar.src = reader.result;
+            // }
+            // reader.readAsDataURL(file[0]);
+            $('#changeAvatarBtn').text('SAVE CHANGES');
+        }
     }
-    reader.readAsDataURL(file[0]);
-    $('#changeAvatarBtn').text('SAVE CHANGES');
 });
 
 $('#save-account-details').click(function (e) { 

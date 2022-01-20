@@ -548,6 +548,11 @@ nav{
 	color: #FF69B4; 
 }
 
+.main-list{
+	min-height: 70vh;
+	color: white;
+}
+
 /*Modal loader*/
 
   .loader {
@@ -608,8 +613,8 @@ input[type="checkbox"] + label {
  
 input[type="checkbox"] + label:before {
     content: "\1F5A4";
-    top: -11px;
-    left: -8px;
+    top: -8.9px;
+    left: -13.1px;
     border: 1px solid transparent;    
     padding: 10px;
     border-radius: 3px;
