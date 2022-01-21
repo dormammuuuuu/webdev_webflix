@@ -187,4 +187,8 @@ $('#favorite-button').click(function(){
     window.location.href = "home.php?load=favorite"
 })
 
+$('#soon-button').click(function(){
+    window.location.href = "home.php?load=coming-soon"
+})
+
 body_container.style.display = 'block';

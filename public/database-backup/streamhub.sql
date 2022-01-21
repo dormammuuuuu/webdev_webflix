@@ -136,6 +136,18 @@ INSERT INTO `user` (`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`
 
 -- --------------------------------------------------------
 
+CREATE TABLE `coming_soon` (
+  `coming_soon_id` int(11) NOT NULL,
+  `coming_soon_title` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_cast` varchar(53) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_category` varchar(31) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_rating` decimal(4,1) DEFAULT NULL,
+  `coming_soon_restriction` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_sypnosis` varchar(488) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_thumbnail` varchar(148) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_year` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_file` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Table structure for table `user_favorites`
 --
@@ -169,6 +181,9 @@ ALTER TABLE `movies`
 ALTER TABLE `series`
   ADD PRIMARY KEY (`series_id`);
 
+ALTER TABLE `coming_soon`
+  ADD PRIMARY KEY (`coming_soon_id`);
+
 --
 -- Indexes for table `user`
 --
@@ -184,6 +199,9 @@ ALTER TABLE `user`
 --
 ALTER TABLE `movies`
   MODIFY `movies_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+ALTER TABLE `coming_soon`
+  MODIFY `coming_soon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `series`

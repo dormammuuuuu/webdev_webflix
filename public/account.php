@@ -58,7 +58,7 @@
                     </a>
                     <span class="tooltip">My List</span>
                 </li>
-                <li>
+                <li id="soon-button">
                     <a href="#">
                         <i class='bx bxs-calendar-event'></i>
                         <span class="links_name">Coming Soon</span>

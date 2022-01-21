@@ -461,7 +461,7 @@ nav{
 	object-position: center;
 }
 
-#modal-play{
+#modal-play, #modal-soon{
 	margin-top: 1em;
 	padding: .6em .5em;
 	background: #FF69B4;
@@ -472,7 +472,8 @@ nav{
 	transition: ease .2s;
 }
 
-#modal-play:focus,#modal-play:hover{
+#modal-play:focus,#modal-play:hover
+#modal-soon:focus,#modal-soon:hover{ 
 	border: 2px solid #d63987;
 	background: #d63987;
 }

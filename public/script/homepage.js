@@ -91,3 +91,9 @@ $('#list-button').click(function (e) {
     $('.dropdown-container h1').text('Favorites');
     $('#list-movies').load('../php-scripts/fetch-favorites.php');
 });
+
+$('#soon-button').click(function (e) { 
+    $('#list-movies').empty();
+    $('.dropdown-container h1').text('Coming Soon');
+    $('#list-movies').load('../php-scripts/fetch-soon.php');
+});

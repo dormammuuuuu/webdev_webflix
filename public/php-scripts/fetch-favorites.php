@@ -20,7 +20,7 @@
             if(!empty($fave_selected)){
                 $counter++;
                 echo'
-                <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" data-title="'.$row['movies_title'].'" id="movie'.$row['movies_id'].'">
+                <div class="thumbnail-container '.$row['movies_category'].'" data-movie="'.$row['movies_id'].'" data-type="'.$type.'" data-title="'.$row['movies_title'].'">
                     <img class="thumbnail" src="'.$row['movies_thumbnail'].'">
                     <div class="thumbnail-description">
                         <div>
@@ -54,7 +54,7 @@
                 if (!empty($fave_selected)){
                     $counter++;
                     echo'
-                    <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-type="'.$type.'" data-title="'.$row['series_title'].'" id="movie'.$row['series_id'].'">
+                    <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-type="'.$type.'" data-title="'.$row['series_title'].'" >
                         <img class="thumbnail" src="'.$row['series_thumbnail'].'">
                         <div class="thumbnail-description">
                             <div>
@@ -72,6 +72,41 @@
                     '; 
                 }
             } while ($row = $series->fetch_assoc());
+        }
+
+        $sql = "SELECT * FROM `coming_soon`";
+        $comingSoon = $conn->query($sql) or die ($conn->error);
+        $row = $comingSoon->fetch_assoc();
+        $type = "coming-soon";
+
+        if (!empty($row)){
+
+            do{ 
+                $comingSoonID = $row['coming_soon_id'];
+                $fave_query = "SELECT * FROM user_favorites WHERE user_id = $uid AND ms_type = '$type' AND favorite_id = $comingSoonID";
+                $fave = $conn->query($fave_query) or die ($conn->error);
+                $fave_selected = $fave->fetch_assoc();
+                if (!empty($fave_selected)){
+                    $counter++;
+                    echo'
+                    <div class="thumbnail-container '.$row['coming_soon_category'].'" data-movie="'.$row['coming_soon_id'].'" data-type="'.$type.'" data-title="'.$row['coming_soon_title'].'" >
+                        <img class="thumbnail" src="'.$row['coming_soon_thumbnail'].'">
+                        <div class="thumbnail-description">
+                            <div>
+                                <p class="thumbnail-title">'.$row['coming_soon_title'].'</p>
+                                <p class="thumbnail-runtime-year">'.$row['coming_soon_year'].'</p>
+                                <div class="thumbnail-rating">
+                                    <span class="restriction">'.$row['coming_soon_restriction'].'
+                                    <p></p>
+                                </div>
+                            </div>
+                            <input type="checkbox" data-movie="'.$row['coming_soon_id'].'" data-type="'.$type.'"  class="thumbnail-add-watchlist" '; if (!empty($fave_selected)){ echo $checked; } echo'>
+                            <label></label>
+                        </div>
+                    </div>
+                    '; 
+                }
+            } while ($row = $comingSoon->fetch_assoc());
         }
 
         if(!$counter){

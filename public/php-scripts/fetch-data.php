@@ -5,8 +5,10 @@
     
     if ($fetch == "series"){
         $query = "SELECT * from series where series_id = $data";
-    } else {
+    } else if ($fetch == "movie"){
         $query = "SELECT * from movies where movies_id = $data";
+    } else {
+        $query = "SELECT * from coming_soon where coming_soon_id  = $data";
     }
     $run_query = mysqli_query($conn,$query);
     $row = mysqli_fetch_array($run_query);
@@ -21,7 +23,7 @@
         $category = $row['series_category'];
         $sypnosis = $row['series_sypnosis'];
         $stream_id = $row['series_id'];
-    } else {
+    } else if ($fetch == "movie") {
         $title = $row['movies_title'];
         $thumbnail = $row['movies_thumbnail'];
         $year = $row['movies_year'];
@@ -31,6 +33,16 @@
         $category = $row['movies_category'];
         $sypnosis = $row['movies_sypnosis'];
         $stream_id = $row['movies_id'];
+    } else {
+        $title = $row['coming_soon_title'];
+        $thumbnail = $row['coming_soon_thumbnail'];
+        $year = $row['coming_soon_year'];
+        $restriction = $row['coming_soon_restriction'];
+        $rating = "";
+        $cast = $row['coming_soon_cast'];
+        $category = $row['coming_soon_category'];
+        $sypnosis = $row['coming_soon_sypnosis'];
+        $stream_id = "#";
     }
 
     $count = mysqli_num_rows($run_query);
@@ -48,7 +60,12 @@
             <div class="modal-container">
                 <div class="modal-thumb-play">
                     <img id="modal-movie-thumbnail" src="'.$thumbnail.'"class="modal-thumbnail" alt="">
-                    <button id="modal-play">PLAY</button>
+                    '; if($fetch == "coming-soon"){ echo '
+                        <button id="modal-soon">SOON</button>';
+                        } else { 
+                        echo'
+                        <button id="modal-play">PLAY</button>';
+                        } echo'
                 </div>
                 <div class="modal-description">
                     <div>

@@ -51,7 +51,7 @@
                     </a>
                     <span class="tooltip">My List</span>
                 </li>
-                <li>
+                <li id="soon-button">
                     <a href="#">
                     <i class='bx bxs-calendar-event'></i>
                     <span class="links_name">Coming Soon</span>
@@ -217,6 +217,9 @@
                                     } else if ($load == "favorite"){
                                         include('php-scripts/fetch-favorites.php');
                                         echo '<script> $(".dropdown-container h1").text("Favorites") </script>';
+                                    } else if ($load == "coming-soon"){
+                                        include('php-scripts/fetch-soon.php');
+                                        echo '<script> $(".dropdown-container h1").text("Coming Soon") </script>';
                                     } else {
                                         include('php-scripts/fetch-movies.php');
                                         echo '<script> $(".dropdown-container h1").text("Movie List") </script>';
