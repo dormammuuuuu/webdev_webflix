@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 04:17 PM
+-- Generation Time: Jan 21, 2022 at 05:09 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -20,6 +20,42 @@ SET time_zone = "+00:00";
 --
 -- Database: `streamhub`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coming_soon`
+--
+
+CREATE TABLE `coming_soon` (
+  `coming_soon_id` int(11) NOT NULL,
+  `coming_soon_title` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_cast` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_category` varchar(31) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_restriction` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_sypnosis` varchar(488) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_thumbnail` varchar(148) CHARACTER SET utf8 DEFAULT NULL,
+  `coming_soon_year` varchar(4) CHARACTER SET utf8 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `coming_soon`
+--
+
+INSERT INTO `coming_soon` (`coming_soon_id`, `coming_soon_title`, `coming_soon_cast`, `coming_soon_category`, `coming_soon_restriction`, `coming_soon_sypnosis`, `coming_soon_thumbnail`, `coming_soon_year`) VALUES
+(1, 'The Lost City', 'Sandra Bullock, Channing Tatum, Daniel Radcliffe, Da\'Vine Joy Randolph', 'Action Adventure Comedy', 'PG-13', 'Reclusive author Loretta Sage writes about exotic places in her popular adventure novels that feature a \r\nhandsome cover model named Alan. While on tour promoting her new book with Alan, Loretta gets kidnapped by an eccentric \r\nbillionaire who hopes she can lead him to an ancient city\'s lost treasure from her latest story. Determined to prove he can \r\nbe a hero in real life and not just on the pages of her books, Alan sets off to rescue her.', 'assets/images/thumb/soon/MOV 1.jpg', '2022'),
+(2, 'Fantastic Beasts', 'Eddie Redmayne, Jude Law, Ezra Miller, Dan Fogler', 'Fiction', 'PG-13', 'Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is \r\nmoving to seize control of the wizarding world. Unable to stop him alone, he entrusts magizoologist \r\nNewt Scamander to lead an intrepid team of wizards and witches. They soon encounter an array of old \r\nand new beasts as they clash with Grindelwald\'s growing legion of followers.', 'assets/images/thumb/soon/MOV 2.png', '2022'),
+(3, 'Avatar 2', 'Zoe Saldana, Sam Worthington, Kate Winslet, Sigourney Weaver', 'Science-Fiction Action', 'PG-13', 'Jake Sully and Ney\'tiri have formed a family and are doing everything to stay \r\ntogether. However, they must leave their home and explore the regions of Pandora. When an \r\nancient threat resurfaces, Jake must fight a difficult war against the humans.', 'assets/images/thumb/soon/MOV 3.jpg', '2022'),
+(4, 'Sonic the Hedgehog 2', 'Jim Carrey, Idris Elba, Ben Schwartz, Colleen O\' Shaughnessy', 'Adventure Comedy', 'PG', 'After settling in Green Hills, Sonic is eager to prove that he has what \r\nit takes to be a true hero. His test comes when Dr. Robotnik returns with a new partner, \r\nKnuckles, in search of a mystical emerald that has the power to destroy civilizations. \r\nSonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting \r\njourney to find the emerald before it falls into the wrong hands.', 'assets/images/thumb/soon/MOV 4.jpg', '2022'),
+(5, 'Dr. Strange: Multive', 'Benidict Cumberbatch, Xochitl Gomez, Elizabeth Olsen', 'Horror Adventure Fiction', 'PG-13', 'o restore a world where everything is changing, Strange seeks help from his ally Wong (Benedict Wong), the Sorcerer Supreme, and the Avengers’ most powerful Scarlet Witch, Wanda (Elizabeth Olsen). But a terrible threat looms over humanity and the entire universe that no longer can be done by their power alone. Even more surprising, the greatest threat in the universe looks exactly like Doctor Strange \r\n', 'assets/images/thumb/soon/MOV 5.jpg', '2022'),
+(6, 'The Tomorrow War', 'Chris Pratt, Yvonne Strahovski, J.K. Simmons', 'Science-Fiction Action', 'PG-13', 'A family man is drafted to fight in a future war where the fate of humanity relies on his ability to confront the past. The world is stunned when a group of time travelers arrive from the year 2051 to deliver an urgent message: Thirty years in the future, mankind is losing a global war against a deadly alien species.', 'assets/images/thumb/soon/MOV 6.jpg', '2021'),
+(7, 'Snake Eyes', 'Henry Golding, Andrew Koji, Haruka Abe', 'Science-Fiction', 'PG-13', 'An ancient Japanese clan called the Arashikage welcomes tenacious loner Snake Eyes after he saves the life of their heir apparent. Upon arrival in Japan, the Arashikage teach him the ways of the ninja warrior while also providing him something he\'s been longing for: a home. However, when secrets from Snake Eyes\' past are revealed, his honor and allegiance get tested -- even if that means losing the trust of those closest to him.\r\n', 'assets/images/thumb/soon/MOV 7.jpg', '2021'),
+(8, 'The Accidental Narco', 'Ha Jung-Woo, Hwang Jng-min, Jo Woo-Jin, Yoo Yeon-seok, Park Hae-soo', 'Thriller Crime Drama', 'PG-18', 'Kang In-Gu (Ha Jung-Woo) begins his business in the South American country of Suriname. He is thrust into a situation, which he must cooperate with the South Korean NIS to catch Jeon Yo-Hwan (Hwang Jung-Min). He is known as a drug king, who runs his drug-smuggling operation out of Suriname.', 'assets/images/thumb/soon/SER 1.jpg', '2022'),
+(9, 'Money Heist (KR)', 'Yoo Ji Tae, Jeon Jong Seo, Park Hae Soo, Lee Won Jong, Kim Ji Hoon', 'Crime Thriller', 'PG-18', 'The series, being a remake of Spanish TV drama is following the storyline and characters of the original series. The writer has brought in cultural and language changes to plot to give it a fresh flavour. Yoo Ji-tae portraying as \'The Professor\', the strategist criminal mastermind, plans to pull off a heist in Korean Peninsula. The operation involves genius strategists and desperadoes with different characteristics and abilities, who have to face unusual situations.', 'assets/images/thumb/soon/SER 2.jpg', '2022'),
+(10, 'Forecasting Love and', 'Park Min-young, Song Kang, Yoon Park', 'Romance Drama', 'PG-18', 'About the paintings and love lives of folks who paintings on the Korea Meteorological Administration, Korea’s country wide climate forecast provider.', 'assets/images/thumb/soon/SER 3.png', '2022'),
+(11, 'Glitch', 'Jeon Yeo-bin, Nana, Lee Dong-Hwi', 'Thriller Comedy Science-Fiction', 'PG-18', 'ong Ji-Hyo’s (Jeon Yeo-Bin) boyfriend disappears with an unidentified light. Since then, Hong Ji-Hyo traces her boyfriend’s whereabouts. With the help of a UFO club members, she approaches a mysterious secret.', 'assets/images/thumb/soon/SER 4.png', '2022'),
+(12, 'Juvenile Justice', 'Kim Hye-soo, Kim Mu-yeol, Lee Sung-min', 'Drama', 'PG-18', 'As crimes committed by minors get more violent and cruel, the offenders usually escape any serious types of punishment.\r\n\r\nSim Eun-Seok (Kim Hye-Soo) is an elite judge with a personality that seems unfriendly to others. She hates juvenile criminals. Sim Eun-Seok gets assigned to a local juvenile court. There, she breaks custom and administers her own ways of punishing the offenders.', 'assets/images/thumb/soon/SER 5.jpg', '2022'),
+(13, 'Fish Bowl Wives', 'Ryoko Shinohara - Sakura Hiraga\r\nTakanori Iwata, Haruto Toyota, Masanobu Ando', 'Romance Drama', 'PG-18', 'Due to an accident, Sakura Hiraga (Ryoko Shinohara) gave up on her dream. She is now married and her husband runs a hair salon. They live in a luxurious penthouse apartment. Her life seems glamorous and she is envied by everyone. What everyone does not know is that Sakura Hiraga is abused physically and verbally by her husband. She is unable to leave her situation. Sakura Hiraga considers herself a goldfish in a fishbowl. One day, due to a goldfish, she meets a man.', 'assets/images/thumb/soon/SER 7.jpg', '2022');
 
 -- --------------------------------------------------------
 
@@ -136,18 +172,6 @@ INSERT INTO `user` (`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`
 
 -- --------------------------------------------------------
 
-CREATE TABLE `coming_soon` (
-  `coming_soon_id` int(11) NOT NULL,
-  `coming_soon_title` varchar(20) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_cast` varchar(53) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_category` varchar(31) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_rating` decimal(4,1) DEFAULT NULL,
-  `coming_soon_restriction` varchar(10) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_sypnosis` varchar(488) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_thumbnail` varchar(148) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_year` varchar(4) CHARACTER SET utf8 DEFAULT NULL,
-  `coming_soon_file` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 --
 -- Table structure for table `user_favorites`
 --
@@ -163,11 +187,20 @@ CREATE TABLE `user_favorites` (
 --
 
 INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
-(1, 1, 'series');
+(1, 1, 'series'),
+(1, 3, 'movie'),
+(1, 7, 'coming-soon'),
+(1, 2, 'coming-soon');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `coming_soon`
+--
+ALTER TABLE `coming_soon`
+  ADD PRIMARY KEY (`coming_soon_id`);
 
 --
 -- Indexes for table `movies`
@@ -181,9 +214,6 @@ ALTER TABLE `movies`
 ALTER TABLE `series`
   ADD PRIMARY KEY (`series_id`);
 
-ALTER TABLE `coming_soon`
-  ADD PRIMARY KEY (`coming_soon_id`);
-
 --
 -- Indexes for table `user`
 --
@@ -195,13 +225,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `coming_soon`
+--
+ALTER TABLE `coming_soon`
+  MODIFY `coming_soon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
   MODIFY `movies_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
-ALTER TABLE `coming_soon`
-  MODIFY `coming_soon_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `series`
