@@ -43,7 +43,7 @@
                 let str = $(this).attr("data-movie");
                 $("#displayData").load("../php-scripts/fetch-data.php",{
                     data: str,
-                    fetch: "movies"
+                    fetch: "movie"
                 });
             });
 

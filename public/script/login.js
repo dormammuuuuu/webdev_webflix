@@ -1,4 +1,4 @@
-login.onclick = () => {
+/*login.onclick = () => {
     var inputFields = document.getElementsByClassName("user-input");
 
     var emptyFields = false;
@@ -36,4 +36,4 @@ login.onclick = () => {
             inputFields[1].style.borderBottom = "2.5px solid #EE3E3E";
         })
     }
-}
+}*/

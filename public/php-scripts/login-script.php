@@ -5,7 +5,7 @@
     if(ISSET($_SESSION['id'])){
       header("location:home.php");
     }
-
+    $message;
     if(isset($_POST['submit'])){
         if(!empty($_POST['email']) && !empty($_POST['password'])){
 
@@ -22,28 +22,30 @@
                 $_SESSION['id'] = $row['id'];
                 header("location:home.php");
             }else{
-               echo '
-               <div id="toast-id">
-                  <div class="toast">
-                    <div class="toast-container">
-                      <div class="toast-content">
-                        <div class="toast-icon">
-                          <i class="fas fa-exclamation"></i>
-                        </div>
-                        <p class="toast-message">The username or password you’ve entered is incorrect</p>
-                      </div>
-                      <div class="toast-dismiss">
-                        <i class="fas fa-times"></i>
-                      </div>
-                    </div>
-                    <div id="toast-progress"></div>
-                  </div>
-                </div>
-               ';
+              $message = "The username or password you've entered is incorrect.";
+               
             }
 
         }else{
-            echo "all fields required!";
+            $message = "All fields required.";
         }
+        echo '
+          <div id="toast-id">
+            <div class="toast">
+              <div class="toast-container">
+                <div class="toast-content">
+                  <div class="toast-icon">
+                    <i class="fas fa-exclamation"></i>
+                  </div>
+                  <p class="toast-message">'.$message.'</p>
+                </div>
+                <div class="toast-dismiss">
+                  <i class="fas fa-times"></i>
+                </div>
+              </div>
+              <div id="toast-progress"></div>
+            </div>
+          </div>
+          ';
     }
 ?>
