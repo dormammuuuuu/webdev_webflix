@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 05:09 PM
+-- Generation Time: Jan 24, 2022 at 06:31 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -149,6 +149,27 @@ INSERT INTO `series` (`series_id`, `series_cast`, `series_category`, `series_rat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `series_files`
+--
+
+CREATE TABLE `series_files` (
+  `series_id` int(11) NOT NULL,
+  `season` int(11) NOT NULL,
+  `episode_file` varchar(255) NOT NULL,
+  `episode` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `series_files`
+--
+
+INSERT INTO `series_files` (`series_id`, `season`, `episode_file`, `episode`) VALUES
+(1, 1, 'assets/series/Daredevil/S1/E1 - Daredevil.mp4', 1),
+(1, 1, 'assets/series/Daredevil/S1/E2 - Daredevil.mp4', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -187,10 +208,10 @@ CREATE TABLE `user_favorites` (
 --
 
 INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
-(1, 1, 'series'),
 (1, 3, 'movie'),
 (1, 7, 'coming-soon'),
-(1, 2, 'coming-soon');
+(1, 2, 'coming-soon'),
+(1, 1, 'series');
 
 --
 -- Indexes for dumped tables

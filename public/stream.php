@@ -6,10 +6,24 @@
         header("location:index.html");
     }
     $movieID = $_GET['watch'];
+    $episode = @$_GET['id'] ?: "";
 
-    $query = "SELECT * FROM movies where movies_id = $movieID";
+    if ($episode){
+        $query = "SELECT * FROM series_files where series_id = $episode and episode = $movieID";
+        $sql = "SELECT series_title as title FROM series where series_id = $episode";
+        $sqlQuery = mysqli_query($conn,$sql);
+        $data = $sqlQuery -> fetch_assoc();
+        $title = $data['title'];
+    } else {
+        $query = "SELECT * FROM movies where movies_id = $movieID";
+    }
     $sql = mysqli_query($conn,$query);
     $details = mysqli_fetch_array($sql);
+    if ($episode){
+        $play = $details['episode_file'];
+    } else {
+        $play = $details['movies_file'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,18 +32,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $details['movies_title']." | StreamHub"; ?></title>
+    <title><?php echo $title . " : E" . $movieID. " | StreamHub"; ?></title>
     <link rel="stylesheet" href="styles/stream.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>  
 </head>
 <body>
     <div id="upper-container">
         <span id="back-arrow"><i class='bx bx-left-arrow-alt'></i></span>
-        <h1><?php echo $details['movies_title'] ?></h1>
+        <h1><?php echo $title . " : E" . $movieID ?></h1>
     </div>
     <div id="movie-player">
         <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">
-                <source src="<?php echo $details['movies_file']?>" type="video/mp4">
+                <source src="<?php echo $play?>" type="video/mp4">
                 FILE NOT FOUND.
         </video>
     </div>

@@ -443,10 +443,57 @@ nav{
 	min-height: 55vh;
 	padding: 2em 1em;
 	background: rgb(27, 27, 27);
+	color: white;
+}
+
+.season-button{
+	cursor: pointer;
+	margin: auto;
+	background: transparent;
+	padding: 10px 20px;
+	color: rgba(255, 255, 255, 0.6);
+	border: none;
+	border-bottom: 1px solid transparent;
+}
+
+.season-button-container{
+	margin: auto;
+	text-align: center;
+}
+
+.season-button.active{
+	color: white;
+	border-bottom: 1px solid #FF69B4;
+}
+
+.episode-list{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
+}
+
+.episode-list:hover{
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.episode-play{
+	padding: 5px 10px;
+	background: #FF69B4;
+	color: black;
+	border: none;
+}
+
+.episode-play:hover{
+	background: #d63987;
+	color: white;
+}
+
+.modal-container .modal-main{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	color: white;
 }
 
 .modal-thumb-play{
@@ -530,6 +577,7 @@ nav{
 	border: 2px solid #FF69B4;
 	font-weight: 600;
 	transition: ease .3s;
+	margin: 20px 0;
 }
 
 .watchlist-button button:hover{

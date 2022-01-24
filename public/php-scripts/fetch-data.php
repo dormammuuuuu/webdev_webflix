@@ -57,44 +57,81 @@
                     <div class="loader three"></div>
                 </div>
             </div>
-            <div class="modal-container">
-                <div class="modal-thumb-play">
-                    <img id="modal-movie-thumbnail" src="'.$thumbnail.'"class="modal-thumbnail" alt="">
-                    '; if($fetch == "coming-soon"){ echo '
-                        <button id="modal-soon">SOON</button>';
-                        } else { 
-                        echo'
-                        <button id="modal-play">PLAY</button>';
-                        } echo'
-                </div>
-                <div class="modal-description">
-                    <div>
-                        <h1 id="modal-title">'.$title.'</h1>
-                        <div class="modal-line"></div>
-                        <div class="modal-extra-description">
-                            <p id="modal-year">'.$year.'</p>
-                            <p id="modal-restriction">'.$restriction.'</p>
-                            <p id="modal-runtime">1h 2m</p>
-                            <p><i class="fas fa-star thumbnail-star"></i> <span id="modal-rating">'.$rating.'</span></p>
-                        </div>
-                        <div class="modal-cast">
-                            <p>Cast: <span id="modal-cast" class="modal-cast-inner">'.$cast.'</span></p>
-                        </div>
-                        <div class="modal-genre">
-                            <p>Genre: <span id="modal-genre" class="modal-genre-inner">'.$category.'</span></p>
-                        </div>
-                        <div class="modal-sypnosis">
-                            <p><span id="modal-sypnosis" class="modal-sypnosis-inner">'.$sypnosis.'</span></p>
-                        </div>
+            <div class="modal-container" '; if($fetch == "series"){ echo'style="height: 100vh"';} echo'>
+                <div class="modal-main">
+                    <div class="modal-thumb-play">
+                        <img id="modal-movie-thumbnail" src="'.$thumbnail.'"class="modal-thumbnail" alt="">
+                        '; if($fetch == "coming-soon"){ 
+                                echo '
+                                    <button id="modal-soon">SOON</button>';
+                            } else if ($fetch == "movie") { 
+                                echo'
+                                    <button id="modal-play">PLAY</button>';
+                            } echo'
                     </div>
-                    <div id="modal-list-container" class="watchlist-button">
-                        <button id="add-to-watchlist">+ My List</button>
+                    <div class="modal-description">
+                        <div>
+                            <h1 id="modal-title">'.$title.'</h1>
+                            <div class="modal-line"></div>
+                            <div class="modal-extra-description">
+                                <p id="modal-year">'.$year.'</p>
+                                <p id="modal-restriction">'.$restriction.'</p>
+                                <p id="modal-runtime">1h 2m</p>
+                                <p><i class="fas fa-star thumbnail-star"></i> <span id="modal-rating">'.$rating.'</span></p>
+                            </div>
+                            <div class="modal-cast">
+                                <p>Cast: <span id="modal-cast" class="modal-cast-inner">'.$cast.'</span></p>
+                            </div>
+                            <div class="modal-genre">
+                                <p>Genre: <span id="modal-genre" class="modal-genre-inner">'.$category.'</span></p>
+                            </div>
+                            <div class="modal-sypnosis">
+                                <p><span id="modal-sypnosis" class="modal-sypnosis-inner">'.$sypnosis.'</span></p>
+                            </div>
+                        </div>
+                        <div id="modal-list-container" class="watchlist-button">
+                            <button id="add-to-watchlist">+ My List</button>
+                        </div>
+                        
+                        <span id="modal-close"><i class="bx bx-x"></i></span>
                     </div>
-                    <span id="modal-close"><i class="bx bx-x"></i></span>
-                </div>
+                </div>';
+                if($fetch == "series"){
+                    $sql = "SELECT MAX(season) as max_season FROM series_files WHERE series_id = $stream_id";
+                    $query = mysqli_query($conn, $sql) or die($conn);
+                    $data = $query->fetch_assoc();
+                    $season = (int) $data['max_season'];
+                    echo'<div>
+                            <div class="season-button-container">
+                                ';
+                                for ($i=0; $i < $season; $i++) { 
+                                    echo '<button value="'.$i + 1 .'" data-series="'.$stream_id.'" class="season-button'; if ($i == 0) {echo' active';} echo'">Season '. $i + 1 . '</button>';
+                                }
+                                echo'
+                            </div>
+                            <div id="season-container">
+                            '; include('../php-scripts/display-series-episodes.php');  
+                            
+                            echo'
+                            </div>
+                        </div>';
+                }
+                echo'
             </div>
         </div>
         <script>
+            $(".season-button").click(function(){
+                $("#season-container").empty();
+                let seriesID = $(this).attr("data-series");
+                let season = $(this).val();
+                $(".season-button").removeClass("active");
+                $(this).addClass("active");
+                $("#season-container").load("../php-scripts/display-series-episodes.php",{
+                    seriesID: seriesID,
+                    season: season
+                });
+            });
+
             $("#modal-close").on("click", function() {
                 let modalPreview = $(".modal-preview");
                 modalPreview.fadeOut();
