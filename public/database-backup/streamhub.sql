@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2022 at 06:31 PM
+-- Generation Time: Jan 26, 2022 at 01:20 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -156,16 +156,80 @@ CREATE TABLE `series_files` (
   `series_id` int(11) NOT NULL,
   `season` int(11) NOT NULL,
   `episode_file` varchar(255) NOT NULL,
-  `episode` int(11) NOT NULL
+  `episode` int(11) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `series_files`
 --
 
-INSERT INTO `series_files` (`series_id`, `season`, `episode_file`, `episode`) VALUES
-(1, 1, 'assets/series/Daredevil/S1/E1 - Daredevil.mp4', 1),
-(1, 1, 'assets/series/Daredevil/S1/E2 - Daredevil.mp4', 2);
+INSERT INTO `series_files` (`series_id`, `season`, `episode_file`, `episode`, `id`) VALUES
+(1, 1, 'assets/series/Daredevil/S1/E1 - Daredevil.mp4', 1, 1),
+(1, 1, 'assets/series/Daredevil/S1/E2 - Daredevil.mp4', 2, 2),
+(2, 1, 'assets/series/The Flash/S1/E1 - Flash.mp4', 1, 3),
+(2, 1, 'assets/series/The Flash/S1/E2 - Flash.mp4', 2, 4),
+(2, 2, 'assets/series/The Flash/S2/E1 - Flash.mp4', 1, 5),
+(2, 2, 'assets/series/The Flash/S2/E2 - Flash.mp4', 2, 6),
+(2, 3, 'assets/series/The Flash/S3/E1 - Flash.mp4', 1, 7),
+(2, 3, 'assets/series/The Flash/S3/E2 - Flash.mp4', 2, 8),
+(2, 3, 'assets/series/The Flash/S3/E3 - Flash.mp4', 3, 9),
+(4, 1, 'assets/series/Breaking Bad/S1/E1 - Breaking Bad.mp4', 1, 10),
+(4, 1, 'assets/series/Breaking Bad/S1/E2 - Breaking Bad.mp4', 2, 11),
+(4, 2, 'assets/series/Breaking Bad/S2/E1 - Breaking Bad.mp4', 1, 12),
+(4, 2, 'assets/series/Breaking Bad/S2/E2 - Breaking Bad.mp4', 2, 13),
+(4, 2, 'assets/series/Breaking Bad/S2/E3 - Breaking Bad.mp4', 3, 14),
+(6, 1, 'assets/series/Friends/S1/E1 - Friends.mp4', 1, 15),
+(6, 1, 'assets/series/Friends/S1/E2 - Friends.mp4', 2, 16),
+(6, 1, 'assets/series/Friends/S1/E3 - Friends.mp4', 3, 17),
+(6, 2, 'assets/series/Friends/S2/E1 - Friends.mp4', 1, 18),
+(6, 2, 'assets/series/Friends/S2/E2 - Friends.mp4', 2, 19),
+(6, 2, 'assets/series/Friends/S2/E3 - Friends.mp4', 3, 20),
+(6, 2, 'assets/series/Friends/S2/E4 - Friends.mp4', 4, 21),
+(6, 3, 'assets/series/Friends/S3/E1 - Friends.mp4', 1, 22),
+(6, 3, 'assets/series/Friends/S3/E2 - Friends.mp4', 2, 23),
+(6, 3, 'assets/series/Friends/S3/E3 - Friends.mp4', 3, 24),
+(6, 4, 'assets/series/Friends/S4/E1 - Friends.mp4', 1, 25),
+(6, 4, 'assets/series/Friends/S4/E2 - Friends.mp4', 2, 26),
+(6, 4, 'assets/series/Friends/S4/E3 - Friends.mp4', 3, 27),
+(6, 4, 'assets/series/Friends/S4/E4 - Friends.mp4', 4, 28),
+(6, 4, 'assets/series/Friends/S4/E5 - Friends.mp4', 5, 29),
+(6, 5, 'assets/series/Friends/S5/E1 - Friends.mp4', 1, 30),
+(6, 5, 'assets/series/Friends/S5/E2 - Friends.mp4', 2, 31),
+(6, 5, 'assets/series/Friends/S5/E3 - Friends.mp4', 3, 32),
+(6, 5, 'assets/series/Friends/S5/E4 - Friends.mp4', 4, 33),
+(7, 1, 'assets/series/Parks and Recreation/S1/E1 - Parks and Recreation.mp4', 1, 34),
+(7, 1, 'assets/series/Parks and Recreation/S1/E2 - Parks and Recreation.mp4', 2, 35),
+(7, 1, 'assets/series/Parks and Recreation/S1/E3 - Parks and Recreation.mp4', 3, 36),
+(7, 2, 'assets/series/Parks and Recreation/S2/E1 - Parks and Recreation.mp4', 1, 37),
+(7, 2, 'assets/series/Parks and Recreation/S2/E2 - Parks and Recreation.mp4', 2, 38),
+(7, 3, 'assets/series/Parks and Recreation/S3/E1 - Parks and Recreation.mp4', 1, 39),
+(7, 3, 'assets/series/Parks and Recreation/S3/E2 - Parks and Recreation.mp4', 2, 40),
+(7, 3, 'assets/series/Parks and Recreation/S3/E3 - Parks and Recreation.mp4', 3, 41),
+(10, 1, 'assets/series/Hometown Cha-Cha/S1/E1 - Hometown Cha-Cha.mp4', 1, 42),
+(10, 1, 'assets/series/Hometown Cha-Cha/S1/E2 - Hometown Cha-Cha.mp4', 2, 43),
+(10, 1, 'assets/series/Hometown Cha-Cha/S1/E3 - Hometown Cha-Cha.mp4', 3, 44),
+(11, 1, 'assets/series/Itaewon Class/S1/E1 - Itaewon Class.mp4', 1, 45),
+(11, 1, 'assets/series/Itaewon Class/S1/E2 - Itaewon Class.mp4', 2, 46),
+(11, 1, 'assets/series/Itaewon Class/S1/E3 - Itaewon Class.mp4', 3, 47),
+(12, 1, 'assets/series/Nevertheless/S1/E1 - Nevertheless.mp4', 1, 48),
+(12, 1, 'assets/series/Nevertheless/S1/E2 - Nevertheless.mp4', 2, 49),
+(12, 1, 'assets/series/Nevertheless/S1/E3 - Nevertheless.mp4', 3, 50),
+(13, 1, 'assets/series/The Silent Sea/S1/E1 - The Silent Sea.mp4', 1, 51),
+(13, 1, 'assets/series/The Silent Sea/S1/E2 - The Silent Sea.mp4', 2, 52),
+(13, 1, 'assets/series/The Silent Sea/S1/E3 - The Silent Sea.mp4', 3, 53),
+(14, 1, 'assets/series/Sisyphus/S1/E1 - Sisyphus.mp4', 1, 54),
+(14, 1, 'assets/series/Sisyphus/S1/E2 - Sisyphus.mp4', 2, 55),
+(14, 1, 'assets/series/Sisyphus/S1/E2 - Sisyphus.mp4', 3, 56),
+(15, 1, 'assets/series/Squid Game/S1/E1 - Daredevil.mp4', 1, 57),
+(15, 1, 'assets/series/Squid Game/S1/E2 - Daredevil.mp4', 2, 58),
+(15, 1, 'assets/series/Squid Game/S1/E3 - Daredevil.mp4', 3, 59),
+(16, 1, 'assets/series/START-UP/S1/E1 - START-UP.mp4', 1, 60),
+(16, 1, 'assets/series/START-UP/S1/E2 - START-UP.mp4', 2, 61),
+(16, 1, 'assets/series/START-UP/S1/E3 - START-UP.mp4', 3, 62),
+(17, 1, 'assets/series/Vincenzo/S1/E1 - Vincenzo.mp4', 1, 63),
+(17, 1, 'assets/series/Vincenzo/S1/E2 - Vincenzo.mp4', 2, 64),
+(17, 1, 'assets/series/Vincenzo/S1/E3 - Vincenzo.mp4', 3, 65);
 
 -- --------------------------------------------------------
 
@@ -211,7 +275,8 @@ INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
 (1, 3, 'movie'),
 (1, 7, 'coming-soon'),
 (1, 2, 'coming-soon'),
-(1, 1, 'series');
+(1, 1, 'series'),
+(1, 2, 'series');
 
 --
 -- Indexes for dumped tables
@@ -234,6 +299,12 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `series`
   ADD PRIMARY KEY (`series_id`);
+
+--
+-- Indexes for table `series_files`
+--
+ALTER TABLE `series_files`
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `user`
@@ -262,6 +333,12 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `series`
   MODIFY `series_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `series_files`
+--
+ALTER TABLE `series_files`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `user`

@@ -139,7 +139,7 @@
             })
             
             $("#modal-play").click(function() {
-                window.location.href = "stream.php?watch='.$stream_id.'";
+                window.open("stream.php?watch='.$stream_id.'", "_blank");
             })
 
             $("#add-to-watchlist").click(function(){

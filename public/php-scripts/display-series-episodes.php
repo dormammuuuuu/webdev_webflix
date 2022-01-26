@@ -22,7 +22,7 @@
     <script>
         $(".episode-list").click(function(){
             let play = $(this).attr("data-value");
-            window.location.href = "stream.php?watch=" + play + "&id='. $seriesID .'";
+            window.location.href = "stream.php?watch=" + play + "&id='. $seriesID .'&season='.$season.'";
         })
     </script>    
     ';

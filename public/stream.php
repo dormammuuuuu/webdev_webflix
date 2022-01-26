@@ -7,15 +7,20 @@
     }
     $movieID = $_GET['watch'];
     $episode = @$_GET['id'] ?: "";
+    $season = @$_GET['season'] ?: 1;
 
     if ($episode){
-        $query = "SELECT * FROM series_files where series_id = $episode and episode = $movieID";
+        $query = "SELECT * FROM series_files where series_id = $episode and episode = $movieID and season = $season";
         $sql = "SELECT series_title as title FROM series where series_id = $episode";
         $sqlQuery = mysqli_query($conn,$sql);
         $data = $sqlQuery -> fetch_assoc();
-        $title = $data['title'];
+        $title = $data['title'] . " : E" . $movieID;
     } else {
         $query = "SELECT * FROM movies where movies_id = $movieID";
+        $sql = "SELECT movies_title as title FROM movies where movies_id = $movieID";
+        $sqlQuery = mysqli_query($conn,$sql);
+        $data = $sqlQuery -> fetch_assoc();
+        $title = $data['title'];
     }
     $sql = mysqli_query($conn,$query);
     $details = mysqli_fetch_array($sql);
@@ -32,14 +37,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title . " : E" . $movieID. " | StreamHub"; ?></title>
+    <title><?php echo $title . " | StreamHub"; ?></title>
     <link rel="stylesheet" href="styles/stream.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>  
 </head>
 <body>
     <div id="upper-container">
         <span id="back-arrow"><i class='bx bx-left-arrow-alt'></i></span>
-        <h1><?php echo $title . " : E" . $movieID ?></h1>
+        <h1><?php echo $title ?></h1>
     </div>
     <div id="movie-player">
         <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">
