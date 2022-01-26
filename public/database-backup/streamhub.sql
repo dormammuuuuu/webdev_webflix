@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2022 at 01:20 PM
+-- Generation Time: Jan 26, 2022 at 06:03 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -229,7 +229,39 @@ INSERT INTO `series_files` (`series_id`, `season`, `episode_file`, `episode`, `i
 (16, 1, 'assets/series/START-UP/S1/E3 - START-UP.mp4', 3, 62),
 (17, 1, 'assets/series/Vincenzo/S1/E1 - Vincenzo.mp4', 1, 63),
 (17, 1, 'assets/series/Vincenzo/S1/E2 - Vincenzo.mp4', 2, 64),
-(17, 1, 'assets/series/Vincenzo/S1/E3 - Vincenzo.mp4', 3, 65);
+(17, 1, 'assets/series/Vincenzo/S1/E3 - Vincenzo.mp4', 3, 65),
+(9, 1, 'assets/series/Alice in Borderland/S1/E1 - Alice in Borderland.mp4', 1, 66),
+(9, 1, 'assets/series/Alice in Borderland/S1/E2 - Alice in Borderland.mp4', 2, 67),
+(9, 1, 'assets/series/Alice in Borderland/S1/E3 - Alice in Borderland.mp4', 3, 68),
+(5, 1, 'assets/series/Friends/S1/E1 - Friends.mp4', 1, 69),
+(5, 1, 'assets/series/Friends/S1/E2 - Friends.mp4', 2, 70),
+(5, 1, 'assets/series/Friends/S1/E3 - Friends.mp4', 3, 71),
+(5, 2, 'assets/series/Friends/S2/E1 - Friends.mp4', 1, 72),
+(5, 2, 'assets/series/Friends/S2/E2 - Friends.mp4', 2, 73),
+(5, 2, 'assets/series/Friends/S2/E3 - Friends.mp4', 3, 74),
+(5, 2, 'assets/series/Friends/S2/E4 - Friends.mp4', 4, 75),
+(5, 3, 'assets/series/Friends/S3/E1 - Friends.mp4', 1, 76),
+(5, 3, 'assets/series/Friends/S3/E2 - Friends.mp4', 2, 77),
+(5, 3, 'assets/series/Friends/S3/E3 - Friends.mp4', 3, 78),
+(5, 4, 'assets/series/Friends/S4/E1 - Friends.mp4', 1, 79),
+(5, 4, 'assets/series/Friends/S4/E2 - Friends.mp4', 2, 80),
+(5, 4, 'assets/series/Friends/S4/E3 - Friends.mp4', 3, 81),
+(5, 4, 'assets/series/Friends/S4/E4 - Friends.mp4', 4, 82),
+(5, 4, 'assets/series/Friends/S4/E5 - Friends.mp4', 5, 83),
+(5, 5, 'assets/series/Friends/S5/E1 - Friends.mp4', 1, 84),
+(5, 5, 'assets/series/Friends/S5/E2 - Friends.mp4', 2, 85),
+(5, 5, 'assets/series/Friends/S5/E3 - Friends.mp4', 3, 86),
+(5, 5, 'assets/series/Friends/S5/E4 - Friends.mp4', 4, 87),
+(8, 1, 'assets/series/Iron Fist/S1/E1 - Iron Fist.mp4', 1, 88),
+(8, 1, 'assets/series/Iron Fist/S1/E2 - Iron Fist.mp4', 2, 89),
+(8, 1, 'assets/series/Iron Fist/S1/E3 - Iron Fist.mp4', 3, 90),
+(8, 1, 'assets/series/Iron Fist/S1/E4 - Iron Fist.mp4', 4, 91),
+(3, 1, 'assets/series/Sherlock Holmes/S1/E1 - Sherlock Holmes.mp4', 1, 92),
+(3, 1, 'assets/series/Sherlock Holmes/S1/E2 - Sherlock Holmes.mp4', 2, 93),
+(3, 1, 'assets/series/Sherlock Holmes/S1/E3 - Sherlock Holmes.mp4', 3, 94),
+(3, 2, 'assets/series/Sherlock Holmes/S2/E1 - Sherlock Holmes.mp4', 1, 95),
+(3, 2, 'assets/series/Sherlock Holmes/S2/E2 - Sherlock Holmes.mp4', 2, 96),
+(3, 2, 'assets/series/Sherlock Holmes/S2/E3 - Sherlock Holmes.mp4', 3, 97);
 
 -- --------------------------------------------------------
 
@@ -274,9 +306,9 @@ CREATE TABLE `user_favorites` (
 INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
 (1, 3, 'movie'),
 (1, 7, 'coming-soon'),
-(1, 2, 'coming-soon'),
 (1, 1, 'series'),
-(1, 2, 'series');
+(1, 2, 'series'),
+(1, 16, 'series');
 
 --
 -- Indexes for dumped tables
@@ -338,7 +370,7 @@ ALTER TABLE `series`
 -- AUTO_INCREMENT for table `series_files`
 --
 ALTER TABLE `series_files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `user`
