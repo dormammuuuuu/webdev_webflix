@@ -247,9 +247,17 @@ input:focus {
   width: 100%;
 }
 
+nav{
+	display: none;
+}
+
 @media (max-width: 500px) {
   .account-details{
     align-items: center;
+  }
+
+  nav{
+    display: flex;
   }
   
   .input-boxes{
