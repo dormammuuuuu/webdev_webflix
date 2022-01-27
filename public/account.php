@@ -106,8 +106,6 @@
             <div class="tabs">
                 <input type="radio" id="tab1" name="tab-control" checked>
                 <input type="radio" id="tab2" name="tab-control">
-                <input type="radio" id="tab3" name="tab-control">
-                <input type="radio" id="tab4" name="tab-control">
                 <ul>
                     <li title="Account Details">
                         <label for="tab1" role="button">
@@ -154,19 +152,21 @@
                         </div>
                     </section>
                     <section>
-                        <h1>Change Password</h1>
-                        <span class="input-labels"> Current Password </span>
-                        <input type="password" id="old-password" class="input-boxes password" name="currentpassword" disabled>
-                        <span class="input-labels"> New Password </span>
-                        <input type="password" id="new-password" class="input-boxes password" name="newpassword" disabled>
-                        <span class="input-labels"> Confirm Password </span>
-                        <input type="password" id="confirm-password" class="input-boxes password" name="confirmpassword" disabled>
-                        <div id="errorMsgDiv">
-                            <p id="errorMsg2"></p>
-                        </div>
-                        <div class="edit-button-container">
-                            <button type="button" id="editBtn2">EDIT ✏️ </button>
-                            <button id="save-password" disabled> <strong> SAVE CHANGES </strong> </button>
+                        <div class="account-security-container">
+                            <h1>Change Password</h1>
+                            <span class="input-labels"> Current Password </span>
+                            <input type="password" id="old-password" class="input-boxes password" name="currentpassword" disabled>
+                            <span class="input-labels"> New Password </span>
+                            <input type="password" id="new-password" class="input-boxes password" name="newpassword" disabled>
+                            <span class="input-labels"> Confirm Password </span>
+                            <input type="password" id="confirm-password" class="input-boxes password" name="confirmpassword" disabled>
+                            <div id="errorMsgDiv">
+                                <p id="errorMsg2"></p>
+                            </div>
+                            <div class="edit-button-container">
+                                <button type="button" id="editBtn2">EDIT ✏️ </button>
+                                <button id="save-password" disabled> <strong> SAVE CHANGES </strong> </button>
+                            </div>
                         </div>
                     </section>
                 </div>
