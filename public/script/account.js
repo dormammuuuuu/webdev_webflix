@@ -179,15 +179,15 @@ $('#save-password').click(function (e) {
     });
 });
 
-$('#series-button').click(function(){
+$('.series-button').click(function(){
     window.location.href = "home.php?load=series"
 })
 
-$('#favorite-button').click(function(){
+$('.favorite-button').click(function(){
     window.location.href = "home.php?load=favorite"
 })
 
-$('#soon-button').click(function(){
+$('.soon-button').click(function(){
     window.location.href = "home.php?load=coming-soon"
 })
 

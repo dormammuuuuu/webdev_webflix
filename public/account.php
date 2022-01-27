@@ -44,21 +44,21 @@
                     </a>
                     <span class="tooltip">Movies</span>
                 </li>
-                <li id="series-button">
+                <li class="series-button">
                     <a href="#">
                         <i class='bx bx-tv'></i>
                         <span class="links_name">TV/Shows</span>
                     </a>
                     <span class="tooltip">TV/Shows</span>
                 </li>
-                <li id="favorite-button">
+                <li class="favorite-button">
                     <a href="#">
                         <i class='bx bx-heart'></i>
                         <span class="links_name">My List</span>
                     </a>
                     <span class="tooltip">My List</span>
                 </li>
-                <li id="soon-button">
+                <li class="soon-button">
                     <a href="#">
                         <i class='bx bxs-calendar-event'></i>
                         <span class="links_name">Coming Soon</span>
@@ -84,6 +84,24 @@
                 </li>
             </ul>
         </div>
+        <nav>
+            <div>
+                <p><i class="brand fas fa-play-circle"></i></p>
+            </div>
+            <ul class="nav-menu">
+                <li><a class="nav-link" href="home.php">Movies</a></li>
+                <li class="series-button"><a class="nav-link" href="#">TV/Shows</a></li>
+                <li class="list-button"><a class="nav-link" href="#">My List</a></li>
+                <li class="soon-button"><a class="nav-link" href="#">Coming Soon</a></li>
+                <li><a class="nav-link" href="account.php">Account Settings</a></li>
+                <li><span class="nav-link log_out" >Logout</span></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
         <section class="home-section">
             <div class="tabs">
                 <input type="radio" id="tab1" name="tab-control" checked>
@@ -103,22 +121,6 @@
                             <br><span>Security</span>
                         </label>
                     </li>
-                    <li title="Coming soon...">
-                        <label for="tab3" role="button">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3,4A2,2 0 0,0 1,6V17H3A3,3 0 0,0 6,20A3,3 0 0,0 9,17H15A3,3 0 0,0 18,20A3,3 0 0,0 21,17H23V12L20,8H17V4M10,6L14,10L10,14V11H4V9H10M17,9.5H19.5L21.47,12H17M6,15.5A1.5,1.5 0 0,1 7.5,17A1.5,1.5 0 0,1 6,18.5A1.5,1.5 0 0,1 4.5,17A1.5,1.5 0 0,1 6,15.5M18,15.5A1.5,1.5 0 0,1 19.5,17A1.5,1.5 0 0,1 18,18.5A1.5,1.5 0 0,1 16.5,17A1.5,1.5 0 0,1 18,15.5Z" />
-                            </svg>
-                            <br><span>Coming soon...</span>
-                        </label>
-                    </li>
-                    <li title="Coming soon...">
-                        <label for="tab4" role="button">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M3,4A2,2 0 0,0 1,6V17H3A3,3 0 0,0 6,20A3,3 0 0,0 9,17H15A3,3 0 0,0 18,20A3,3 0 0,0 21,17H23V12L20,8H17V4M10,6L14,10L10,14V11H4V9H10M17,9.5H19.5L21.47,12H17M6,15.5A1.5,1.5 0 0,1 7.5,17A1.5,1.5 0 0,1 6,18.5A1.5,1.5 0 0,1 4.5,17A1.5,1.5 0 0,1 6,15.5M18,15.5A1.5,1.5 0 0,1 19.5,17A1.5,1.5 0 0,1 18,18.5A1.5,1.5 0 0,1 16.5,17A1.5,1.5 0 0,1 18,15.5Z" />
-                            </svg>
-                            <br><span>Coming soon...</span>
-                        </label>
-                    </li>
                 </ul>
                 <div class="slider">
                     <div class="indicator"></div>
@@ -131,7 +133,7 @@
                                 <input type="file" accept="image/*" id="upload" hidden />
                                 <label for="upload" id="changeAvatarBtn"> CHANGE AVATAR </label>
                             </div>
-                            <div>
+                            <div class="account-information"> 
                                 <span class="input-labels"> First Name </span>
                                 <input type="text" id="first-name" class="input-boxes account" name="firstname" value="<?php echo $account['firstName'] ?>" disabled>
                                 <span class="input-labels"> Last Name </span>
@@ -143,8 +145,11 @@
                                 <div id="errorMsgDiv">
                                     <p id="errorMsg"></p>
                                 </div>
-                                <button id="save-account-details" disabled> <strong> SAVE CHANGES </strong> </button>
-                                <button type="button" id="editBtn">EDIT ✏️ </button>
+                                <div class="edit-button-container"> 
+                                    <button type="button" id="editBtn">EDIT ✏️ </button>
+                                    <button id="save-account-details" disabled> <strong> SAVE CHANGES </strong> </button>
+                                </div>
+                                
                             </div>
                         </div>
                     </section>
@@ -159,16 +164,10 @@
                         <div id="errorMsgDiv">
                             <p id="errorMsg2"></p>
                         </div>
-                        <button id="save-password" disabled> <strong> SAVE CHANGES </strong> </button>
-                        <button type="button" id="editBtn2">EDIT ✏️ </button>
-                    </section>
-                    <section>
-                        <h2>Shipping</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nemo ducimus eius, magnam error quisquam sunt voluptate labore, excepturi numquam! Alias libero optio sed harum debitis! Veniam, quia in eum.
-                    </section>
-                    <section>
-                        <h2>Returns</h2>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa dicta vero rerum? Eaque repudiandae architecto libero reprehenderit aliquam magnam ratione quidem? Nobis doloribus molestiae enim deserunt necessitatibus eaque quidem incidunt.
+                        <div class="edit-button-container">
+                            <button type="button" id="editBtn2">EDIT ✏️ </button>
+                            <button id="save-password" disabled> <strong> SAVE CHANGES </strong> </button>
+                        </div>
                     </section>
                 </div>
             </div>
@@ -179,6 +178,8 @@
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script src="script/sidebar.js"></script>
         <script src="script/account.js"></script>
+        <script src="script/navbar.js"></script>
+        
 </body>
 
 </html>

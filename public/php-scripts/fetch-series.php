@@ -17,7 +17,7 @@
             $fave = $conn->query($fave_query) or die ($conn->error);
             $fave_selected = $fave->fetch_assoc();
             echo'
-            <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-title="'.$row['series_title'].'" id="movie'.$row['series_id'].'">
+            <div class="thumbnail-container '.$row['series_category'].'" data-movie="'.$row['series_id'].'" data-title="'.$row['series_title'].'">
                 <img class="thumbnail" src="'.$row['series_thumbnail'].'">
                 <div class="thumbnail-description">
                     <div>

@@ -146,7 +146,7 @@ body {
 }
 
 .input-boxes {
-    width: 430px;
+    min-width: 430px;
     height:35px;
     border: 0px;
 	display: block;
@@ -158,6 +158,11 @@ body {
     color: white;
 }
 
+.edit-button-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
 #save-account-details, #save-password {
     background-color: #FF69B4;
     font-size: 15px;
@@ -166,8 +171,6 @@ body {
     border: 0px;
     cursor: pointer;  
     display: block;
-    margin: auto;
-    margin: 0px 0px 0px 230px;
 }
 
 #save-account-details:hover, #save-password:hover {
@@ -191,7 +194,6 @@ body {
     border: 0px;
     cursor: pointer;  
     display: block;
-    margin: -35px 0px 0px 45px;
 }
 
 #editBtn:hover, #editBtn2:hover {
@@ -243,4 +245,14 @@ input:focus {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .account-details{
+    align-items: center;
   }
+  
+  .input-boxes{
+    min-width: 300px;
+  }
+}

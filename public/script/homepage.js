@@ -74,25 +74,25 @@ $("#searchBox").on("keyup", function() {
     });
 });
 
-$('#series-button').click(function (e) { 
+$('.series-button').click(function (e) { 
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Series List');
     $('#list-movies').load('../php-scripts/fetch-series.php');
 });
 
-$('#movies-button').click(function (e) { 
+$('.movies-button').click(function (e) { 
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Movie List');
     $('#list-movies').load('../php-scripts/fetch-movies.php');
 });
 
-$('#list-button').click(function (e) { 
+$('.list-button').click(function (e) { 
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Favorites');
     $('#list-movies').load('../php-scripts/fetch-favorites.php');
 });
 
-$('#soon-button').click(function (e) { 
+$('.soon-button').click(function (e) { 
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Coming Soon');
     $('#list-movies').load('../php-scripts/fetch-soon.php');

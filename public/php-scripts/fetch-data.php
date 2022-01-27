@@ -57,7 +57,7 @@
                     <div class="loader three"></div>
                 </div>
             </div>
-            <div class="modal-container" '; if($fetch == "series"){ echo'style="height: 100vh"';} echo'>
+            <div class="modal-container" '; if($fetch == "series"){ echo'style="height: 99vh"';} echo'>
                 <div class="modal-main">
                     <div class="modal-thumb-play">
                         <img id="modal-movie-thumbnail" src="'.$thumbnail.'"class="modal-thumbnail" alt="">

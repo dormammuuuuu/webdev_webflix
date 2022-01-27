@@ -30,28 +30,28 @@
                 <i class='bx bx-menu' id="btn" ></i>
             </div>
             <ul class="nav-list">
-                <li id="movies-button">
+                <li class="movies-button">
                     <a href="#">
                     <i class='bx bx-movie'></i>
                     <span class="links_name">Movies</span>
                     </a>
                     <span class="tooltip">Movies</span>
                 </li>
-                <li id="series-button">
+                <li class="series-button">
                     <a href="#">
                     <i class='bx bx-tv' ></i>
                     <span class="links_name">TV/Shows</span>
                     </a>
                     <span class="tooltip">TV/Shows</span>
                 </li>
-                <li id="list-button">
+                <li class="list-button">
                     <a href="#">
                     <i class='bx bx-heart' ></i>
                     <span class="links_name">My List</span>
                     </a>
                     <span class="tooltip">My List</span>
                 </li>
-                <li id="soon-button">
+                <li class="soon-button">
                     <a href="#">
                     <i class='bx bxs-calendar-event'></i>
                     <span class="links_name">Coming Soon</span>
@@ -82,10 +82,10 @@
                 <p><i class="brand fas fa-play-circle"></i></p>
             </div>
             <ul class="nav-menu">
-                <li><a class="nav-link" href="#">Movies</a></li>
-                <li><a class="nav-link" href="#">TV/Shows</a></li>
-                <li><a class="nav-link" href="#">My List</a></li>
-                <li><a class="nav-link" href="#">Coming Soon</a></li>
+                <li class="movies-button"><a class="nav-link" href="#">Movies</a></li>
+                <li class="series-button"><a class="nav-link" href="#">TV/Shows</a></li>
+                <li class="list-button"><a class="nav-link" href="#">My List</a></li>
+                <li class="soon-button"><a class="nav-link" href="#">Coming Soon</a></li>
                 <li><a class="nav-link" href="account.php">Account Settings</a></li>
                 <li><span class="nav-link log_out" >Logout</span></li>
             </ul>
