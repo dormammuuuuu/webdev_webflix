@@ -1,26 +1,27 @@
-html,body{
+html,
+body {
     padding: 0;
     margin: 0;
     overflow: hidden;
 }
 
 * {
-	font-family: Arial, Helvetica, sans-serif;
-	box-sizing: border-box;
-    transition: ease .3s;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    transition: ease 0.3s;
 }
 
-#movie-player{
+#movie-player {
     width: 100%;
     height: 100vh;
     background: black;
 }
 
-#video{
+#video {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     height: auto;
     width: 100%;
     z-index: 5;
@@ -29,43 +30,42 @@ html,body{
 #video::-webkit-media-controls {
     display: none;
 }
-  
 
-#playpause{
+#playpause {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
     display: flex;
 }
 
-#left-previous, #right-forward{
+#left-previous,
+#right-forward {
     width: 45vw;
     height: 80vh;
     z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,.7);
-    font-size: 2.5em;   
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2.5em;
 }
 
-.fp-label{
-    font-size: .5em;
+.fp-label {
+    font-size: 0.5em;
     margin: 0 10px;
 }
 
-
-#playpause-button{
+#playpause-button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     z-index: 10;
-    background: rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, 0.3);
     font-size: 60px;
-    color: rgba(255,255,255,.7);
+    color: rgba(255, 255, 255, 0.7);
     height: 100px;
     width: 100px;
     border: none;
@@ -75,19 +75,20 @@ html,body{
     align-items: center;
 }
 
-#upper-container, #back-arrow{
+#upper-container,
+#back-arrow {
     position: absolute;
     top: 0;
     width: 100%;
     display: flex;
     align-items: center;
-    color: rgba(255,255,255,.7);
-    background: linear-gradient(180deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 100%, 0) 100%);
+    color: rgba(255, 255, 255, 0.7);
+    background: linear-gradient( 180deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 100%, 0) 100%);
     z-index: 10;
     min-height: 3em;
 }
 
-#back-arrow{
+#back-arrow {
     position: relative;
     width: 7vw;
     font-size: 30px;
@@ -95,19 +96,19 @@ html,body{
     background: none;
 }
 
-#upper-container h1{
+#upper-container h1 {
     font-size: 1.5em;
     letter-spacing: 1px;
 }
 
-#lower-container{
+#lower-container {
     position: absolute;
     bottom: 0;
     width: 100%;
     display: flex;
     align-items: center;
-    color: rgba(255,255,255,.7);
-    background: linear-gradient(360deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 100%, 0) 100%);
+    color: rgba(255, 255, 255, 0.7);
+    background: linear-gradient( 360deg, hsla(0, 0%, 0%, 0.7) 0%, hsla(0, 0%, 100%, 0) 100%);
     z-index: 10;
     min-height: 5em;
     display: flex;
@@ -115,47 +116,52 @@ html,body{
     justify-content: space-evenly;
 }
 
-.seekbar-time-container{
+.seekbar-time-container {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-#volume-button, #brightness-button{
+#volume-button,
+#brightness-button {
     font-size: 1.7em;
     margin-left: 1em;
-    margin-right: .7em;
+    margin-right: 0.7em;
 }
 
-#brightness-button{
-    margin-left: .7em;
-    margin-right: .7em;
+#brightness-button {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
 }
 
-#volume-button:hover, #brightness-button:hover{
+#volume-button:hover,
+#brightness-button:hover {
     color: white;
 }
 
-.volume-brightness-container{
+.volume-brightness-container {
     display: flex;
     align-items: center;
 }
 
-.volume, .brightness{
+.volume,
+.brightness {
     display: none;
     align-items: center;
 }
 
-#volume-slider, #brightness-slider {
+#volume-slider,
+#brightness-slider {
     position: relative;
     display: block;
     height: 5px;
     width: 100px;
     background: #555;
     border-radius: 15px;
-  }
+}
 
-  #volume-slider .ui-slider-range-min, #brightness-slider .ui-slider-range-min  {
+#volume-slider .ui-slider-range-min,
+#brightness-slider .ui-slider-range-min {
     height: 5px;
     width: 300px;
     position: absolute;
@@ -164,22 +170,22 @@ html,body{
     border-radius: 10px;
     outline: none;
     z-index: 10;
-  }
+}
 
-  #volume-slider .ui-slider-handle, #brightness-slider .ui-slider-handle {
+#volume-slider .ui-slider-handle,
+#brightness-slider .ui-slider-handle {
     width: 10px;
     height: 10px;
     border-radius: 20px;
-    background: #FFF;
+    background: #fff;
     position: absolute;
     margin-left: -8px;
     margin-top: -3px;
     cursor: pointer;
     outline: none;
-  }
+}
 
-
-#custom-seekbar{
+#custom-seekbar {
     cursor: pointer;
     height: 5px;
     overflow: hidden;
@@ -188,8 +194,9 @@ html,body{
     border-radius: 5px;
     background: #555;
 }
-#custom-seekbar span{
-    background-color: rgba(255,255,255,.7);
+
+#custom-seekbar span {
+    background-color: rgba(255, 255, 255, 0.7);
     position: absolute;
     top: 0;
     left: 0;
@@ -197,16 +204,16 @@ html,body{
     width: 0px;
 }
 
-#time{
+#time {
     display: inline;
     margin: 0;
     margin: 0 10px;
 }
 
-#fullscreen-button{
+#fullscreen-button {
     font-size: 1.5em;
 }
 
-#fullscreen-button:hover{
+#fullscreen-button:hover {
     color: white;
 }

@@ -12,7 +12,7 @@
             echo'
                 <div data-value="'.$result['episode'].'" class="episode-list">
                     <p>Episode '.$result['episode'].'</p>
-                    <p>PLAY</p>
+                    <p><i class="bx bx-play" style="font-size: 2em;"></i></p>
                 </div>
             '; 
         } while ($result = $series->fetch_assoc());
