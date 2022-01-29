@@ -1,21 +1,21 @@
 var searchClear = $('.search-clear');
 body_container.style.display = 'block';
 
-$(function () {
+$(function() {
     let clickButton = $('.swiper-button-next');
     setInterval(function() {
         clickButton.click();
     }, 6000);
 });
 
-$('#searchBox').on('input', function(){
+$('#searchBox').on('input', function() {
     searchClear.css('visibility', 'visible');
-    if (!$(this).val()){
+    if (!$(this).val()) {
         searchClear.css('visibility', 'hidden');
     }
 });
 
-searchClear.on('click', function(){
+searchClear.on('click', function() {
     $('#searchBox').val("");
     searchClear.css('visibility', 'hidden');
     $('.thumbnail-container').show();
@@ -26,35 +26,35 @@ $("#add-to-list").change(function(e) {
     alert("STOP");
 })
 
-$('#logoutBtn').click(function() {
+$('.logoutBtn').click(function() {
     $('#add').load('../php-scripts/logout.php')
 })
 
 //carousel
 
 const swiper = new Swiper(".swiper", {
-	// Optional parameters
-	direction: "horizontal",
-	loop: true,
-	effect: "fade",
-	fadeEffect: {
-		crossFade: true
-	},
-	speed: 400,
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true
+    },
+    speed: 400,
 
-	// If we need pagination
-	/*pagination: {
+    // If we need pagination
+    /*pagination: {
     el: '.swiper-pagination',
   },*/
 
-	// Navigation arrows
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev"
-	}
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
 
-	// And if we need scrollbar
-	/*scrollbar: {
+    // And if we need scrollbar
+    /*scrollbar: {
     el: '.swiper-scrollbar',
   },*/
 });
@@ -74,25 +74,25 @@ $("#searchBox").on("keyup", function() {
     });
 });
 
-$('.series-button').click(function (e) { 
+$('.series-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Series List');
     $('#list-movies').load('../php-scripts/fetch-series.php');
 });
 
-$('.movies-button').click(function (e) { 
+$('.movies-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Movie List');
     $('#list-movies').load('../php-scripts/fetch-movies.php');
 });
 
-$('.list-button').click(function (e) { 
+$('.list-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Favorites');
     $('#list-movies').load('../php-scripts/fetch-favorites.php');
 });
 
-$('.soon-button').click(function (e) { 
+$('.soon-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Coming Soon');
     $('#list-movies').load('../php-scripts/fetch-soon.php');

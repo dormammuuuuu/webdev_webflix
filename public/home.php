@@ -65,7 +65,7 @@
                     </a>
                     <span class="tooltip">Account Settings</span>
                 </li>
-                <li class="profile" id="logoutBtn">
+                <li class="profile logoutBtn">
                     
                         <div class="profile-details">
                             <!--<img src="profile.jpg" alt="profileImg">-->
@@ -87,7 +87,7 @@
                 <li class="list-button"><a class="nav-link" href="#">My List</a></li>
                 <li class="soon-button"><a class="nav-link" href="#">Coming Soon</a></li>
                 <li><a class="nav-link" href="account.php">Account Settings</a></li>
-                <li><span class="nav-link log_out" >Logout</span></li>
+                <li><span class="nav-link log_out logoutBtn" >Logout</span></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

@@ -1,4 +1,3 @@
-
 function toggleDisabled(e) {
     return this.each(function() {
         var $this = $(this);
@@ -8,14 +7,14 @@ function toggleDisabled(e) {
 }
 
 
-$('#editBtn').click(function (e) { 
+$('#editBtn').click(function(e) {
     let inputBoxes = $('.account');
     let saveAccountDetails = $('#save-account-details');
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
     saveAccountDetails.prop('disabled', function(i, disabled) { return !disabled; });
 });
 
-$('#editBtn2').click(function (e) { 
+$('#editBtn2').click(function(e) {
     let inputBoxes = $('.password');
     let savePassword = $('#save-password');
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
@@ -126,7 +125,7 @@ function updateUserDetails() {
 }
 */
 $('#upload').on('click', function(e) {
-    if ($('#changeAvatarBtn').text() == 'SAVE CHANGES'){
+    if ($('#changeAvatarBtn').text() == 'SAVE CHANGES') {
         e.preventDefault();
         alert('EDI WOW');
     } else {
@@ -134,10 +133,10 @@ $('#upload').on('click', function(e) {
         let files = $('#upload')[0].files;
 
         // Check file selected or not
-        if(files.length > 0 ){
-            fd.append('file',files[0]);
+        if (files.length > 0) {
+            fd.append('file', files[0]);
 
-            $('#update-notif').load('../php-scripts/upload.php',{
+            $('#update-notif').load('../php-scripts/upload.php', {
                 file: fd
             })
 
@@ -154,12 +153,12 @@ $('#upload').on('click', function(e) {
     }
 });
 
-$('#save-account-details').click(function (e) { 
+$('#save-account-details').click(function(e) {
     let firstName = $('#first-name').val();
     let lastName = $('#last-name').val();
     let userName = $('#user-name').val();
     let password = $('#ad-password').val();
-    $('#update-notif').load('../php-scripts/save_account_details.php',{
+    $('#update-notif').load('../php-scripts/save_account_details.php', {
         firstname: firstName,
         lastname: lastName,
         username: userName,
@@ -167,28 +166,32 @@ $('#save-account-details').click(function (e) {
     });
 });
 
-$('#save-password').click(function (e) { 
+$('#save-password').click(function(e) {
     let password = $('#old-password').val();
     let newpassword = $('#new-password').val();
     let confpassword = $('#confirm-password').val();
-    
-    $('#update-notif').load('../php-scripts/save-password.php',{
+
+    $('#update-notif').load('../php-scripts/save-password.php', {
         password: password,
         newPassword: newpassword,
         confPassword: confpassword
     });
 });
 
-$('.series-button').click(function(){
+$('.series-button').click(function() {
     window.location.href = "home.php?load=series"
 })
 
-$('.favorite-button').click(function(){
+$('.favorite-button').click(function() {
     window.location.href = "home.php?load=favorite"
 })
 
-$('.soon-button').click(function(){
+$('.soon-button').click(function() {
     window.location.href = "home.php?load=coming-soon"
+})
+
+$('.update-notif').click(function() {
+    $('#add').load('../php-scripts/logout.php')
 })
 
 body_container.style.display = 'block';
