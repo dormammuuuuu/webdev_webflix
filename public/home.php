@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.css'>
         <link rel="stylesheet" type="text/CSS" href="styles/loader.css">
+        <link rel="stylesheet" type="text/CSS" href="styles/toast.css">
         <link rel="stylesheet" type="text/CSS" href="styles/sidebar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/home_carousel.css">
@@ -244,5 +245,6 @@
         <script src="script/sidebar.js"></script>
         <script src="script/homepage.js"></script>
         <script src="script/navbar.js"></script>
+        <script src="script/toast.js"></script>
     </body>
 </html>

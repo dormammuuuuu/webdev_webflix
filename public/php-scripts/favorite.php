@@ -18,4 +18,23 @@
         $fetch = $conn->query($sql) or die ($conn->error);
     }
 
+    echo '
+        <div id="toast-id">
+        <div class="toast">
+            <div class="toast-container">
+            <div class="toast-content">
+                <div class="toast-icon">
+                <i class="fas fa-exclamation"></i>
+                </div>
+                <p class="toast-message">Successfully added to your list.</p>
+            </div>
+            <div class="toast-dismiss">
+                <i class="fas fa-times"></i>
+            </div>
+            </div>
+            <div id="toast-progress"></div>
+        </div>
+        </div>
+    ';
+
 ?>

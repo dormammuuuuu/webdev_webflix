@@ -12,7 +12,8 @@
     }
     $run_query = mysqli_query($conn,$query);
     $row = mysqli_fetch_array($run_query);
-    
+    @session_start();
+    $uid = $_SESSION['id'];
     if ($fetch == "series"){
         $title = $row['series_title'];
         $thumbnail = $row['series_thumbnail'];
@@ -44,6 +45,10 @@
         $sypnosis = $row['coming_soon_sypnosis'];
         $stream_id = "#";
     }
+
+    $faveQuery = "SELECT * FROM user_favorites WHERE user_id = $uid AND ms_type = '$fetch' AND favorite_id = $data";
+    $runQuery = mysqli_query($conn, $faveQuery);
+    $queryResult = mysqli_num_rows($runQuery);
 
     $count = mysqli_num_rows($run_query);
 
@@ -90,7 +95,8 @@
                             </div>
                         </div>
                         <div id="modal-list-container" class="watchlist-button">
-                            <button id="add-to-watchlist">+ My List</button>
+                            <input type="checkbox" data-movie="'.$data.'" data-type="'.$fetch.'" name="fave" id="fave" class="add-to-list-button"'; if ($queryResult){echo 'checked';} echo'/>
+                            <label class="add-to-list-label" for="fave">+ My List</label>
                         </div>
                         
                         <span id="modal-close"><i class="bx bx-x"></i></span>
@@ -144,6 +150,16 @@
 
             $("#add-to-watchlist").click(function(){
                 $("").load("", )
+            })
+
+            $("input[type=checkbox]").change(function(e) {
+                let type = $(this).attr("data-type");
+                let str = $(this).attr("data-movie");
+                
+                $(".add-to-list-button").load("../php-scripts/favorite.php",{
+                    dataID: str,
+                    type: type,
+                })
             })
         </script>
         ';

@@ -587,23 +587,6 @@ nav {
     align-self: flex-start;
 }
 
-.watchlist-button button {
-    background: transparent;
-    color: #ff69b4;
-    padding: 0.4em 1.8em;
-    letter-spacing: 2px;
-    font-size: 14px;
-    border: 2px solid #ff69b4;
-    font-weight: 600;
-    transition: ease 0.3s;
-    margin: 20px 0;
-}
-
-.watchlist-button button:hover {
-    background: #ff69b4;
-    color: rgb(27, 27, 27);
-}
-
 #modal-close {
     position: absolute;
     top: 1em;
@@ -666,20 +649,20 @@ nav {
     }
 }
 
-input[type="checkbox"] {
+.thumbnail-description input[type="checkbox"] {
     position: absolute;
     z-index: 10;
     opacity: 0;
 }
 
-input[type="checkbox"]+label {
+.thumbnail-description input[type="checkbox"]+label {
     position: absolute;
     right: 35px;
     display: inline-block;
     font-size: 16px;
 }
 
-input[type="checkbox"]+label:before {
+.thumbnail-description input[type="checkbox"]+label:before {
     content: "\1F5A4";
     top: -8.9px;
     left: -13.1px;
@@ -692,12 +675,12 @@ input[type="checkbox"]+label:before {
     filter: invert(100%);
 }
 
-input[type="checkbox"]:checked+label:before {
+.thumbnail-description input[type="checkbox"]:checked+label:before {
     border: 1px solid transparent;
     background-color: transparent;
 }
 
-input[type="checkbox"]:checked+label:after {
+.thumbnail-description input[type="checkbox"]:checked+label:after {
     content: "\1F5A4";
     font-size: 16px;
     top: -8.9px;
@@ -709,6 +692,28 @@ input[type="checkbox"]:checked+label:after {
     color: #ff69b4;
     transition: 0.5s ease;
     filter: invert(47%) sepia(86%) saturate(392%) hue-rotate(281deg) brightness(103%) contrast(102%);
+}
+
+.add-to-list-button {
+    display: none;
+}
+
+.add-to-list-label {
+    cursor: pointer;
+    background: transparent;
+    color: #ff69b4;
+    padding: 0.4em 1.8em;
+    letter-spacing: 2px;
+    font-size: 14px;
+    border: 2px solid #ff69b4;
+    font-weight: 600;
+    transition: ease 0.3s;
+    margin: 20px 0;
+}
+
+.add-to-list-button:checked~.add-to-list-label {
+    background: #ff69b4;
+    color: rgb(27, 27, 27);
 }
 
 

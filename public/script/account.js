@@ -164,6 +164,10 @@ $('#save-account-details').click(function(e) {
         username: userName,
         password: password
     });
+    let inputBoxes = $('.account');
+    inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
+    let saveAccountDetails = $('#save-account-details');
+    saveAccountDetails.prop('disabled', function(i, disabled) { return !disabled; });
 });
 
 $('#save-password').click(function(e) {
@@ -176,6 +180,11 @@ $('#save-password').click(function(e) {
         newPassword: newpassword,
         confPassword: confpassword
     });
+
+    let inputBoxes = $('.password');
+    let savePassword = $('#save-password');
+    inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
+    savePassword.prop('disabled', function(i, disabled) { return !disabled; });
 });
 
 $('.series-button').click(function() {
