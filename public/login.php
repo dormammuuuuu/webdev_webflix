@@ -3,6 +3,7 @@
     <head>
         <title> StreamHub | LOGIN </title>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="assets/images/icon.ico">
         <link rel="stylesheet" type="text/CSS" href="styles/login.css">
         <link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/toast.css">
