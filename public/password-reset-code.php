@@ -6,20 +6,22 @@
     use PHPMailer\PHPMailer\Exception;
 
     //Load Composer's autoloader
-    include 'vendor/autoload.php';
+    require 'php-scripts/vendor/autoload.php';
 
     function send_password_reset($get_email, $token) {
         $mail = new PHPMailer(true);
-        $mail->isSMTP();                                        
+        $mail->SMTPDebug = 2;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->Username   = 'streamhubemail@gmail.com';                     //SMTP username
+        $mail->Password   = 'streamhub12321';                               //SMTP password
+        $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
+        $mail->Port       = 465;                                    
 
-        $mail->Host       = 'smtp.gmail.com';           
-        $mail->Username   = 'streamhubemail@gmail.com';           
-        $mail->Password   = 'streamhub12321';                
 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         
-        $mail->Port       = 465;                               
-
-        $mail->addAddress($get_email);
+        $mail->setFrom('streamhubemail@gmail.com', 'Mailer');
+        $mail->addAddress($get_email);     //Add a recipient
 
         $mail->isHTML(true);
         $mail->Subject = "Reset Password Notification";
@@ -44,11 +46,11 @@
             $row = mysqli_fetch_array($check_email_run);
             $get_email = $row['email'];
 
-            $update_token = "UPDATE users SET verify_token='$token' WHERE email='$get_email' LIMIT 1";
+            $update_token = "UPDATE user SET verify_token='$token' WHERE email='$get_email' LIMIT 1";
             $update_token_run = mysqli_query($conn, $update_token);
 
             if($update_token_run) {
-                send_password_reset($get_mail, $token);
+                send_password_reset($get_email, $token);
                 echo 'We e-mailed you a password reset link';
                 exit(0);
             } else {
