@@ -6,10 +6,31 @@
     use PHPMailer\PHPMailer\Exception;
 
     //Load Composer's autoloader
-    require 'vendor/autoload.php';
+    include 'vendor/autoload.php';
 
     function send_password_reset($get_email, $token) {
-        $mail->isSMTP();
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();                                        
+
+        $mail->Host       = 'smtp.gmail.com';           
+        $mail->Username   = 'streamhubemail@gmail.com';           
+        $mail->Password   = 'streamhub12321';                
+
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         
+        $mail->Port       = 465;                               
+
+        $mail->addAddress($get_email);
+
+        $mail->isHTML(true);
+        $mail->Subject = "Reset Password Notification";
+
+        $email_template = "
+            <p>Test<p>
+            <a href='password-change.php?token=$token&email=$get_email'>Click here</a>
+        ";
+
+        $mail->Body = $email_template;
+        $mail->send();
     }
 
     if(isset($_POST['reset-link'])) {
