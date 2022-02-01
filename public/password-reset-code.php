@@ -17,7 +17,9 @@
         $mail->Username   = 'streamhubemail@gmail.com';                     //SMTP username
         $mail->Password   = 'streamhub12321';                               //SMTP password
         $mail->SMTPSecure = "tls";            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                    
+        $mail->SMTPAutoTLS = false;
+
+        $mail->Port       = 587;                                    
 
 
         $mail->setFrom('streamhubemail@gmail.com', 'Mailer');
