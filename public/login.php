@@ -44,7 +44,7 @@
                             <p id="errorMsgLogin"></p>
                         </div>
                         <input type="submit" name="submit" id="login" value="LOG IN">
-                        <a href="#" class="forgot-register"> Forgot password? </a>
+                        <a href="forgot-pass.php" class="forgot-register"> Forgot password? </a>
                         <a href="signup.php" class="forgot-register"> Register now </a>
                     </form>
                 </div>
