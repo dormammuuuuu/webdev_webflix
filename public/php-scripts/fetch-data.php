@@ -111,7 +111,10 @@
                             <div class="season-button-container">
                                 ';
                                 for ($i=0; $i < $season; $i++) { 
-                                    echo '<button value="'.$i + 1 .'" data-series="'.$stream_id.'" class="season-button'; if ($i == 0) {echo' active';} echo'">Season '. $i + 1 . '</button>';
+                                    echo '<button value="'.$i + 1 .'"
+                                    data-series="'.$stream_id.'" 
+                                    class="season-button'; if ($i == 0) {echo' active';} echo'">
+                                    Season '. $i + 1 . '</button>';
                                 }
                                 echo'
                             </div>

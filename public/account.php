@@ -74,14 +74,14 @@
                     <span class="tooltip">Account Settings</span>
                 </li>
                 <li class="profile logoutBtn">
-                    <a href="php-scripts/logout.php">
-                        <div class="profile-details">
-                            <div class="name_job">
-                                <div class="name">Log out</div>
-                            </div>
+                    
+                    <div class="profile-details">
+                        <div class="name_job">
+                            <div class="name">Log out</div>
                         </div>
-                        <i class='bx bx-log-out log_out'></i>
-                    </a>
+                    </div>
+                    <i class='bx bx-log-out log_out'></i>
+                    
                 </li>
             </ul>
         </div>
@@ -127,11 +127,15 @@
                 <div class="content">
                     <section>
                         <div class="account-details">
-                            <div class="account-avatar">
-                                <img id="avatar" src="<?php echo $account['avatar'] ?>" alt="Avatar">
-                                <input type="file" accept="image/*" id="upload" hidden />
-                                <label for="upload" id="changeAvatarBtn"> CHANGE AVATAR </label>
-                            </div>
+                            <form id="avatar-update" method="post" enctype="multipart/form-data" class="account-avatar">
+                                <img id="avatar" src="<?php echo 'assets/images/user_avatar/'.$account['avatar'] ?: "assets/images/user_avatar/default.png" ?>" alt="Avatar">
+                                <input type="file" name="avatarInput" accept="image/*" id="fileInput" onchange="imageChanged(this)" hidden />
+                                <div class="avatar-buttons">
+                                    <button id="changeAvatarBtn" onclick="openSystemDialog()"> Change Avatar </button>
+                                    <input id="submit-avatar" type="submit" value="Save Avatar">
+                                </div>
+                                
+                            </form>
                             <div class="account-information"> 
                                 <span class="input-labels"> First Name </span>
                                 <input type="text" id="first-name" class="input-boxes account" name="firstname" value="<?php echo $account['firstName'] ?>" disabled>

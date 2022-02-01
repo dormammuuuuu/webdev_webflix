@@ -514,6 +514,7 @@ nav {
 .modal-thumb-play {
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
 }
 
 .modal-thumbnail {

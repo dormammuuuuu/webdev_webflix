@@ -20,138 +20,6 @@ $('#editBtn2').click(function(e) {
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
     savePassword.prop('disabled', function(i, disabled) { return !disabled; });
 });
-/*
-var toggle1 = false;
-editBtn.onclick = () => {
-    var userDetails = document.getElementsByClassName("input-boxes");
-    if (!toggle1){
-      save.disabled = false;
-
-        for(let i = 0; i < 4; i++) {
-            userDetails[i].disabled = false;
-        }
-        toggle1 = true;
-        editBtn.innerHTML = "CANCEL";
-
-    } else {
-        save = true;
-
-        for(let i = 0; i < 4; i++) {
-            userDetails[i].disabled = true;
-        }
-        toggle1 = false;
-        editBtn.innerHTML = "EDIT ✏️";
-
-    }
-    
-}
-
-var toggle = false;
-editBtn2.onclick = () => {
-    var userDetails = document.getElementsByClassName("input-boxes");
-    if (!toggle){
-    save2.disabled = false;
-
-        for(let i = 4; i < 7; i++) {
-            userDetails[i].disabled = false;
-        }
-        toggle = true;
-        editBtn2.innerHTML = "CANCEL";
-    } else {
-    save2.disabled = true;
-
-        for(let i = 4; i < 7; i++) {
-            userDetails[i].disabled = true;
-        }
-        toggle = false;
-    }
-    
-}
-*/
-/*
-save.onclick = () => {
-    var userDetails = document.getElementsByClassName("input-boxes");
-    var emptyFields = false;
-
-    for(let i = 0; i < 3; i++) {
-        if(userDetails[i].value == '') {
-            emptyFields = (userDetails[i].value == '') ? true : false;
-            userDetails[i].style.borderBottom = "2px solid red";
-        } else {
-            userDetails[i].style.borderBottom = "none";
-        }
-    }
-
-    if(emptyFields) {
-        errorMsg.innerHTML = "Please input empty fields";
-    } else {
-        errorMsg.innerHTML = "";
-        if(userDetails[4].value == userDetails[5].value) {
-            updateUserDetails();
-            errorMsg.innerHTML = "";
-        } else {
-            errorMsg.innerHTML = "Passwords doesn't match";
-
-        }
-    }
-}
-
-function updateUserDetails() {
-    var user = auth.currentUser;
-    var dbref = db.ref(`users/${user.uid}`);
-    var userDetails = document.getElementsByClassName("input-boxes");
-    var credential = firebase.auth.EmailAuthProvider.credential(firebase.auth().currentUser.email, userDetails[3].value);
-    
-    firebase.auth().onAuthStateChanged(user => {
-    if(user) {
-        user.reauthenticateWithCredential(credential).then(function() {
-            dbref.update({
-                firstName: userDetails[0].value,
-                lastName: userDetails[1].value,
-                username: userDetails[2].value,
-            }).then(() => {
-                var userDetails = document.getElementsByClassName("input-boxes");
-                save.disabled = true;
-                for(let i = 0; i < 4; i++) {
-                    userDetails[i].disabled = true;
-                }
-            });
-            
-            }).catch(function(error) {
-                errorMsg.innerHTML = error.message;
-            });
-        }
-    });
-}
-*/
-$('#upload').on('click', function(e) {
-    if ($('#changeAvatarBtn').text() == 'SAVE CHANGES') {
-        e.preventDefault();
-        alert('EDI WOW');
-    } else {
-        let fd = new FormData();
-        let files = $('#upload')[0].files;
-
-        // Check file selected or not
-        if (files.length > 0) {
-            fd.append('file', files[0]);
-
-            $('#update-notif').load('../php-scripts/upload.php', {
-                file: fd
-            })
-
-            // let file = [];
-            // file = e.target.files;
-            // let reader;
-            // reader = new FileReader;
-            // reader.onload = function() {
-            //     avatar.src = reader.result;
-            // }
-            // reader.readAsDataURL(file[0]);
-            $('#changeAvatarBtn').text('SAVE CHANGES');
-        }
-    }
-});
 
 $('#save-account-details').click(function(e) {
     let firstName = $('#first-name').val();
@@ -165,6 +33,8 @@ $('#save-account-details').click(function(e) {
         password: password
     });
     let inputBoxes = $('.account');
+    $('#ad-password').val('');
+    window.scrollTo(0, 0);
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
     let saveAccountDetails = $('#save-account-details');
     saveAccountDetails.prop('disabled', function(i, disabled) { return !disabled; });
@@ -180,9 +50,11 @@ $('#save-password').click(function(e) {
         newPassword: newpassword,
         confPassword: confpassword
     });
+    window.scrollTo(0, 0);
 
     let inputBoxes = $('.password');
     let savePassword = $('#save-password');
+    inputBoxes.val('');
     inputBoxes.prop('disabled', function(i, disabled) { return !disabled; });
     savePassword.prop('disabled', function(i, disabled) { return !disabled; });
 });
@@ -199,8 +71,45 @@ $('.soon-button').click(function() {
     window.location.href = "home.php?load=coming-soon"
 })
 
-$('.update-notif').click(function() {
-    $('#add').load('../php-scripts/logout.php')
+$('.logoutBtn').click(function() {
+    $('#update-notif').load('../php-scripts/logout.php')
 })
+
+function openSystemDialog() {
+    $('#fileInput').click();
+}
+
+var files = [];
+
+function imageChanged(e) {
+    files = e.files;
+    if (files) {
+        const reader = new FileReader();
+        reader.onload = function() {
+            const result = reader.result;
+            document.getElementById('avatar').src = result;
+        }
+        reader.readAsDataURL(files[0]);
+        $('#submit-avatar').show();
+
+    }
+};
+
+$('#avatar-update').submit(function(e) {
+    e.preventDefault();
+    let formdata = new FormData(this);
+    $.ajax({
+        method: "post",
+        url: "../php-scripts/upload.php",
+        data: formdata,
+        processData: false,
+        contentType: false,
+        dataType: "html",
+        success: function(data) {
+            $('#submit-avatar').hide();
+            $('.update-notif').html(data);
+        }
+    });
+});
 
 body_container.style.display = 'block';

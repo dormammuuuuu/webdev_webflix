@@ -8,14 +8,22 @@
     $movieID = $_GET['watch'];
     $episode = @$_GET['id'] ?: "";
     $season = @$_GET['season'] ?: 1;
+    $type = '';
 
     if ($episode){
         $query = "SELECT * FROM series_files where series_id = $episode and episode = $movieID and season = $season";
         $sql = "SELECT series_title as title FROM series where series_id = $episode";
         $sqlQuery = mysqli_query($conn,$sql);
         $data = $sqlQuery -> fetch_assoc();
-        $title = $data['title'] . " : E" . $movieID;
+        $title = $data['title'] . " : S". $season ."E" . $movieID;
+        $type = 'series';
+        $newQuery = "SELECT MAX(season) as max_season FROM series_files WHERE series_id = $episode";
+        $cmd = mysqli_query($conn, $newQuery);
+        $cmdData = $cmd->fetch_assoc();
+        $maxSeason = (int) $cmdData['max_season'];
     } else {
+        $type = 'movie';
+
         $query = "SELECT * FROM movies where movies_id = $movieID";
         $sql = "SELECT movies_title as title FROM movies where movies_id = $movieID";
         $sqlQuery = mysqli_query($conn,$sql);
@@ -41,11 +49,17 @@
     <title><?php echo $title . " | StreamHub"; ?></title>
     <link rel="stylesheet" href="styles/stream.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>  
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="upper-container">
-        <span id="back-arrow"><i class='bx bx-left-arrow-alt'></i></span>
-        <h1><?php echo $title ?></h1>
+        <div style="display: flex; align-items: center;">
+            <span id="back-arrow"><i class='bx bx-left-arrow-alt'></i></span>
+            <h1 id="title"><?php echo $title ?></h1>
+        </div>
+        <?php if ($type == 'series') {
+            echo '<p id="menu-button"><i class="bx bx-menu"></i></p>';
+        }?>
     </div>
     <div id="movie-player">
         <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">
@@ -85,7 +99,44 @@
              <span id="fullscreen-button"><i class='bx bx-fullscreen'></i></span>
          </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <div id="side-menu">
+        <div class="side-header">
+            <h1>Episodes</h1>
+            <p id="hide-button"><i class="bx bx-x" ></i></p>
+        </div>
+    <?php 
+        if ($type == 'series'){
+            for ($i=0; $i < $maxSeason; $i++) { 
+                echo '
+                    <div class="episodes-container">
+                        <div class="season-button" data-season="'. $i + 1 . '">
+                            Season '. $i + 1 . '
+                            <i class="bx bx-chevron-down"></i>
+                        </div>
+                        <div class="season" data-container="'. $i + 1 . '">
+                        </div>
+                    </div>  
+                ';
+            }
+            echo'
+            <script> 
+                $(".season-button").click(function(e) {
+                    $(".season-button").removeClass("active");
+                    $(this).addClass("active");
+                    $(".season").hide();
+                    let season = $(this).attr("data-season");
+                    $("[data-container = " + season + "]").load("../php-scripts/fetch-sidebar-episodes.php", {
+                        seasonID: season,
+                        id: ' .$episode. '
+                    }).slideDown();
+                });
+            </script>
+            ';
+        }
+        
+    ?>
+    </div>
+    
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
     <script src="script/stream.js"></script>
 </body>

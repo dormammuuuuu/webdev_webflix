@@ -1,30 +1,40 @@
 <?php
 // Include the database configuration file
-include 'initialize-db.php';
+   include ('initialize-db.php');
+   @session_start();
+   $uid = (int) $_SESSION['id'];
 
-if(isset($_FILES['file']['name'])){
+   $file = $_FILES['avatarInput']['name'];
+   $path = '../assets/images/user_avatar/'.basename($file);
+   $output = "";
+   
+   $query = "UPDATE user SET avatar = '$file' where id = $uid";
+   $cmd = mysqli_query($conn,$query);
 
-    /* Getting file name */
-    $filename = $_FILES['file']['name'];
- 
-    /* Location */
-    $location = "assets/images/user_avatar/".$filename;
-    $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
-    $imageFileType = strtolower($imageFileType);
- 
-    /* Valid extensions */
-    $valid_extensions = array("jpg","jpeg","png");
- 
-    $response = 0;
-    /* Check file extension */
-    if(in_array(strtolower($imageFileType), $valid_extensions)) {
-       /* Upload file */
-       if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-          $response = $location;
-       }
-    }
- 
-    echo $response;
-    exit;
- }
+   if ($cmd) {
+      move_uploaded_file($_FILES['avatarInput']['tmp_name'], $path);
+      $output = "Submitted Successfully";
+   } else {
+      $output = $cmd;
+   }
+
+   echo'
+      <div id="toast-id">
+            <div class="toast">
+            <div class="toast-container">
+               <div class="toast-content">
+               <div class="toast-icon">
+                  <i class="fas fa-exclamation"></i>
+               </div>
+               <p class="toast-message">Avatar has been updated.</p>
+               </div>
+               <div class="toast-dismiss">
+               <i class="fas fa-times"></i>
+               </div>
+            </div>
+            <div id="toast-progress"></div>
+            </div>
+      </div>
+      <script src="script/toast.js"></script>
+   ';
 ?>

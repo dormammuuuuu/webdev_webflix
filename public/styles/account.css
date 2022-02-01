@@ -2,8 +2,10 @@
     transition: ease .3s;
 }
 
+html,
 body {
     background-color: black;
+    scroll-behavior: smooth;
 }
 
 .flex-container {
@@ -113,28 +115,46 @@ body {
 }
 
 #avatar {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     margin: 20px;
+    object-fit: cover;
+    object-position: center;
 }
 
-#changeAvatarBtn {
+#changeAvatarBtn,
+#submit-avatar {
     background-color: #FF69B4;
     font-weight: bold;
     width: auto;
-    padding: 10px 25px;
-    border: 0px;
+    padding: 5px 15px;
+    border: 0;
     cursor: pointer;
     color: black;
+    font-size: 1em;
 }
 
-#changeAvatarBtn:hover {
+#submit-avatar {
+    display: none;
+    margin-left: 10px
+}
+
+.avatar-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.5em;
+}
+
+#changeAvatarBtn:hover,
+#submit-avatar:hover {
     background-color: #b14a7d;
     color: black;
 }
 
-#changeAvatarBtn:active {
+#changeAvatarBtn:active,
+#submit-avatar:active {
     background-color: #FF69B4;
     color: black;
     box-shadow: #FF69B4;
@@ -175,6 +195,7 @@ body {
 .edit-button-container {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 100px;
 }
 
 #save-account-details,

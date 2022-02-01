@@ -34,11 +34,8 @@
                 <div>
                     <form method="post">
                         <p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
-                        <p id="subheader"> Welcome back! Log In with your Email or Phone Number </p>
-                        <div class="phone-email">
-                            <button class="buttons"> Email </button>
-                            <button class="buttons"> Phone </button>
-                        </div>
+                        <p id="subheader"> Welcome back! Log In with your Email </p>
+                        
                         <span class="form-labels"> Email</span>
                         <input type="email" class="user-input" name="email" value="<?php echo $firstName?>">
                         <span class="form-labels"> Password</span>
