@@ -16,6 +16,7 @@
             $firstName = $_POST['firstname'];
             $lastName = $_POST['lastname'];
             $confirm = $_POST['confirm'];
+            $token = md5(rand());
     
             $checkUsername = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `user` WHERE `userName` = '$username'"));
             $checkEmail = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `user` WHERE `email` = '$email'"));
@@ -38,7 +39,7 @@
                 if($confirm != $password) {
                   $message = "Password does not match";
                 } else {
-                    $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password')";
+                    $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`, `verify_token`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password', '$token')";
                     $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));    
                     if($cmd){
                       $firstName = $lastName = $email = $password = $username = "";
