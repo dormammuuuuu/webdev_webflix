@@ -30,7 +30,7 @@
 
         $email_template = "
             <p>Test<p>
-            <a href='password-change.php?token=$token&email=$get_email'>Click here</a>
+            <a href='localhost/password-change.php?token=$token&email=$get_email'>Click here</a>
         ";
 
         $mail->Body = $email_template;
