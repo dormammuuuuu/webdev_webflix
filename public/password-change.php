@@ -18,8 +18,8 @@
             header("Location:404.html");
         }
     ?>
-
-    <form action="password-reset-code.php" method="POST">
+    
+    <form action="php-scripts/password-reset-code.php" method="POST">
         <input type="hidden" name="token" value="<?php if(isset($_GET['token'])){echo $_GET['token'];}?>">
         <span class="form-labels"> New password</span>
         <input type="password" name="new-pass">

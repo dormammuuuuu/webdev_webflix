@@ -242,6 +242,7 @@
         </div>
         
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/7.3.1/swiper-bundle.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.waitforimages/1.5.0/jquery.waitforimages.min.js'></script>
         <script src="script/sidebar.js"></script>
         <script src="script/homepage.js"></script>
         <script src="script/navbar.js"></script>

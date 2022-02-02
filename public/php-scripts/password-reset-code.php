@@ -1,12 +1,12 @@
 <?php
-    include('php-scripts/initialize-db.php');
+    include('initialize-db.php');
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
     //Load Composer's autoloader
-    require 'php-scripts/vendor/autoload.php';
+    require 'vendor/autoload.php';
 
     function send_password_reset($get_email, $token) {
         $mail = new PHPMailer(true);
@@ -37,7 +37,7 @@
         $mail->send();
     }
     if(isset($_POST['reset-link'])) {
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $email = $_POST['email'];
         $token = md5(rand());
 
         $check_email = "SELECT email FROM user WHERE email='$email' LIMIT 1";
@@ -52,16 +52,31 @@
 
             if($update_token_run) {
                 send_password_reset($get_email, $token);
-                echo 'We e-mailed you a password reset link';
-                exit(0);
+                $stat =  'We e-mailed you a password reset link';
             } else {
-                echo 'Something went wrong';
-                exit(0);
+                $stat =  'Something went wrong';
             }
         } else {
-            echo 'Email does not exist';
-            exit(0);
+            $stat =  'Email does not exist';
         }
+        echo '
+            <div id="toast-id">
+                <div class="toast">
+                <div class="toast-container">
+                    <div class="toast-content">
+                    <div class="toast-icon">
+                        <i class="fas fa-exclamation"></i>
+                    </div>
+                    <p class="toast-message">'.$stat.'</p>
+                    </div>
+                    <div class="toast-dismiss">
+                    <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div id="toast-progress"></div>
+                </div>
+            </div>
+        ';
     }
 
     if(isset($_POST['password-update'])) {

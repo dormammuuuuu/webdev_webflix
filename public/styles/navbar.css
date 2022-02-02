@@ -3,6 +3,8 @@
 }
 
 nav {
+    width: -webkit-fill-available;
+    position: absolute;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,6 +12,7 @@ nav {
     padding: 0 30px;
     color: white;
     height: 90px;
+    z-index: 100;
 }
 
 nav p {

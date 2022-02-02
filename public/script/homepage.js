@@ -97,3 +97,8 @@ $('.soon-button').click(function(e) {
     $('.dropdown-container h1').text('Coming Soon');
     $('#list-movies').load('../php-scripts/fetch-soon.php');
 });
+
+$('#list-movies').waitForImages(function() {
+    // All descendant images have loaded, now slide up.
+    alert("Done");
+});
