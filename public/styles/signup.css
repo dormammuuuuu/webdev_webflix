@@ -235,6 +235,10 @@ input:focus {
     display: block;
 }
 
+nav {
+    position: relative
+}
+
 #agreeCheckbox {
     margin: 20px 0px 0px 0px;
 }

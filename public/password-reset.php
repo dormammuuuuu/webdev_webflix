@@ -16,6 +16,11 @@
     
     <?php
         include('php-scripts/initialize-db.php');
+
+        session_start();
+        if(ISSET($_SESSION['id'])){
+            header("location:home.php");
+        }
         include('php-scripts/password-reset-code.php');
     ?>
     <nav>
@@ -143,10 +148,11 @@
 	</g>
 </g>
 </svg>
+
     </div>
     
 
-    <div id="form-container">
+    <div class="form-container" id="pass-form">
         <form method="POST">
             <h2 class="form-labels"> Reset Password</h2>
             <p>Tell us the email address associated with your StreamHub account, and we’ll send you an email with a link to reset your password.</p>

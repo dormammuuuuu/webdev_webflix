@@ -80,34 +80,6 @@
     }
 
     if(isset($_POST['password-update'])) {
-        $new_password = mysqli_real_escape_string($conn, $_POST['new-pass']);
-        $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm-new-pass']);
-        $token = mysqli_real_escape_string($conn, $_POST['token']);
-
-        if(!empty($token)) {
-            if(!empty($new_password) && !empty($confirm_password)) {
-                $check_token = "SELECT verify_token FROM user WHERE verify_token='$token' LIMIT 1";
-                $check_token_run = mysqli_query($conn, $check_token);
-
-                if(mysqli_num_rows($check_token_run) > 0) {
-                    if($new_password == $confirm_password) {
-                        $update_password = "UPDATE user SET password='$new_password' WHERE verify_token='$token'";
-                        $update_password_run = mysqli_query($conn, $update_password);
-                        
-                        if($update_password_run) {
-                        header ("location:login.php");
-                        } else {
-                            echo 'Password did not update, Something went wrong.';
-                        }
-                    } else {
-                        echo 'Password does not match';
-                    }
-                } else {
-                    echo 'Invalid token';
-                }
-            } else {
-                echo 'Please input empty fields';
-            }
-        }
+        
     }
 ?>
