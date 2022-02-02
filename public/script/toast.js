@@ -5,9 +5,6 @@ $(function() {
     let timer;
     $('.toast').hide();
 
-    if (url == '/login.php')
-        $('.toast-message').text('Account doesn\'t exist');
-
     progressToast.css('width', '100%');
     $('.toast').slideDown('fast');
     for (let i = 100; i > 0; i--) {
