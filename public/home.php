@@ -60,6 +60,13 @@
                     </a>
                     <span class="tooltip">Coming Soon</span>
                 </li>
+                <li class="party-button">
+                    <a href="#">
+                    <i class='bx bx-group'></i>
+                    <span class="links_name">Watch Together</span>
+                    </a>
+                    <span class="tooltip">Watch Together</span>
+                </li>
                 <li>
                     <a href="account.php">
                     <i class='bx bx-cog' ></i>
@@ -233,7 +240,13 @@
                     </div>
                 </div>
             </div>
-
+            <div id="party-modal">
+                <div class="party-modal-container">
+                    <p>Party ID</p>
+                    <input type="text" name="party-id" id="party-id-input">
+                    <button id="party-id-button">JOIN</button>
+                </div>
+            </div>
         </section>
         
         <div id="add">

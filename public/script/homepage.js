@@ -98,7 +98,15 @@ $('.soon-button').click(function(e) {
     $('#list-movies').load('../php-scripts/fetch-soon.php');
 });
 
-$('#list-movies').waitForImages(function() {
-    // All descendant images have loaded, now slide up.
-    alert("Done");
+$('.party-button').click(function(e) {
+    e.preventDefault();
+    $('#party-modal').toggle();
+
+});
+
+$('#party-id-button').click(function(e) {
+    let partyID = $('#party-id-input').val();
+    $('#displayData').load('../php-scripts/get-party.php', {
+        watchID: partyID
+    });
 });

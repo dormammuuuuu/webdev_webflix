@@ -71,7 +71,12 @@
                                     <button id="modal-soon">SOON</button>';
                             } else if ($fetch == "movie") { 
                                 echo'
-                                    <button id="modal-play">PLAY</button>';
+                                    <button id="modal-play">PLAY</button>
+                                    <div class="watch-mode">
+                                        <button id="solo-watch">Solo Watch</button>
+                                        <button id="party-watch">Party Watch</button>
+                                    </div>';
+                                    
                             } echo'
                     </div>
                     <div class="modal-description">
@@ -148,7 +153,29 @@
             })
             
             $("#modal-play").click(function() {
+                $(".watch-mode").slideToggle(100);
+            })
+
+            $("#solo-watch").click(function() {
                 window.open("stream.php?watch='.$stream_id.'", "_blank");
+            })
+
+            $("#party-watch").click(function() {
+                let id = '.$stream_id.';
+                $.ajax({
+                    method: "post",
+                    data: {vidID: id},
+                    url: "../php-scripts/start-party.php",
+                    success: function(response) {
+                        console.log(response);
+                        window.open("party.php?watch='.$stream_id.'&key="+ response, "_blank");
+                    },
+                    error: function(xhr, textStatus, error) {
+                        console.log(xhr.statusText);
+                        console.log(textStatus);
+                        console.log(error);
+                    }
+                });
             })
 
             $("#add-to-watchlist").click(function(){

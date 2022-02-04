@@ -68,9 +68,7 @@
         There are currently no movies available in this category '; 
     }
 
-    $myuid = uniqid('strmhb');
- 
-    echo $myuid;
+    
 
     // $temp = ;
     

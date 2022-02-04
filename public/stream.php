@@ -30,6 +30,12 @@
         $data = $sqlQuery -> fetch_assoc();
         $title = $data['title'];
     }
+    if($type == "series"){
+        $mediaID = $episode;
+    } else {
+        $mediaID = $movieID;
+    }
+
     $sql = mysqli_query($conn,$query);
     $details = mysqli_fetch_array($sql);
     if ($episode){
@@ -57,9 +63,12 @@
             <span id="back-arrow"><i class='bx bx-left-arrow-alt'></i></span>
             <h1 id="title"><?php echo $title ?></h1>
         </div>
-        <?php if ($type == 'series') {
-            echo '<p id="menu-button"><i class="bx bx-menu"></i></p>';
-        }?>
+        <div class="right-buttons">
+            <?php if ($type == 'series') {
+                echo '<p id="menu-button"><i class="bx bx-menu"></i></p>';
+            }?>
+        </div>
+        
     </div>
     <div id="movie-player">
         <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">

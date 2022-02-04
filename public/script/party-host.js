@@ -3,9 +3,9 @@ const volumeIcon = $('#volume-rocker');
 const playpauseContainer = $('#playpause');
 const upperContainer = $('#upper-container');
 const lowerContainer = $('#lower-container');
-var timer, vb;
-var visible = true;
-var DELAY = 300,
+let timer, vb;
+let visible = true;
+let DELAY = 300,
     rightclicks = 0,
     lefttclicks = 0,
     righttimer = null,
@@ -22,15 +22,29 @@ $(function() {
     }, 5000);
 });
 
+
+
 function playpause() {
+    let status;
+    let id = $('#video').attr('data-id');
     if (video.paused) {
         video.play();
+        status = "play";
         playpauseIcon.removeClass('bx-play');
         playpauseIcon.addClass('bx-pause');
+        $('.updateplaypause').load('../php-scripts/party-host-playpause.php', {
+            status: status,
+            vidID: id
+        });
     } else {
         video.pause();
+        status = "pause";
         playpauseIcon.removeClass('bx-pause');
         playpauseIcon.addClass('bx-play');
+        $('.updateplaypause').load('../php-scripts/party-host-playpause.php', {
+            status: status,
+            vidID: id
+        });
     }
 }
 
@@ -73,6 +87,7 @@ $("#volume-slider").slider({
     slide: function(event, ui) {
         setVolume(ui.value / 100);
     }
+
 });
 
 $("#brightness-slider").slider({
@@ -136,7 +151,7 @@ $('.brightness').mouseenter(function() {
 });
 
 function format(s) {
-    var m = Math.floor(s / 60);
+    let m = Math.floor(s / 60);
     m = (m >= 10) ? m : "0" + m;
     s = Math.floor(s % 60);
     s = (s >= 10) ? s : "0" + s;
@@ -144,23 +159,43 @@ function format(s) {
 }
 
 video.ontimeupdate = function() {
-    var percentage = (video.currentTime / video.duration) * 100;
+    let partyID = $('')
+    let percentage = (video.currentTime / video.duration) * 100;
     $("#custom-seekbar span").css("width", percentage + "%");
-    var currtime = format(video.currentTime);
+    let currtime = format(video.currentTime);
     $('#time').text(currtime);
     if (video.currentTime == video.duration - 1) {
         playpauseIcon.removeClass('bx-play');
         playpauseIcon.addClass('bx-pause');
     }
+
+    let id = $('#video').attr('data-id');
+    let time = video.currentTime;
+
+    $('.update').load('../php-scripts/update-party-video.php', {
+        vidTime: time,
+        vidID: id
+    });
+
 };
 
 $("#custom-seekbar").on("click", function(e) {
-    var offset = $(this).offset();
-    var left = (e.pageX - offset.left);
-    var totalWidth = $("#custom-seekbar").width();
-    var percentage = (left / totalWidth);
-    var vidTime = video.duration * percentage;
+    let offset = $(this).offset();
+    let id = $('#video').attr('data-id');
+    let left = (e.pageX - offset.left);
+    let totalWidth = $("#custom-seekbar").width();
+    let percentage = (left / totalWidth);
+    let vidTime = video.duration * percentage;
     video.currentTime = vidTime;
+    $('.updateseek').load('../php-scripts/party-host-seek.php', {
+        seek: vidTime,
+        vidID: id
+    });
+    setTimeout(() => {
+        $('.updateseek').load('../php-scripts/party-all-seek.php', {
+            vidID: id
+        });
+    }, 1500);
 });
 
 $('#fullscreen-button').click(function(e) {
@@ -168,7 +203,6 @@ $('#fullscreen-button').click(function(e) {
 });
 
 $('body').mousemove(function(e) {
-    // values: e.clientX, e.clientY, e.pageX, e.pageY
     playpauseContainer.show();
     upperContainer.show();
     lowerContainer.show();
@@ -204,6 +238,18 @@ $('#left-previous').click(function() {
         clearTimeout(lefttimer); //prevent single-click action
         video.currentTime -= 10; //perform double-click action
         lefttclicks = 0; //after action performed, reset counter
+        let id = $('#video').attr('data-id');
+        let vidTime = video.currentTime;
+        $('.updateseek').load('../php-scripts/party-host-seek.php', {
+            seek: vidTime,
+            vidID: id
+        });
+        setTimeout(() => {
+            $('.updateseek').load('../php-scripts/party-all-seek.php', {
+                vidID: id
+            });
+
+        }, 1000);
     }
 }).on("dblclick", function(e) {
     e.preventDefault(); //cancel system double-click event
@@ -231,6 +277,17 @@ $('#right-forward').click(function() {
         clearTimeout(righttimer); //prevent single-click action
         video.currentTime += 10; //perform double-click action
         rightclicks = 0; //after action performed, reset counter
+        let id = $('#video').attr('data-id');
+        let vidTime = video.currentTime;
+        $('.updateseek').load('../php-scripts/party-host-seek.php', {
+            seek: vidTime,
+            vidID: id
+        });
+        setTimeout(() => {
+            $('.updateseek').load('../php-scripts/party-all-seek.php', {
+                vidID: id
+            });
+        }, 1000);
     }
 }).on("dblclick", function(e) {
     e.preventDefault(); //cancel system double-click event
@@ -246,4 +303,13 @@ $('#hide-button').click(function() {
 
 $('#party-button').click(function() {
     $('#start-button').slideToggle(100);
+});
+
+$("#copy-btn").click(function(e) {
+    let copyText = $("#key");
+    let temp = $("<input>");
+    $("body").append(temp);
+    temp.val(copyText.text()).select();
+    document.execCommand("copy");
+    temp.remove();
 });

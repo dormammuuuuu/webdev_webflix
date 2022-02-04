@@ -20,32 +20,30 @@ $(function() {
         lowerContainer.fadeOut();
         visible = false;
     }, 5000);
+
 });
 
-function playpause() {
-    if (video.paused) {
-        video.play();
-        playpauseIcon.removeClass('bx-play');
-        playpauseIcon.addClass('bx-pause');
-    } else {
-        video.pause();
-        playpauseIcon.removeClass('bx-pause');
-        playpauseIcon.addClass('bx-play');
-    }
-}
+$('#start-playback').click(function(e) {
+    e.preventDefault();
+    let id = $('#video').attr('data-id');
+    let time = video.currentTime;
 
-$('#playpause-button').click(function() {
-    playpause();
+    $('.update').load('../php-scripts/update-party-video-global.php', {
+        vidID: id
+    });
+    $('#modal-container').hide();
+    setInterval(() => {
+        $('.updateplaypause').load('../php-scripts/party-global-playpause.php', {
+            vidID: id
+        });
+        $('.updateseek').load('../php-scripts/party-global-seek.php', {
+            vidID: id
+        });
+    }, 250);
 });
 
 $('#back-arrow').click(function(e) {
     window.location.href = 'home.php';
-});
-
-$('html').keyup(function(e) {
-    if (e.keyCode == 32) {
-        playpause();
-    }
 });
 
 $('html').keydown(function(e) {
@@ -57,10 +55,6 @@ $('html').keydown(function(e) {
     } else if (e.keyCode == 40) {
         new_volume -= 0.05;
         setVolume(new_volume);
-    } else if (e.keyCode == 37) {
-        video.currentTime -= 10;
-    } else if (e.keyCode == 39) {
-        video.currentTime += 10;
     }
     $('#volume-slider').slider('value', new_volume * 100);
 });
@@ -144,6 +138,7 @@ function format(s) {
 }
 
 video.ontimeupdate = function() {
+    let partyID = $('')
     var percentage = (video.currentTime / video.duration) * 100;
     $("#custom-seekbar span").css("width", percentage + "%");
     var currtime = format(video.currentTime);
@@ -154,14 +149,6 @@ video.ontimeupdate = function() {
     }
 };
 
-$("#custom-seekbar").on("click", function(e) {
-    var offset = $(this).offset();
-    var left = (e.pageX - offset.left);
-    var totalWidth = $("#custom-seekbar").width();
-    var percentage = (left / totalWidth);
-    var vidTime = video.duration * percentage;
-    video.currentTime = vidTime;
-});
 
 $('#fullscreen-button').click(function(e) {
     video.requestFullscreen();
@@ -183,58 +170,6 @@ $('body').mousemove(function(e) {
     }, 5000);
 });
 
-$('#left-previous').click(function() {
-    lefttclicks++; //count clicks
-    if (lefttclicks === 1) {
-        lefttimer = setTimeout(function() {
-            if (visible == true) {
-                playpauseContainer.hide();
-                upperContainer.hide();
-                lowerContainer.hide();
-                visible = false;
-            } else {
-                playpauseContainer.show();
-                upperContainer.show();
-                lowerContainer.show();
-                visible = true;
-            } //perform single-click action    
-            lefttclicks = 0; //after action performed, reset counter
-        }, DELAY);
-    } else {
-        clearTimeout(lefttimer); //prevent single-click action
-        video.currentTime -= 10; //perform double-click action
-        lefttclicks = 0; //after action performed, reset counter
-    }
-}).on("dblclick", function(e) {
-    e.preventDefault(); //cancel system double-click event
-});
-
-
-$('#right-forward').click(function() {
-    rightclicks++; //count clicks
-    if (rightclicks === 1) {
-        righttimer = setTimeout(function() {
-            if (visible == true) {
-                playpauseContainer.hide();
-                upperContainer.hide();
-                lowerContainer.hide();
-                visible = false;
-            } else {
-                playpauseContainer.show();
-                upperContainer.show();
-                lowerContainer.show();
-                visible = true;
-            } //perform single-click action    
-            rightclicks = 0; //after action performed, reset counter
-        }, DELAY);
-    } else {
-        clearTimeout(righttimer); //prevent single-click action
-        video.currentTime += 10; //perform double-click action
-        rightclicks = 0; //after action performed, reset counter
-    }
-}).on("dblclick", function(e) {
-    e.preventDefault(); //cancel system double-click event
-});
 
 $('#menu-button').click(function() {
     $('#side-menu').css('right', 0);
@@ -246,4 +181,13 @@ $('#hide-button').click(function() {
 
 $('#party-button').click(function() {
     $('#start-button').slideToggle(100);
+});
+
+$("#copy-btn").click(function(e) {
+    let copyText = $("#key");
+    var temp = $("<input>");
+    $("body").append(temp);
+    temp.val(copyText.text()).select();
+    document.execCommand("copy");
+    temp.remove();
 });
