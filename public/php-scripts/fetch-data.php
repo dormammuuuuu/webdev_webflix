@@ -168,7 +168,7 @@
                     url: "../php-scripts/start-party.php",
                     success: function(response) {
                         console.log(response);
-                        window.open("party.php?watch='.$stream_id.'&key="+ response, "_blank");
+                        window.open("party.php?watch=" + id + "&key="+ response, "_blank");
                     },
                     error: function(xhr, textStatus, error) {
                         console.log(xhr.statusText);
