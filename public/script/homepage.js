@@ -106,7 +106,12 @@ $('.party-button').click(function(e) {
 
 $('#party-id-button').click(function(e) {
     let partyID = $('#party-id-input').val();
-    $('#displayData').load('../php-scripts/get-party.php', {
+    $('.party-warning').load('../php-scripts/get-party.php', {
         watchID: partyID
     });
+});
+$('#party-modal-close').click(function(e) {
+    e.preventDefault();
+    $('#party-modal').hide();
+
 });

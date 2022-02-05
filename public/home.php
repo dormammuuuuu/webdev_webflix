@@ -242,9 +242,13 @@
             </div>
             <div id="party-modal">
                 <div class="party-modal-container">
-                    <p>Party ID</p>
-                    <input type="text" name="party-id" id="party-id-input">
-                    <button id="party-id-button">JOIN</button>
+                    <img class="watch-party-img" src="assets/images/watch-party.jpg" alt="">
+                    <p class="party-warning"></p>
+                    <div>
+                        <input type="text" name="party-id" id="party-id-input">
+                        <button id="party-id-button">JOIN</button>
+                    </div>
+                    <p id="party-modal-close"><i class='bx bx-x'></i></p>
                 </div>
             </div>
         </section>
