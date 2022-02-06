@@ -39,14 +39,13 @@
                 if($confirm != $password) {
                   $message = "Password does not match";
                 } else {
-                    $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`, `verify_token`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'NONE','$password', '$token')";
+                    $query = "INSERT INTO `user`(`id`, `firstName`, `lastName`, `userName`, `email`, `avatar`, `password`, `verify_token`) VALUES (NULL,'$firstName','$lastName','$username','$email', 'default.png','$password', '$token')";
                     $cmd = mysqli_query($conn,$query) or die(mysqli_error($conn));    
                     if($cmd){
                       $firstName = $lastName = $email = $password = $username = "";
-    
                       header ("location:login.php");
                     }else{
-                      echo " Registration not Succcesful";
+                      echo "Registration failed.";
                     }
                 }
             }
