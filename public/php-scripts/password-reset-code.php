@@ -22,15 +22,16 @@
         $mail->Port       = 587; 
 
 
-        $mail->setFrom('streamhubemail@gmail.com', 'Mailer');
+        $mail->setFrom('streamhubemail@gmail.com', 'StreamHub');
         $mail->addAddress($get_email);     //Add a recipient
 
         $mail->isHTML(true);
         $mail->Subject = "Reset Password Notification";
 
         $email_template = "
-            <p>Test<p>
+            <p>We received a request to reset your StreamHub password. You can directly change your password by clicking the link:<p>
             <a href='localhost/password-change.php?token=$token'>Click here</a>
+            <p>If you didn't request a new password, ignore this email.</p>
         ";
 
         $mail->Body = $email_template;

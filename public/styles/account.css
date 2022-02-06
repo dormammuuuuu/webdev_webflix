@@ -290,6 +290,7 @@ input:focus {
 
 nav {
     display: none;
+    position: relative;
 }
 
 .account-security-container {

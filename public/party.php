@@ -7,6 +7,7 @@
     }
 
     $uid = $_SESSION['id'];
+
     $movieID = $_GET['watch'];
     $type = 'movie';
     $hostUser = false;
@@ -18,10 +19,17 @@
 
     $sql = mysqli_query($conn,$query);
     $details = mysqli_fetch_array($sql);
+    if (!$details){
+        header("location:home.php");
+    }
+
     $play = $details['movies_file'];
 
     $partyQuery = mysqli_query($conn,"SELECT * FROM party WHERE party_id = '{$_GET['key']}'");
     $partyQueryResult = mysqli_fetch_assoc($partyQuery);
+    if (!$partyQueryResult){
+        header("location:home.php");
+    }
 
     $partyHost = $partyQueryResult['host_id'];
 
@@ -80,6 +88,24 @@
         </div>
         
     </div>
+    <div id="toggle-messages">
+        <i class='bx bx-chevron-left'></i>
+    </div>
+    <div id="messages-container">
+        <div id="messages-header">
+            <h2>Party Messages</h2>
+            <p id="messages-container-hide"><i class='bx bx-x'></i></p>
+        </div>
+        <hr>
+        <div class="messages">            
+        </div>
+        <hr>
+        <div id="message-form">
+            <input id="input-message" type="text" placeholder="Message...">
+            <span id="send-button"><i class='bx bxs-send'></i></span>
+        </div>
+        
+    </div>
     <div id="movie-player">
         <video id="video" data-id="<?php echo $_GET['key']?>" controls="false" preload="metadata">
                 <source src="<?php echo $play?>" type="video/mp4">
@@ -125,12 +151,6 @@
              <span id="fullscreen-button"><i class='bx bx-fullscreen'></i></span>
          </div>
     </div>
-    <div id="side-menu">
-        <div class="side-header">
-            <h1>Episodes</h1>
-            <p id="hide-button"><i class="bx bx-x" ></i></p>
-        </div>
-    </div>
     
     <?php
         if (!$hostUser){
@@ -159,6 +179,7 @@
         }
         
     ?>
+                <script src="script/chat.js"></script>
     
 </body>
 </html>

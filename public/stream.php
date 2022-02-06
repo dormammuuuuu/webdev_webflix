@@ -8,6 +8,7 @@
     $movieID = $_GET['watch'];
     $episode = @$_GET['id'] ?: "";
     $season = @$_GET['season'] ?: 1;
+
     $type = '';
 
     if ($episode){
@@ -21,19 +22,20 @@
         $cmd = mysqli_query($conn, $newQuery);
         $cmdData = $cmd->fetch_assoc();
         $maxSeason = (int) $cmdData['max_season'];
+        if (!$cmdData){
+            header("location:home.php");
+         }
+        
     } else {
         $type = 'movie';
-
         $query = "SELECT * FROM movies where movies_id = $movieID";
         $sql = "SELECT movies_title as title FROM movies where movies_id = $movieID";
         $sqlQuery = mysqli_query($conn,$sql);
         $data = $sqlQuery -> fetch_assoc();
         $title = $data['title'];
-    }
-    if($type == "series"){
-        $mediaID = $episode;
-    } else {
-        $mediaID = $movieID;
+        if (!$data){
+           header("location:home.php");
+        }
     }
 
     $sql = mysqli_query($conn,$query);

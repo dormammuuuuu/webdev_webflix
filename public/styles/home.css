@@ -435,6 +435,7 @@ input:focus {
 
 nav {
     display: none;
+    position: relative;
 }
 
 .modal-preview {

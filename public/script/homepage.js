@@ -101,6 +101,7 @@ $('.soon-button').click(function(e) {
 $('.party-button').click(function(e) {
     e.preventDefault();
     $('#party-modal').toggle();
+    $('.party-warning').text("");
 
 });
 
@@ -113,5 +114,5 @@ $('#party-id-button').click(function(e) {
 $('#party-modal-close').click(function(e) {
     e.preventDefault();
     $('#party-modal').hide();
-
+    $('.party-warning').text("");
 });

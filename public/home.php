@@ -95,6 +95,7 @@
                 <li class="series-button"><a class="nav-link" href="#">TV/Shows</a></li>
                 <li class="list-button"><a class="nav-link" href="#">My List</a></li>
                 <li class="soon-button"><a class="nav-link" href="#">Coming Soon</a></li>
+                <li class="party-button"><a class="nav-link" href="#">Watch Together</a></li>
                 <li><a class="nav-link" href="account.php">Account Settings</a></li>
                 <li><span class="nav-link log_out logoutBtn" >Logout</span></li>
             </ul>
