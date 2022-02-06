@@ -17,7 +17,13 @@
         include('php-scripts/initialize-db.php');
 
         $token = $_GET['token'];
+		if (!$token || ISSET($_SESSION['id'])){
+			header('location:home.php');
+		}
         $check_token = "SELECT verify_token FROM user WHERE verify_token='$token' LIMIT 1";
+		if (!$check_token){
+			header('location:home.php');
+		}
         $check_token_run = mysqli_query($conn, $check_token);
         $cmd = mysqli_query($conn, "SELECT email FROM user WHERE verify_token = '$token'");
         $user = mysqli_fetch_array($cmd);
