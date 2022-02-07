@@ -1,39 +1,21 @@
-/*login.onclick = () => {
-    var inputFields = document.getElementsByClassName("user-input");
+$(function() {
+    let bgarr = ['thumb.png', 'thumb2.jpg', 'thumb3.jpg'];
 
-    var emptyFields = false;
-    for(let i = 0; i < 2; i++) {
-        emptyFields = (inputFields[i].value == '') ? true : false;
-        if(inputFields[i].value == '') {
-            inputFields[i].style.borderBottom = "2.5px solid #EE3E3E";
+    function preload(bgarr) {
+        $(arrayOfImages).each(function() {
+            $('<img />').attr('src', this).appendTo('body').css('display', 'none');
+        });
+    }
+    let i = 0;
+    setInterval(() => {
+        $("#image").fadeOut('fast', function() {
+            $("#image").attr('src', '/assets/images/' + bgarr[i]);
+            $("#image").fadeIn('fast');
+        });
+        if (i >= 2) {
+            i = 0;
         } else {
-            inputFields[i].style.border = "none";
+            i++;
         }
-    }
-    if(emptyFields) {
-        errorMsgLogin.innerHTML = "Please input empty fields";
-    } else {
-        errorMsgLogin.innerHTML = '';
-        email = inputFields[0].value;
-        password = inputFields[1].value;
-
-        auth.signInWithEmailAndPassword(email, password).then(function() {
-            var user = auth.currentUser;
-            var dbref = db.ref(`users/${user.uid}`);
-            const t = Date.now();
-            const today = new Date(t).toLocaleDateString();
-            dbref.update({
-                lastLogin: today
-            })
-            errorMsgLogin.innerHTML = '';
-            inputFields[0].style.border = "none";
-            inputFields[1].style.border = "none";
-            window.location = "home.html";
-        })
-        .catch(function(error) {
-            errorMsgLogin.innerHTML = "Invalid email or password";
-            inputFields[0].style.borderBottom = "2.5px solid #EE3E3E";
-            inputFields[1].style.borderBottom = "2.5px solid #EE3E3E";
-        })
-    }
-}*/
+    }, 4000);
+});
