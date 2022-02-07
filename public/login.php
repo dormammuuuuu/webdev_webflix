@@ -40,7 +40,7 @@
                         <span class="form-labels"> Email</span>
                         <input type="email" class="user-input" name="email" value="<?php echo $firstName?>">
                         <span class="form-labels"> Password</span>
-                        <input type="password" class="user-input" name="password">
+                        <input type="password" class="user-input" name="password" id="login-pass-inputbox"><span id="show-pass">👁</span>
                         <div id="errorMsgDiv">
                             <p id="errorMsgLogin"></p>
                         </div>

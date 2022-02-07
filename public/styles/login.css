@@ -183,6 +183,17 @@ input {
     text-align: center;
 }
 
+#show-pass {
+    margin-left: -20px;
+    padding: 10px 2px;
+    flex-direction: row;
+}
+
+#show-pass:hover {
+    cursor: pointer;
+    z-index: 10;
+}
+
 @media (max-width: 400px) {
     #mainheader {
         font-size: 1.2em;
