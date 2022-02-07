@@ -38,8 +38,8 @@
                         <p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
                         <p id="subheader"> Welcome back! Log In with your Email </p>
                         
-                        <span class="form-labels"> Email</span>
-                        <input type="email" class="user-input" name="email" value="<?php echo $email?>">
+                        <span class="form-labels"> Email or Username</span>
+                        <input type="text" class="user-input" name="email" value="<?php echo $email?>">
                         <span class="form-labels"> Password</span>
                         <input type="password" class="user-input" name="password" id="login-pass-inputbox"><span id="show-pass">👁</span>
                         <div id="errorMsgDiv">
