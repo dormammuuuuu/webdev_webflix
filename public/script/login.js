@@ -19,3 +19,9 @@ $(function() {
         }
     }, 4000);
 });
+
+var x = true;
+document.getElementById('show-pass').onclick = () => {
+    (x == true) ? document.getElementById('login-pass-inputbox').type = "text" : document.getElementById('login-pass-inputbox').type = "password";
+    x = !x;
+}
