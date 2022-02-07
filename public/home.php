@@ -22,7 +22,7 @@
             
             session_start();
             if(!ISSET($_SESSION['id'])){
-               header("location:index.html");
+               header("location:index.php");
             }
             ?>
         <div class="sidebar">

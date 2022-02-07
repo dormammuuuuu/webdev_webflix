@@ -22,7 +22,7 @@
 
     session_start();
     if (!isset($_SESSION['id'])) {
-        header("location:index.html");
+        header("location:index.php");
     } else {
         $id = (int) $_SESSION['id'];
 

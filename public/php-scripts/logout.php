@@ -3,7 +3,7 @@
     session_destroy(); //destroy the session
     echo'
     <script>
-        window.location.href = "index.html";
+        window.location.href = "index.php";
     </script>
     ';
 ?>

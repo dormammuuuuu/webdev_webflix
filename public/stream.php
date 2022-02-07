@@ -3,7 +3,7 @@
 
     session_start();
     if(!ISSET($_SESSION['id'])){
-        header("location:index.html");
+        header("location:index.php");
     }
     $movieID = $_GET['watch'];
     $episode = @$_GET['id'] ?: "";

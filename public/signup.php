@@ -24,8 +24,8 @@
                 <p><i class="brand fas fa-play-circle"></i></p>
             </div>
             <ul class="nav-menu">
-                <li><a class="nav-link" href="index.html">Home</a></li>
-                <li><a class="nav-link" href="index.html#about">About</a></li>
+                <li><a class="nav-link" href="index.php">Home</a></li>
+                <li><a class="nav-link" href="index.php#about">About</a></li>
                 <li><a class="nav-link" href="login.php">Log In</a></li>
             </ul>
             <div class="hamburger">
