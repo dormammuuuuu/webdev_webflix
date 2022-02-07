@@ -13,6 +13,7 @@
     <body>
         <?php
             include("php-scripts/signup-script.php");
+            $email = @$_GET['email'] ?: "";
 		?>
         <nav>
             <div>
