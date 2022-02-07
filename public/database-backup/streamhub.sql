@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2022 at 03:15 PM
+-- Generation Time: Feb 07, 2022 at 04:29 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -81,7 +81,7 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`movies_id`, `movies_cast`, `movies_category`, `movies_rating`, `movies_restriction`, `movies_sypnosis`, `movies_thumbnail`, `movies_title`, `movies_year`, `movies_file`) VALUES
-(1, 'Jennie Kim, Jisoo Kim, Lalisa Manoban, Rosé', 'Documentary', '5.0', 'PG-13', 'Exclusive interviews and concert footage highlihgting the career of Korean pop group Blackpink, as the quartet celebrate five years in the business.', 'assets/images/thumb/MOV 1.jpg', 'Black Pink: The Movie', '2021', 'assets/movies/1 - Black Pink - The Movie.mp4'),
+(1, 'Jennie Kim, Jisoo Kim, Lalisa Manoban, Rosé', 'Documentary', '5.0', 'PG-13', 'Exclusive interviews and concert footage highlihgting the career of Korean pop group Blackpink, as the quartet celebrate five years in the business.', 'assets/images/thumb/MOV 1.jpg', 'BlackPink: The Movie', '2021', 'assets/movies/1 - Black Pink - The Movie.mp4'),
 (2, 'Simu Liu, Awkwafina, Meng\'er Zhang', 'Action Adventure', '5.0', 'PG-13', 'Martial-arts master Shang-Chi confronts the past he thought he left behind when he\'s drawn into the web of the mysterious Ten Rings organization.', 'assets/images/thumb/MOV 2.jpg', 'Shang-Chi', '2021', 'assets/movies/2 - Shang Chi.mp4'),
 (3, 'Ryan Reynolds, Jodie Comer, Joe Keery', 'Action Comedy Adventure', '5.0', 'PG-13', 'When a bank teller discovers he\'s actually a background player in an open-world video game, he decides to become the hero of his own story -- one that he can rewrite himself. In a world where there\'s no limits, he\'s determined to save the day his way before it\'s too late, and maybe find a little romance with the coder who conceived him.', 'assets/images/thumb/MOV 3.jpg', 'Free Guy', '2021', 'assets/movies/3 - Free Guy.mp4'),
 (4, 'Dave Bautista, Ella Purnell, Omari Hardwick', 'Action Horror Adventure Crime', '5.0', 'PG-18', 'After a zombie outbreak in Las Vegas, a group of mercenaries take the ultimate gamble and venture into the quarantine zone in hopes of pulling off an impossible heist.', 'assets/images/thumb/MOV 4.jpg', 'Army of the Dead', '2021', 'assets/movies/4 - Army of the Dead.mp4'),
@@ -336,12 +336,15 @@ CREATE TABLE `user_favorites` (
 --
 
 INSERT INTO `user_favorites` (`user_id`, `favorite_id`, `ms_type`) VALUES
-(1, 3, 'movie'),
 (1, 7, 'coming-soon'),
 (1, 1, 'series'),
 (1, 16, 'series'),
 (1, 1, 'coming-soon'),
-(1, 2, 'series');
+(1, 2, 'series'),
+(1, 2, 'movie'),
+(1, 5, 'movie'),
+(1, 4, 'movie'),
+(1, 9, 'movie');
 
 --
 -- Indexes for dumped tables
@@ -409,7 +412,7 @@ ALTER TABLE `movies`
 -- AUTO_INCREMENT for table `party_chat`
 --
 ALTER TABLE `party_chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 
 --
 -- AUTO_INCREMENT for table `series`

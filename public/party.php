@@ -65,7 +65,8 @@
                         <p id="key"><?php echo $_GET['key'] ?></p>
                         <p id="copy-btn"><i class='bx bx-copy-alt'></i></p>
                     </div>
-                    <div class="users">
+
+                    <!-- <div class="users">
                         <p>Users</p>
                         <div class="user-count">
                             <i class='bx bxs-group'></i>
@@ -82,7 +83,7 @@
                             <img src="assets/images/user_avatar/virtue.png" class="user-avatar">
                             <p class="user-name">Ramino Tampipi Panaligan</p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

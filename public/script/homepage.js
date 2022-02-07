@@ -78,31 +78,38 @@ $('.series-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Series List');
     $('#list-movies').load('../php-scripts/fetch-series.php');
+    $('#btn').click();
+
 });
 
 $('.movies-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Movie List');
     $('#list-movies').load('../php-scripts/fetch-movies.php');
+    $('#btn').click();
+
 });
 
 $('.list-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Favorites');
     $('#list-movies').load('../php-scripts/fetch-favorites.php');
+    $('#btn').click();
 });
 
 $('.soon-button').click(function(e) {
     $('#list-movies').empty();
     $('.dropdown-container h1').text('Coming Soon');
     $('#list-movies').load('../php-scripts/fetch-soon.php');
+    $('#btn').click();
+
 });
 
 $('.party-button').click(function(e) {
     e.preventDefault();
     $('#party-modal').toggle();
     $('.party-warning').text("");
-
+    $('#btn').click();
 });
 
 $('#party-id-button').click(function(e) {
@@ -111,6 +118,7 @@ $('#party-id-button').click(function(e) {
         watchID: partyID
     });
 });
+
 $('#party-modal-close').click(function(e) {
     e.preventDefault();
     $('#party-modal').hide();

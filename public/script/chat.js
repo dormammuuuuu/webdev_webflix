@@ -26,6 +26,20 @@ $('#send-button').click(function(e) {
     }
 });
 
+$('body').on('keypress', function(e) {
+    if (e.which == 13) {
+        let id = $('#video').attr('data-id');
+        let message = $('#input-message').val();
+        if (message != "") {
+            $('.update').load('../php-scripts/send-chat.php', {
+                message: message,
+                vidID: id
+            });
+            $('#input-message').val("");
+        }
+    }
+});
+
 
 $('#input-message').on('input', function(e) {
     if ($(this).val() != "")

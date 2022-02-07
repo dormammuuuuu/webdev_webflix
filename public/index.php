@@ -171,9 +171,9 @@
         <div class="card-container">
             <div class="card-1" data-aos="zoom-out-up" data-aos-delay="300">
                 <div class="fab-icon">
-                    <i class="fas fa-child"></i>
+                    <i class="fas fa-user-plus"></i>
                 </div>
-                <p class="card-info">Create profile for your kids</p>
+                <p class="card-info">Create an account</p>
             </div>
             <div class="card-2" data-aos="zoom-out-up" data-aos-delay="500">
                 <div class="fab-icon">
@@ -241,6 +241,7 @@
     <footer>
         <p id="footer"> © 2021 - 2022 StreamHub.com. All rights reserved. </p>
     </footer>
+    <div class="update"></div>
     <script src="script/index.js"></script>
     <script>
         AOS.init();

@@ -16,9 +16,11 @@
                 } else {
                     event.preventDefault()
                     event.stopPropagation()
-
-                    let value = document.getElementById('email-input').value;
-                    window.location.href = "signup.php?email=" + value;
+                    let value = $('#email-input').val();
+                    alert(value);
+                    $('.update').load('../php-scripts/check-email.php', {
+                        userEmail: value
+                    });
                 }
 
                 form.classList.add('was-validated')

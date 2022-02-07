@@ -20,21 +20,22 @@
 
     echo '
         <div id="toast-id">
-        <div class="toast">
-            <div class="toast-container">
-            <div class="toast-content">
-                <div class="toast-icon">
-                <i class="fas fa-exclamation"></i>
+            <div class="toast">
+                <div class="toast-container">
+                <div class="toast-content">
+                    <div class="toast-icon">
+                    <i class="fas fa-exclamation"></i>
+                    </div>
+                    <p class="toast-message">Successfully added to your list.</p>
                 </div>
-                <p class="toast-message">Successfully added to your list.</p>
+                <div class="toast-dismiss">
+                    <i class="fas fa-times"></i>
+                </div>
+                </div>
+                <div id="toast-progress"></div>
             </div>
-            <div class="toast-dismiss">
-                <i class="fas fa-times"></i>
-            </div>
-            </div>
-            <div id="toast-progress"></div>
         </div>
-        </div>
+        <script src="script/toast.js"></script>
     ';
 
 ?>

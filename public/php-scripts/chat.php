@@ -6,12 +6,12 @@
     $vidID = $_POST['vidID'];
 
     $getMessages = mysqli_query($conn, "SELECT * from party_chat WHERE party_id = '$vidID'");
-    $result = $getMessages->fetch_assoc();
+    $result = mysqli_fetch_assoc($getMessages);
 
     if (!$result){
         Echo '<p class="no-message">No messages available</p>';
     } else {
-        while ($result = $getMessages->fetch_assoc()){
+        do{
             if ($result['sender_id'] == $uid){
                 echo'
                     <div class="sender">
@@ -34,7 +34,7 @@
                     </div>
                 ';
             }
-        }
+        } while ($result = mysqli_fetch_assoc($getMessages));
     }
     mysqli_close($conn);
 
