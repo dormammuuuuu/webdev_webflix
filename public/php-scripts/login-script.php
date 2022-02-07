@@ -21,7 +21,7 @@
               $_SESSION['id'] = $row['id'];
               header("location:home.php");
           }else{
-            $message = "The username or password you've entered is incorrect.";
+            $message = "The username/email or password you've entered is incorrect.";
             
           }
 
