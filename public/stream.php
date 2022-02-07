@@ -73,7 +73,7 @@
         
     </div>
     <div id="movie-player">
-        <video id="video" controls="false" preload="metadata" poster="img/poster.jpg">
+        <video id="video" controls="false" preload="metadata" poster="assets/images/poster.png">
                 <source src="<?php echo $play?>" type="video/mp4">
                 FILE NOT FOUND.
         </video>

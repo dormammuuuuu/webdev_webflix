@@ -107,7 +107,7 @@
         
     </div>
     <div id="movie-player">
-        <video id="video" data-id="<?php echo $_GET['key']?>" controls="false" preload="metadata">
+        <video id="video" data-id="<?php echo $_GET['key']?>" controls="false" preload="metadata" poster="assets/images/poster.png">
                 <source src="<?php echo $play?>" type="video/mp4">
                 FILE NOT FOUND.
         </video>

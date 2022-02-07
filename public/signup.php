@@ -7,13 +7,15 @@
         <link rel="stylesheet" type="text/CSS" href="styles/navbar.css">
         <link rel="stylesheet" type="text/CSS" href="styles/signup.css">
         <link rel="stylesheet" type="text/CSS" href="styles/toast.css">
+        <link rel="stylesheet" type="text/CSS" href="styles/bg.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     </head>
     <body>
         <?php
             include("php-scripts/signup-script.php");
-            $email = @$_GET['email'] ?: "";
+            include("php-scripts/background.php");
+
 		?>
         <nav>
             <div>
@@ -30,9 +32,10 @@
                 <span class="bar"></span>
             </div>
         </nav>
+        
         <div class="flex-container">
-            <span id="mainheader"> CREATE YOUR ACCOUNT </span> 
-            <span id="subheader"> Watch, enjoy, and binge on thousands of videos. </span> 
+            <p id="mainheader"> CREATE YOUR ACCOUNT </p> 
+            <p id="subheader"> Watch, enjoy, and binge on thousands of videos. </p> 
             <form method="post" id="register-form">
                 <span class="input-labels"> First name </span> 
                 <input type="text" class="input-boxes" name="firstname" value="<?php echo $firstName?>" require> 
@@ -114,10 +117,15 @@
                     </div>
                 </div>
             </form>
-            <footer id="footer"> 
+            
+        </div>
+        <?php
+            include("php-scripts/background.php");
+
+		?>
+        <footer id="footer"> 
                 <span> © 2021 - 2022 StreamHub.com. All rights reserved. </span> 
             </footer>
-        </div>
         <script src="script/register.js"></script>
         <script src="script/navbar.js"></script>
         <script src="script/toast.js"></script>
