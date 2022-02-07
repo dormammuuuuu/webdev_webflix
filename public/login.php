@@ -36,7 +36,7 @@
                 <div>
                     <form method="post">
                         <p id="mainheader"> STREAMHUB ACCOUNT LOGIN </p>
-                        <p id="subheader"> Welcome back! Log In with your Email </p>
+                        <p id="subheader"> Welcome back! Log In with your Email or Username </p>
                         
                         <span class="form-labels"> Email or Username</span>
                         <input type="text" class="user-input" name="email" value="<?php echo $email?>">
