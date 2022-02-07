@@ -16,6 +16,8 @@
             include("php-scripts/signup-script.php");
             include("php-scripts/background.php");
 
+            $email = @$_GET['email'] ?: "";
+
 		?>
         <nav>
             <div>
