@@ -9,7 +9,7 @@
     if (!$result){
         echo'
             <script>
-                window.location.href = "signup.php?email="'.$userEmail.'";
+                window.location.href = "signup.php?email='.$userEmail.'";
             </script>
         ';
     } else {

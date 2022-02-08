@@ -17,7 +17,6 @@
                     event.preventDefault()
                     event.stopPropagation()
                     let value = $('#email-input').val();
-                    alert(value);
                     $('.update').load('../php-scripts/check-email.php', {
                         userEmail: value
                     });
